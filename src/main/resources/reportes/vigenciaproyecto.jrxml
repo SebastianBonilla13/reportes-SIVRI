@@ -1,0 +1,302 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="report name" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b71f69aa-37c1-4669-9220-6ea6306b0157">
+	<property name="ireport.zoom" value="1.464100000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="titulo" class="java.lang.String"/>
+	<parameter name="idproyecto" class="java.lang.Long"/>
+	<parameter name="diaini" class="java.lang.String"/>
+	<parameter name="mesini" class="java.lang.String"/>
+	<parameter name="anioini" class="java.lang.Integer"/>
+	<parameter name="diafin" class="java.lang.String"/>
+	<parameter name="mesfin" class="java.lang.String"/>
+	<parameter name="aniofin" class="java.lang.Integer"/>
+	<parameter name="director" class="java.lang.String"/>
+	<field name="idProyecto" class="java.lang.Long"/>
+	<background splitType="Stretch"/>
+	<title height="90" splitType="Stretch">
+		<element kind="frame" uuid="6fc8c223-30a9-43c3-a46f-5c7eacb1c85c" positionType="Float" x="67" y="11" width="468" height="53">
+			<element kind="staticText" uuid="baabbab1-d2db-4256-958c-158ebbfe774c" positionType="Float" x="10" y="24" width="445" height="14" fontName="Arial" hTextAlign="Center">
+				<text><![CDATA[Información de la vigencia de contratos / Convenio / Proyectos]]></text>
+			</element>
+			<element kind="staticText" uuid="d0d2b624-f001-42ed-ada6-38545f9f13f6" positionType="Float" x="10" y="10" width="445" height="14" fontName="Arial" hTextAlign="Center">
+				<text><![CDATA[Vicerrectoría Administrativa]]></text>
+			</element>
+			<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="aca8d21d-dc92-42ee-a2f5-e7bf0b608f89" positionType="Float" x="22" y="64" width="174" height="14" fontName="Arial" hTextAlign="Center">
+			<text><![CDATA[Código: PA-GA-5-FOR-2]]></text>
+			<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="42c54a6d-5614-4d65-b151-d5941064e7ca" positionType="Float" x="196" y="64" width="165" height="14" fontName="Arial" hTextAlign="Center">
+			<text><![CDATA[Versión: 0]]></text>
+			<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="0a560ea1-fcf5-4109-8102-088571457e8f" positionType="Float" x="361" y="64" width="174" height="14" fontName="Arial" hTextAlign="Center">
+			<text><![CDATA[Fecha Vigencia: 13-01-2014]]></text>
+			<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="image" uuid="261404e5-5bee-4637-99dc-8e1dc0594c57" x="10" y="7" width="53" height="52" linkType="None" linkTarget="Self">
+			<expression><![CDATA["C:\\Users\\Usuario\\Desktop\\Tesis\\archivos Fichas Resumen\\Logo-Unicauca.PNG"]]></expression>
+		</element>
+	</title>
+	<detail>
+		<band height="466" splitType="Stretch">
+			<element kind="frame" uuid="087ef0b2-13cf-481b-b3f1-8060620e5737" positionType="Float" x="0" y="18" width="555" height="46">
+				<element kind="staticText" uuid="20da202c-d4f8-4789-bbc3-ec7632ea4a8e" positionType="Float" x="12" y="24" width="523" height="14" fontName="Arial" hTextAlign="Center">
+					<text><![CDATA[DEL CONTRATO / CONVENIO / PROYECTO]]></text>
+				</element>
+				<element kind="staticText" uuid="896de42f-9546-43a4-8ce1-e21448bf9843" positionType="Float" x="12" y="10" width="523" height="14" fontName="Arial" hTextAlign="Center">
+					<text><![CDATA[EL DIRECTOR y/o COORDINADOR]]></text>
+				</element>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="87f97566-2931-429d-8dc8-54752f8ee28d" positionType="Float" x="0" y="79" width="88" height="14" fontName="Arial">
+				<text><![CDATA[Nombre convenio: ]]></text>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="3469b4bb-cfd5-4f73-8d73-05d18ac56b61" positionType="Float" x="0" y="107" width="88" height="14" fontName="Arial">
+				<text><![CDATA[N° del Convenio ID ]]></text>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="c6c6883a-3bd0-48df-805e-4b7d222e90db" positionType="Float" x="0" y="140" width="555" height="14" fontName="Arial" hTextAlign="Center">
+				<text><![CDATA[CERTIFICA:]]></text>
+			</element>
+			<element kind="textField" uuid="a544d6d4-9b48-44fc-bb7f-3f163c410df0" x="12" y="370" width="523" height="15" fontName="Arial" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$P{director}]]></expression>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="frame" uuid="53d57be6-e476-485a-9077-cb126c651902" x="0" y="385" width="555" height="29">
+				<element kind="staticText" uuid="e5394f02-73fe-4146-b9d9-4f37e3f162e8" x="12" y="14" width="523" height="14" fontName="Arial" hTextAlign="Center">
+					<text><![CDATA[DEL CONTRATO / CONVENIO / PROYECTO]]></text>
+				</element>
+				<element kind="staticText" uuid="e73dfbcf-40cd-4e59-9d29-5e2b068196bc" x="12" y="0" width="523" height="14" fontName="Arial" hTextAlign="Center">
+					<text><![CDATA[EL DIRECTOR y/o COORDINADOR]]></text>
+				</element>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.0" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.0" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.0" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.0" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.0" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="805a00e4-6f9d-48bc-b7c2-e8a791e49323" positionType="Float" stretchType="ContainerHeight" x="0" y="93" width="555" height="14" fontName="Arial" textAdjust="StretchHeight" hTextAlign="Justified" vTextAlign="Top">
+				<expression><![CDATA[$P{titulo}]]></expression>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="627d62eb-f2fe-4ed5-b2bd-13d5336677dd" positionType="Float" x="88" y="107" width="108" height="14" fontName="Arial" vTextAlign="Top">
+				<expression><![CDATA[$P{idproyecto}]]></expression>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="44a53b03-09c0-48e0-b2c2-3e6c359a4bb5" x="12" y="423" width="523" height="14" fontName="Arial" fontSize="8.0" hTextAlign="Center">
+				<text><![CDATA[(*)Recuerde que la fecha de ejecución es diferente a la fecha de liquidación]]></text>
+			</element>
+			<element kind="staticText" uuid="d0ed3b07-76d9-4d9a-b63a-a6912720ec63" positionType="Float" x="0" y="171" width="555" height="24" fontName="Arial" hTextAlign="Justified">
+				<text><![CDATA[Que las fechas que a continuación se relacionan están definidas  dentro del Contrato/Convenio/Proyecto  y  son las que corresponden al mismo así:]]></text>
+			</element>
+			<element kind="staticText" uuid="6ca1f81b-ef71-4353-a846-333ab95265e2" positionType="Float" x="38" y="204" width="203" height="30" fontName="Arial">
+				<text><![CDATA[Fecha  de Inicio de EJECUCION del Contrato/Convenio/Proyecto:  
+]]></text>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="4d7d22a1-5516-4545-993f-8b5abff7c1b8" positionType="Float" x="241" y="204" width="39" height="30" fontName="Arial" hTextAlign="Center" vTextAlign="Middle">
+				<text><![CDATA[Día:]]></text>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="d442cf83-28ba-44a3-8999-45d2863194a2" positionType="Float" x="400" y="204" width="40" height="30" fontName="Arial" hTextAlign="Center" vTextAlign="Middle">
+				<text><![CDATA[Año:]]></text>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="74422b2b-6f05-4c7c-bc2b-e48cd7ce94f0" positionType="Float" x="320" y="204" width="40" height="30" fontName="Arial" hTextAlign="Center" vTextAlign="Middle">
+				<text><![CDATA[Mes:]]></text>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="8c842e41-a29f-4c32-ae18-b913b54cfb2e" positionType="Float" x="280" y="204" width="40" height="30" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$P{diaini}]]></expression>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="82fb3bc1-3de2-4804-95cb-60b4bb357766" positionType="Float" x="360" y="204" width="40" height="30" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$P{mesini}]]></expression>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="eaa737a1-7167-43f0-b469-290679779c03" positionType="Float" x="440" y="204" width="40" height="30" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$P{anioini}]]></expression>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="309ca1eb-febe-47aa-b9c9-16f0c0fb81e2" positionType="Float" x="241" y="234" width="39" height="30" fontName="Arial" hTextAlign="Center" vTextAlign="Middle">
+				<text><![CDATA[Día:]]></text>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="da4d4c49-29e4-4a4d-b97c-b48f1b74036d" positionType="Float" x="320" y="234" width="40" height="30" fontName="Arial" hTextAlign="Center" vTextAlign="Middle">
+				<text><![CDATA[Mes:]]></text>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="2075873b-77c6-4268-beb5-adbbae63d9f0" positionType="Float" x="400" y="234" width="40" height="30" fontName="Arial" hTextAlign="Center" vTextAlign="Middle">
+				<text><![CDATA[Año:]]></text>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="90fbc0c4-835f-4f20-9001-e8610fe79538" positionType="Float" x="38" y="234" width="203" height="30" fontName="Arial">
+				<text><![CDATA[Fecha  de Terminación de EJECUCION del Contrato/Convenio/Proyecto:  
+]]></text>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="a18fc95a-7cb7-40c5-a44a-8de23e8aca51" positionType="Float" x="280" y="234" width="40" height="30" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$P{diafin}]]></expression>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="6ebb8379-e5a9-4ef2-9712-ab4b728a7a5b" positionType="Float" x="360" y="234" width="40" height="30" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$P{mesfin}]]></expression>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="2cf2d35e-cb82-4bf8-bdc8-56d86a85ad59" positionType="Float" x="440" y="234" width="40" height="30" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$P{aniofin}]]></expression>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+</jasperReport>
