@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import edu.unicauca.reportes_SIVRI.dto.ProyectoDTO;
-import edu.unicauca.reportes_SIVRI.util.JasperHelper;
+import edu.unicauca.reportes_SIVRI.reportes.infraestructura.output.service.JasperHelper;
 
 @Service
 public class ProyectoServiceImpl implements ProyectoService {

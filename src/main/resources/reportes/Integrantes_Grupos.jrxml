@@ -1,0 +1,393 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="Integrantes_Grupos" language="java" columnCount="1" pageWidth="1250" pageHeight="842" orientation="Landscape" columnWidth="1210" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e14bc3eb-b7bd-42db-b1ac-f54a03b1c9d8">
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.rows" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.white.page.background" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.ignore.graphics" value="false"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="Nombre" class="java.lang.String"/>
+	<parameter name="Identificacion" class="java.lang.String"/>
+	<parameter name="Grupo" class="java.lang.String"/>
+	<parameter name="ID Grupo" class="java.lang.String"/>
+	<parameter name="Codigo GrupLAC" class="java.lang.String"/>
+	<parameter name="Enlace GrupLAC" class="java.lang.String"/>
+	<parameter name="Historial Roles" class="java.lang.String"/>
+	<parameter name="Estado" class="java.lang.String"/>
+	<parameter name="Tipo Vinculacion" class="java.lang.String"/>
+	<parameter name="Facultad" class="java.lang.String"/>
+	<parameter name="Departamento" class="java.lang.String"/>
+	<parameter name="Programas" class="java.lang.String"/>
+	<parameter name="Entidad" class="java.lang.String"/>
+	<field name="Nombre" class="java.lang.String"/>
+	<field name="Identificacion" class="java.lang.Integer"/>
+	<field name="Grupo" class="java.lang.String"/>
+	<field name="ID Grupo" class="java.lang.Integer"/>
+	<field name="Codigo GrupLAC" class="java.lang.String"/>
+	<field name="Enlace GrupLAC" class="java.lang.String"/>
+	<field name="Enlace CvLAC" class="java.lang.String"/>
+	<field name="Historial Roles" class="java.lang.String"/>
+	<field name="Estado" class="java.lang.String"/>
+	<field name="Tipo Vinculacion" class="java.lang.String"/>
+	<field name="Facultad" class="java.lang.String"/>
+	<field name="Departamento" class="java.lang.String"/>
+	<field name="Programas" class="java.lang.String"/>
+	<field name="Entidad" class="java.lang.String"/>
+	<background splitType="Stretch"/>
+	<title height="68">
+		<element kind="frame" uuid="8e2758a8-ac27-4348-a98d-5bcfc38f21d1" x="0" y="0" width="1180" height="68">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<element kind="frame" uuid="57443d81-5e05-491c-aa12-e8d06d098d06" x="0" y="0" width="67" height="53">
+				<element kind="image" uuid="45a64521-ae16-4b99-b277-cfaf9359cf66" x="13" y="0" width="40" height="49">
+					<expression><![CDATA["C:\\Users\\Usuario\\Desktop\\Tesis\\Escudo-Unicauca.png"]]></expression>
+				</element>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineStyle="Solid" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="frame" uuid="55fd2271-5774-47dc-a937-be973d05195b" positionType="Float" x="67" y="0" width="1113" height="53">
+				<element kind="staticText" uuid="3c7c6b66-dc5c-4c71-8ce8-e86414877aa4" positionType="Float" x="-1" y="24" width="1102" height="14" fontName="Arial" hTextAlign="Center">
+					<text><![CDATA[Información de la vigencia de contratos / Convenio / Proyectos]]></text>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</element>
+				<element kind="staticText" uuid="ae05606c-05d0-405a-8a6b-3b1a3bc75977" positionType="Float" x="-1" y="10" width="1102" height="14" fontName="Arial" hTextAlign="Center">
+					<text><![CDATA[Vicerrectoría Administrativa]]></text>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</element>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+		</element>
+		<property name="com.jaspersoft.studio.unit.height" value="px"/>
+	</title>
+	<pageHeader height="29" splitType="Stretch">
+		<element kind="staticText" uuid="9fd617bc-7a13-436f-8df5-0d521c914ea7" positionType="Float" x="0" y="0" width="393" height="14" fontName="Arial" hTextAlign="Center">
+			<text><![CDATA[Código: R02]]></text>
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="07d8c1e6-18f2-411d-9c39-e9f144727ace" positionType="Float" x="393" y="0" width="393" height="14" fontName="Arial" hTextAlign="Center">
+			<text><![CDATA[Versión: 0]]></text>
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="ab54c1b4-fc8b-4d42-9a24-d0447edebedb" positionType="Float" x="786" y="0" width="394" height="14" fontName="Arial" hTextAlign="Center">
+			<text><![CDATA[Fecha Reporte: dd-mm-aaaa]]></text>
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="32d6d490-dbea-493f-9f1b-9c1c1e7d49f1" x="0" y="14" width="1180" height="14">
+			<text><![CDATA[]]></text>
+		</element>
+		<property name="com.jaspersoft.studio.unit.height" value="px"/>
+	</pageHeader>
+	<columnHeader height="15" splitType="Stretch">
+		<element kind="staticText" uuid="19fc0ad6-76fc-48f2-98c9-914491560338" x="190" y="0" width="120" height="14" bold="true">
+			<text><![CDATA[Grupo]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="04298890-0b05-4a17-82f2-069f87e2dcb3" x="0" y="0" width="120" height="14" bold="true">
+			<text><![CDATA[Nombre]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="03a79ce4-cd4e-4dee-8462-cdd46543ca05" x="120" y="0" width="70" height="14" bold="true">
+			<text><![CDATA[Identificacion]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="b633f963-bdef-4914-afd9-4485cf5c9a49" x="310" y="0" width="50" height="14" bold="true">
+			<text><![CDATA[ID Grupo]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="61b37129-0e4e-484b-b6cd-52ad0b1ba2be" x="360" y="0" width="80" height="14" bold="true">
+			<text><![CDATA[Código GrupLAC]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="6d5b2f46-655a-4e05-a55d-872f58ef2284" x="440" y="0" width="81" height="14" bold="true">
+			<text><![CDATA[Enlace GrupLAC]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="5f42cfb3-90b9-4ef5-be4f-0fc1859b27b3" x="521" y="0" width="100" height="14" bold="true">
+			<text><![CDATA[Historial Roles]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="62e1cdca-4ada-4973-8ef4-bd6ac6978ecd" x="620" y="0" width="50" height="14" bold="true">
+			<text><![CDATA[Estado]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="0fe6a563-ac72-4c72-81c1-381b8f4fefdf" x="670" y="0" width="100" height="14" bold="true">
+			<text><![CDATA[Tipo Vinculacion]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="e1390672-0667-41bd-8d87-34c638dd2b5c" x="770" y="0" width="120" height="14" bold="true">
+			<text><![CDATA[Facultad]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="051d190a-5072-49ff-a849-69bde7de671c" x="890" y="0" width="90" height="14" bold="true">
+			<text><![CDATA[Departamento]]></text>
+			<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="d7de745c-fea4-4e2a-af0c-bdf605c7328d" x="980" y="0" width="100" height="14" bold="true">
+			<text><![CDATA[Programas]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="23782824-5c64-44c4-b9cb-82c6c683c458" x="1080" y="0" width="100" height="14" bold="true">
+			<text><![CDATA[Entidad]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<element kind="textField" uuid="6c6741c6-23c0-4809-b98f-abe116946b0c" x="190" y="0" width="120" height="30" textAdjust="ScaleFont">
+				<expression><![CDATA[$P{Grupo}]]></expression>
+				<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="77a76699-14ab-4ca4-b8f6-172e47fa77d1" x="120" y="0" width="70" height="30">
+				<expression><![CDATA[$P{Identificacion}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="6faace56-451b-4793-ac77-6aebc29b10a5" x="0" y="0" width="120" height="30" textAdjust="ScaleFont">
+				<expression><![CDATA[$P{Nombre}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="a92f2e5f-a245-4c9d-9ccd-2c1968f5d14f" x="310" y="0" width="50" height="30">
+				<expression><![CDATA[$P{ID Grupo}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="2d30f936-d1e7-4661-a0fa-8814fcda8e70" x="360" y="0" width="80" height="30">
+				<expression><![CDATA[$P{Codigo GrupLAC}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="ccef1852-f635-4223-8ae3-c3948cc20509" x="440" y="0" width="81" height="30">
+				<expression><![CDATA[$P{Enlace GrupLAC}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="13302885-6155-4a0d-b61f-fa8f8cadad4e" x="521" y="0" width="100" height="30" textAdjust="ScaleFont">
+				<expression><![CDATA[$P{Historial Roles}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="0e5fc74c-9e8e-4c1c-b0ea-af3fbd7ac0ae" x="621" y="0" width="49" height="30">
+				<expression><![CDATA[$P{Estado}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="64bd23bb-a09c-46a6-ae9d-56e97d721254" x="670" y="0" width="100" height="30">
+				<expression><![CDATA[$P{Tipo Vinculacion}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="8c03b31e-f23f-4889-8d38-dd033ecdaa28" x="770" y="0" width="120" height="30" textAdjust="ScaleFont">
+				<expression><![CDATA[$P{Facultad}]]></expression>
+				<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="320db2fd-dacb-4db8-9e37-2dd9986bea4f" x="890" y="0" width="90" height="30" textAdjust="ScaleFont">
+				<expression><![CDATA[$P{Departamento}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="af6e84b9-ebc7-469a-9d4d-3039679cb610" x="980" y="0" width="100" height="30" textAdjust="ScaleFont">
+				<expression><![CDATA[$P{Programas}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="978c4680-f00b-4ea2-9012-061fa9f61b0b" x="1080" y="0" width="100" height="30" textAdjust="ScaleFont">
+				<expression><![CDATA[$P{Entidad}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
