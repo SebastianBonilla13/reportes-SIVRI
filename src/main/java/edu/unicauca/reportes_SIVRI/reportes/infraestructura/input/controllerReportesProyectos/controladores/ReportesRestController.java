@@ -18,23 +18,43 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
 @RestController
 @RequestMapping("/reportes")
 @RequiredArgsConstructor
 public class ReportesRestController {
-    
+
     private final GenerarReporteCUIntPort objGenerarReporteCUIntPort;
 
     @PostMapping("generar")
     public ResponseEntity<byte[]> generarReporte(@RequestBody ReporteDTOPeticion objReporte) {
-        
-        // Llamar al caso de uso para generar el reporte
-        byte[] pdf = objGenerarReporteCUIntPort.generarReporte(objReporte.getData(), objReporte.getTipoReporte());
 
-        // archivo, nombre del archivo descarga y tipo de contenido
-        return buildFileResponse(pdf, "reporte.pdf", MediaType.APPLICATION_PDF);
-        
+        String formato = objReporte.getFormato(); // Debes agregar este campo en tu DTO y en el JSON
+        byte[] archivo = objGenerarReporteCUIntPort.generarReporte(objReporte.getData(), objReporte.getTipoReporte(),formato);
+
+        String filename;
+        MediaType mediaType;
+
+        switch (formato.toLowerCase()) {
+            case "xlsx":
+            case "excel":
+                filename = "reporte.xlsx";
+                mediaType = MediaType
+                        .parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+                break;
+            case "docx":
+            case "word":
+                filename = "reporte.docx";
+                mediaType = MediaType
+                        .parseMediaType("application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+                break;
+            case "pdf":
+            default:
+                filename = "reporte.pdf";
+                mediaType = MediaType.APPLICATION_PDF;
+                break;
+        }
+
+        return buildFileResponse(archivo, filename, mediaType);
     }
 
     @GetMapping("/hola")
@@ -49,6 +69,5 @@ public class ReportesRestController {
                                                                                                // del archivo
         return new ResponseEntity<>(file, headers, HttpStatus.OK); // construccion respuesta
     }
-    
 
 }

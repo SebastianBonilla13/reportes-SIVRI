@@ -1,11 +1,14 @@
 package edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies;
 
-import edu.unicauca.reportes_SIVRI.reportes.dominio.modelos.Reporte;
+import java.util.List;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+
 
 public interface ReporteStrategy<T> {
 
-    byte[] generarReporte(T datos);
-    Class<T> getDtoType();
+    byte[] generarReporte(List<T> datos, String formato);
+    TypeReference<List<T>> getTypeReference();
     String getPlantilla();
 
 

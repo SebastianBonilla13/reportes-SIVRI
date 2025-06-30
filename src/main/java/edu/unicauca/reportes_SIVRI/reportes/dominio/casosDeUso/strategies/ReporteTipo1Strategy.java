@@ -1,9 +1,13 @@
 package edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Component;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+
 import edu.unicauca.reportes_SIVRI.reportes.infraestructura.input.controllerReportesProyectos.DTOPeticion.ReporteTipo1DTOPeticion;
 import edu.unicauca.reportes_SIVRI.reportes.infraestructura.output.service.JasperHelper;
 
@@ -18,32 +22,51 @@ public class ReporteTipo1Strategy implements ReporteStrategy<ReporteTipo1DTOPeti
     }
 
     @Override
-    public byte[] generarReporte(ReporteTipo1DTOPeticion datos) {
+    public byte[] generarReporte(List<ReporteTipo1DTOPeticion> datos, String formato) {
 
-        // Lógica para llenar el reporte con datos del DTOReporte
+        if (datos == null || datos.isEmpty()) {
+            throw new IllegalArgumentException("La lista de datos no puede estar vacía");
+        }
+
+        System.out.println("");
+        System.out.println("DATOSSSS: " + datos);
+        System.out.println("");
+
+        // Usar el primer elemento para los parámetros simples
+        ReporteTipo1DTOPeticion dto = datos.get(0);
+
+        // Preparar los parámetros para el reporte
         Map<String, Object> parametros = new HashMap<>();
-        parametros.put("titulo", datos.getTitulo());
-        parametros.put("idproyecto", datos.getIdProyecto()); // Nombre exacto requerido por Jasper
-        parametros.put("diaini", String.format("%02d", datos.getFechaInicio().getDayOfMonth()));
-        parametros.put("mesini", String.format("%02d", datos.getFechaInicio().getMonthValue()));
-        parametros.put("anioini", Integer.valueOf(datos.getFechaInicio().getYear()));
-        parametros.put("diafin", String.format("%02d", datos.getFechaFinalizacion().getDayOfMonth()));
-        parametros.put("mesfin", String.format("%02d", datos.getFechaFinalizacion().getMonthValue()));
-        parametros.put("aniofin", Integer.valueOf(datos.getFechaFinalizacion().getYear()));
-        parametros.put("director", datos.getDirector());
-        
+        parametros.put("titulo", dto.getTitulo());
+        parametros.put("idproyecto", dto.getIdProyecto());
+        parametros.put("diaini", String.format("%02d", dto.getFechaInicio().getDayOfMonth()));
+        parametros.put("mesini", String.format("%02d", dto.getFechaInicio().getMonthValue()));
+        parametros.put("anioini", dto.getFechaInicio().getYear());
+        parametros.put("diafin", String.format("%02d", dto.getFechaFinalizacion().getDayOfMonth()));
+        parametros.put("mesfin", String.format("%02d", dto.getFechaFinalizacion().getMonthValue()));
+        parametros.put("aniofin", dto.getFechaFinalizacion().getYear());
+        parametros.put("director", dto.getDirector());
+
+        // Convertir la lista de DTOs a una lista de mapas para el reporte
+        parametros.put("DATA_LIST", datos);
+
         // Se llama al servicio para generar el reporte. La plantilla y los parámetros
-        return JasperService.generarPdfDesdePlantilla(Plantilla, parametros);
+        return JasperService.generarReporteDesdePlantilla(Plantilla, parametros, formato);
     }
 
-    @Override
+    /* @Override
     public Class<ReporteTipo1DTOPeticion> getDtoType() {
         return ReporteTipo1DTOPeticion.class;
-    }
+    } */
 
     @Override
     public String getPlantilla() {
         return Plantilla;
+    }
+
+    @Override
+    public TypeReference<List<ReporteTipo1DTOPeticion>> getTypeReference() {
+        return new TypeReference<List<ReporteTipo1DTOPeticion>>() {};
     }
 
 }

@@ -1,5 +1,6 @@
 package edu.unicauca.reportes_SIVRI.service;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,7 +55,9 @@ public class ProyectoServiceImpl implements ProyectoService {
         System.out.println("ANTES de generar el reporte");
         System.out.println(" ");
 
-        return JasperHelper.generarPdfDesdePlantilla(rutaReporte, parametros);
+        
+
+        return JasperHelper.generarReporteDesdePlantilla(rutaReporte, parametros, "xlsx");
     }
 
     private byte[] generarVigenciaProyecto(ProyectoDTO proyecto) {

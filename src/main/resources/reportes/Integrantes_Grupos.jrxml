@@ -13,33 +13,32 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
-	<parameter name="Nombre" class="java.lang.String"/>
-	<parameter name="Identificacion" class="java.lang.String"/>
-	<parameter name="Grupo" class="java.lang.String"/>
-	<parameter name="ID Grupo" class="java.lang.String"/>
-	<parameter name="Codigo GrupLAC" class="java.lang.String"/>
-	<parameter name="Enlace GrupLAC" class="java.lang.String"/>
-	<parameter name="Historial Roles" class="java.lang.String"/>
-	<parameter name="Estado" class="java.lang.String"/>
-	<parameter name="Tipo Vinculacion" class="java.lang.String"/>
-	<parameter name="Facultad" class="java.lang.String"/>
-	<parameter name="Departamento" class="java.lang.String"/>
-	<parameter name="Programas" class="java.lang.String"/>
-	<parameter name="Entidad" class="java.lang.String"/>
-	<field name="Nombre" class="java.lang.String"/>
-	<field name="Identificacion" class="java.lang.Integer"/>
-	<field name="Grupo" class="java.lang.String"/>
-	<field name="ID Grupo" class="java.lang.Integer"/>
-	<field name="Codigo GrupLAC" class="java.lang.String"/>
-	<field name="Enlace GrupLAC" class="java.lang.String"/>
-	<field name="Enlace CvLAC" class="java.lang.String"/>
-	<field name="Historial Roles" class="java.lang.String"/>
-	<field name="Estado" class="java.lang.String"/>
-	<field name="Tipo Vinculacion" class="java.lang.String"/>
-	<field name="Facultad" class="java.lang.String"/>
-	<field name="Departamento" class="java.lang.String"/>
-	<field name="Programas" class="java.lang.String"/>
-	<field name="Entidad" class="java.lang.String"/>
+	<parameter name="nombre" class="java.lang.String"/>
+	<parameter name="identificacion" class="java.lang.String"/>
+	<parameter name="grupo" class="java.lang.String"/>
+	<parameter name="idGrupo" class="java.lang.String"/>
+	<parameter name="codigoGrupLAC" class="java.lang.String"/>
+	<parameter name="enlaceGrupLAC" class="java.lang.String"/>
+	<parameter name="historialRoles" class="java.lang.String"/>
+	<parameter name="estado" class="java.lang.String"/>
+	<parameter name="tipoVinculacion" class="java.lang.String"/>
+	<parameter name="facultad" class="java.lang.String"/>
+	<parameter name="departamento" class="java.lang.String"/>
+	<parameter name="programas" class="java.lang.String"/>
+	<parameter name="entidad" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="identificacion" class="java.lang.String"/>
+	<field name="grupo" class="java.lang.String"/>
+	<field name="idGrupo" class="java.lang.String"/>
+	<field name="codigoGrupLAC" class="java.lang.String"/>
+	<field name="enlaceGrupLAC" class="java.lang.String"/>
+	<field name="historialRoles" class="java.lang.String"/>
+	<field name="estado" class="java.lang.String"/>
+	<field name="tipoVinculacion" class="java.lang.String"/>
+	<field name="facultad" class="java.lang.String"/>
+	<field name="departamento" class="java.lang.String"/>
+	<field name="programas" class="java.lang.String"/>
+	<field name="entidad" class="java.lang.String"/>
 	<background splitType="Stretch"/>
 	<title height="68">
 		<element kind="frame" uuid="8e2758a8-ac27-4348-a98d-5bcfc38f21d1" x="0" y="0" width="1180" height="68">
@@ -120,7 +119,7 @@
 	</pageHeader>
 	<columnHeader height="15" splitType="Stretch">
 		<element kind="staticText" uuid="19fc0ad6-76fc-48f2-98c9-914491560338" x="190" y="0" width="120" height="14" bold="true">
-			<text><![CDATA[Grupo]]></text>
+			<text><![CDATA[grupo]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -130,7 +129,7 @@
 			</box>
 		</element>
 		<element kind="staticText" uuid="04298890-0b05-4a17-82f2-069f87e2dcb3" x="0" y="0" width="120" height="14" bold="true">
-			<text><![CDATA[Nombre]]></text>
+			<text><![CDATA[nombre]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -140,7 +139,7 @@
 			</box>
 		</element>
 		<element kind="staticText" uuid="03a79ce4-cd4e-4dee-8462-cdd46543ca05" x="120" y="0" width="70" height="14" bold="true">
-			<text><![CDATA[Identificacion]]></text>
+			<text><![CDATA[identificacion]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -150,7 +149,7 @@
 			</box>
 		</element>
 		<element kind="staticText" uuid="b633f963-bdef-4914-afd9-4485cf5c9a49" x="310" y="0" width="50" height="14" bold="true">
-			<text><![CDATA[ID Grupo]]></text>
+			<text><![CDATA[idGrupo]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -160,7 +159,7 @@
 			</box>
 		</element>
 		<element kind="staticText" uuid="61b37129-0e4e-484b-b6cd-52ad0b1ba2be" x="360" y="0" width="80" height="14" bold="true">
-			<text><![CDATA[Código GrupLAC]]></text>
+			<text><![CDATA[codigoGrupLAC]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -170,7 +169,7 @@
 			</box>
 		</element>
 		<element kind="staticText" uuid="6d5b2f46-655a-4e05-a55d-872f58ef2284" x="440" y="0" width="81" height="14" bold="true">
-			<text><![CDATA[Enlace GrupLAC]]></text>
+			<text><![CDATA[enlaceGrupLAC]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -180,7 +179,7 @@
 			</box>
 		</element>
 		<element kind="staticText" uuid="5f42cfb3-90b9-4ef5-be4f-0fc1859b27b3" x="521" y="0" width="100" height="14" bold="true">
-			<text><![CDATA[Historial Roles]]></text>
+			<text><![CDATA[historialRoles]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -190,7 +189,7 @@
 			</box>
 		</element>
 		<element kind="staticText" uuid="62e1cdca-4ada-4973-8ef4-bd6ac6978ecd" x="620" y="0" width="50" height="14" bold="true">
-			<text><![CDATA[Estado]]></text>
+			<text><![CDATA[estado]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -200,7 +199,7 @@
 			</box>
 		</element>
 		<element kind="staticText" uuid="0fe6a563-ac72-4c72-81c1-381b8f4fefdf" x="670" y="0" width="100" height="14" bold="true">
-			<text><![CDATA[Tipo Vinculacion]]></text>
+			<text><![CDATA[tipoVinculacion]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -210,7 +209,7 @@
 			</box>
 		</element>
 		<element kind="staticText" uuid="e1390672-0667-41bd-8d87-34c638dd2b5c" x="770" y="0" width="120" height="14" bold="true">
-			<text><![CDATA[Facultad]]></text>
+			<text><![CDATA[facultad]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -220,7 +219,7 @@
 			</box>
 		</element>
 		<element kind="staticText" uuid="051d190a-5072-49ff-a849-69bde7de671c" x="890" y="0" width="90" height="14" bold="true">
-			<text><![CDATA[Departamento]]></text>
+			<text><![CDATA[departamento]]></text>
 			<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -231,7 +230,7 @@
 			</box>
 		</element>
 		<element kind="staticText" uuid="d7de745c-fea4-4e2a-af0c-bdf605c7328d" x="980" y="0" width="100" height="14" bold="true">
-			<text><![CDATA[Programas]]></text>
+			<text><![CDATA[programas]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -241,7 +240,7 @@
 			</box>
 		</element>
 		<element kind="staticText" uuid="23782824-5c64-44c4-b9cb-82c6c683c458" x="1080" y="0" width="100" height="14" bold="true">
-			<text><![CDATA[Entidad]]></text>
+			<text><![CDATA[entidad]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -252,9 +251,9 @@
 		</element>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
+		<band height="30" splitType="Stretch">
 			<element kind="textField" uuid="6c6741c6-23c0-4809-b98f-abe116946b0c" x="190" y="0" width="120" height="30" textAdjust="ScaleFont">
-				<expression><![CDATA[$P{Grupo}]]></expression>
+				<expression><![CDATA[$F{grupo}]]></expression>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -265,7 +264,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="77a76699-14ab-4ca4-b8f6-172e47fa77d1" x="120" y="0" width="70" height="30">
-				<expression><![CDATA[$P{Identificacion}]]></expression>
+				<expression><![CDATA[$F{identificacion}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -275,7 +274,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="6faace56-451b-4793-ac77-6aebc29b10a5" x="0" y="0" width="120" height="30" textAdjust="ScaleFont">
-				<expression><![CDATA[$P{Nombre}]]></expression>
+				<expression><![CDATA[$F{nombre}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -285,7 +284,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="a92f2e5f-a245-4c9d-9ccd-2c1968f5d14f" x="310" y="0" width="50" height="30">
-				<expression><![CDATA[$P{ID Grupo}]]></expression>
+				<expression><![CDATA[$F{idGrupo}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -295,7 +294,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="2d30f936-d1e7-4661-a0fa-8814fcda8e70" x="360" y="0" width="80" height="30">
-				<expression><![CDATA[$P{Codigo GrupLAC}]]></expression>
+				<expression><![CDATA[$F{codigoGrupLAC}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -305,7 +304,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="ccef1852-f635-4223-8ae3-c3948cc20509" x="440" y="0" width="81" height="30">
-				<expression><![CDATA[$P{Enlace GrupLAC}]]></expression>
+				<expression><![CDATA[$F{enlaceGrupLAC}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -315,7 +314,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="13302885-6155-4a0d-b61f-fa8f8cadad4e" x="521" y="0" width="100" height="30" textAdjust="ScaleFont">
-				<expression><![CDATA[$P{Historial Roles}]]></expression>
+				<expression><![CDATA[$F{historialRoles}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -325,7 +324,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="0e5fc74c-9e8e-4c1c-b0ea-af3fbd7ac0ae" x="621" y="0" width="49" height="30">
-				<expression><![CDATA[$P{Estado}]]></expression>
+				<expression><![CDATA[$F{estado}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -335,7 +334,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="64bd23bb-a09c-46a6-ae9d-56e97d721254" x="670" y="0" width="100" height="30">
-				<expression><![CDATA[$P{Tipo Vinculacion}]]></expression>
+				<expression><![CDATA[$F{tipoVinculacion}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -345,7 +344,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="8c03b31e-f23f-4889-8d38-dd033ecdaa28" x="770" y="0" width="120" height="30" textAdjust="ScaleFont">
-				<expression><![CDATA[$P{Facultad}]]></expression>
+				<expression><![CDATA[$F{facultad}]]></expression>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -356,7 +355,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="320db2fd-dacb-4db8-9e37-2dd9986bea4f" x="890" y="0" width="90" height="30" textAdjust="ScaleFont">
-				<expression><![CDATA[$P{Departamento}]]></expression>
+				<expression><![CDATA[$F{departamento}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -366,7 +365,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="af6e84b9-ebc7-469a-9d4d-3039679cb610" x="980" y="0" width="100" height="30" textAdjust="ScaleFont">
-				<expression><![CDATA[$P{Programas}]]></expression>
+				<expression><![CDATA[$F{programas}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -376,7 +375,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="978c4680-f00b-4ea2-9012-061fa9f61b0b" x="1080" y="0" width="100" height="30" textAdjust="ScaleFont">
-				<expression><![CDATA[$P{Entidad}]]></expression>
+				<expression><![CDATA[$F{entidad}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -385,6 +384,7 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 				</box>
 			</element>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 		</band>
 	</detail>
 	<columnFooter height="45" splitType="Stretch"/>
