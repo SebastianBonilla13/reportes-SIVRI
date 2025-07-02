@@ -1,4 +1,4 @@
-package edu.unicauca.reportes_SIVRI.reportes.infraestructura.output.service;
+package edu.unicauca.reportes_SIVRI.reportes.infraestructura.output.serviceJasperReport;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;

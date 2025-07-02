@@ -5,25 +5,17 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Component;
-
 import com.fasterxml.jackson.core.type.TypeReference;
-
-
 import edu.unicauca.reportes_SIVRI.reportes.infraestructura.input.controllerReportesProyectos.DTOPeticion.ReporteTipo2DTOPeticion;
-import edu.unicauca.reportes_SIVRI.reportes.infraestructura.output.service.JasperHelper;
 
 @Component
 public class ReporteTipo2Strategy implements ReporteStrategy<ReporteTipo2DTOPeticion> {
 
     private static final String Plantilla = "/reportes/Integrantes_Grupos.jrxml";
-    private final JasperHelper JasperService;
-
-    public ReporteTipo2Strategy(JasperHelper JasperService) {
-        this.JasperService = JasperService;
-    }
+    private static final Map<String, Object> parametros = new HashMap<>();
 
     @Override
-    public byte[] generarReporte(List<ReporteTipo2DTOPeticion> datos, String formato) {
+    public Map<String, Object> prepararParametros(List<ReporteTipo2DTOPeticion> datos) {
 
         if (datos == null || datos.isEmpty()) {
             throw new IllegalArgumentException("La lista de datos no puede estar vacía");
@@ -32,28 +24,8 @@ public class ReporteTipo2Strategy implements ReporteStrategy<ReporteTipo2DTOPeti
         // Usar el primer elemento para los parámetros simples
         ReporteTipo2DTOPeticion dto = datos.get(0);
 
-        System.out.println("");
-        System.out.println("DATOSSSS: " + datos);
-        System.out.println("");
-
         // Preparar los parámetros para el reporte
         Map<String, Object> parametros = new HashMap<>();
-        /*
-         * parametros.put("Nombre", dto.getNombre());
-         * parametros.put("Identificacion", dto.getIdentificacion());
-         * parametros.put("Grupo", dto.getGrupo());
-         * parametros.put("ID Grupo", dto.getIdGrupo());
-         * parametros.put("Codigo GrupLAC", dto.getCodigoGrupLAC());
-         * parametros.put("Enlace GrupLAC", dto.getEnlaceGrupLAC());
-         * parametros.put("Historial Roles", dto.getHistorialRoles());
-         * parametros.put("Estado", dto.getEstado());
-         * parametros.put("Tipo Vinculacion", dto.getTipoVinculacion());
-         * parametros.put("Facultad", dto.getFacultad());
-         * parametros.put("Departamento", dto.getDepartamento());
-         * parametros.put("Programas", dto.getProgramas());
-         * parametros.put("Entidad", dto.getEntidad());
-         */
-
         parametros.put("nombre", dto.getNombre());
         parametros.put("identificacion", dto.getIdentificacion());
         parametros.put("grupo", dto.getGrupo());
@@ -71,8 +43,7 @@ public class ReporteTipo2Strategy implements ReporteStrategy<ReporteTipo2DTOPeti
         // Convertir la lista de DTOs a una lista de mapas para el reporte
         parametros.put("DATA_LIST", datos);
 
-        // Se llama al servicio para generar el reporte. La plantilla y los parámetros
-        return JasperService.generarReporteDesdePlantilla(Plantilla, parametros, formato);
+        return parametros;
     }
 
     @Override
@@ -84,6 +55,11 @@ public class ReporteTipo2Strategy implements ReporteStrategy<ReporteTipo2DTOPeti
     @Override
     public String getPlantilla() {
         return Plantilla;
+    }
+
+    @Override
+    public Map<String, Object> getParametros() {
+        return parametros;
     }
 
 }
