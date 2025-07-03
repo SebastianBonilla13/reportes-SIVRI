@@ -5,8 +5,6 @@ import java.util.Map;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 
-import edu.unicauca.reportes_SIVRI.reportes.infraestructura.input.controllerReportesProyectos.DTOPeticion.ReporteTipo2DTOPeticion;
-
 
 public interface ReporteStrategy<T> {
 
@@ -16,6 +14,4 @@ public interface ReporteStrategy<T> {
     String getPlantilla();
     Map<String, Object> getParametros();
     
-
-
 }

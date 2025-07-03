@@ -3,10 +3,12 @@ package edu.unicauca.reportes_SIVRI.reportes.infraestructura.input.controllerRep
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.unicauca.reportes_SIVRI.dto.ProyectoDTO;
-import edu.unicauca.reportes_SIVRI.dto.ReporteProyectoRequest;
 import edu.unicauca.reportes_SIVRI.reportes.aplicacion.input.GenerarReporteCUIntPort;
+import edu.unicauca.reportes_SIVRI.reportes.dominio.modelos.Reporte;
 import edu.unicauca.reportes_SIVRI.reportes.infraestructura.input.controllerReportesProyectos.DTOPeticion.ReporteDTOPeticion;
+import edu.unicauca.reportes_SIVRI.reportes.infraestructura.input.controllerReportesProyectos.mappers.ReporteMapperInfraestructuraDominio;
+import edu.unicauca.reportes_SIVRI.reportes.infraestructura.output.formateador.FormatoReporte;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.ContentDisposition;
@@ -24,42 +26,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class ReportesRestController {
 
     private final GenerarReporteCUIntPort objGenerarReporteCUIntPort;
+    private final ReporteMapperInfraestructuraDominio objMapeador;
 
     @PostMapping("generar")
-    public ResponseEntity<byte[]> generarReporte(@RequestBody ReporteDTOPeticion objReporte) {
+    public ResponseEntity<byte[]> generarReporte(@RequestBody @Valid ReporteDTOPeticion objReporte) {
 
-        String formato = objReporte.getFormato(); // Debes agregar este campo en tu DTO y en el JSON
-        byte[] archivo = objGenerarReporteCUIntPort.generarReporte(objReporte.getData(), objReporte.getTipoReporte(),formato);
+        Reporte objReporteGenerar = objMapeador.mappearDePeticionAReporte(objReporte);
+        byte[] archivoReporteGenerado = objGenerarReporteCUIntPort.generarReporte(objReporteGenerar);
 
-        String filename;
-        MediaType mediaType;
+        FormatoReporte formatoReporte = FormatoReporte.tipoFormato(objReporteGenerar.getFormato());
 
-        switch (formato.toLowerCase()) {
-            case "xlsx":
-            case "excel":
-                filename = "reporte.xlsx";
-                mediaType = MediaType
-                        .parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-                break;
-            case "docx":
-            case "word":
-                filename = "reporte.docx";
-                mediaType = MediaType
-                        .parseMediaType("application/vnd.openxmlformats-officedocument.wordprocessingml.document");
-                break;
-            case "pdf":
-            default:
-                filename = "reporte.pdf";
-                mediaType = MediaType.APPLICATION_PDF;
-                break;
-        }
-
-        return buildFileResponse(archivo, filename, mediaType);
-    }
-
-    @GetMapping("/hola")
-    public String holaMundo() {
-        return "Hola Mundo";
+        return buildFileResponse(archivoReporteGenerado, formatoReporte.getNombreArchivo(), formatoReporte.getMediaType());
     }
 
     private ResponseEntity<byte[]> buildFileResponse(byte[] file, String filename, MediaType mediaType) {
@@ -68,6 +45,11 @@ public class ReportesRestController {
         headers.setContentDisposition(ContentDisposition.inline().filename(filename).build()); // establecer el nombre
                                                                                                // del archivo
         return new ResponseEntity<>(file, headers, HttpStatus.OK); // construccion respuesta
+    }
+
+    @GetMapping("/hola")
+    public String holaMundo() {
+        return "Hola Mundo";
     }
 
 }

@@ -16,11 +16,7 @@ public class ReporteTipo2Strategy implements ReporteStrategy<ReporteTipo2DTOPeti
 
     @Override
     public Map<String, Object> prepararParametros(List<ReporteTipo2DTOPeticion> datos) {
-
-        if (datos == null || datos.isEmpty()) {
-            throw new IllegalArgumentException("La lista de datos no puede estar vacía");
-        }
-
+        
         // Usar el primer elemento para los parámetros simples
         ReporteTipo2DTOPeticion dto = datos.get(0);
 

@@ -32,9 +32,6 @@ public class ReporteStrategyFactory {
 
     public ReporteStrategy<?> getStrategy(String tipoReporte) {
         ReporteStrategy<?> strategy = strategies.get(tipoReporte);
-        if (strategy == null) {
-            throw new IllegalArgumentException("Tipo de reporte no soportado: " + tipoReporte);
-        }
         return strategy;
     }
 }
