@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import edu.unicauca.reportes_SIVRI.reportes.aplicacion.output.GenerarReporteGatewayIntPort;
+import edu.unicauca.reportes_SIVRI.reportes.aplicacion.output.ReporteFormateadorResultadosIntPort;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.GenerarReporteCUAdapter;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.factory.ReporteStrategyFactory;
 
@@ -13,8 +14,9 @@ public class BeanConfigurations {
     @Bean
     public GenerarReporteCUAdapter crearGenerarReporteCUAdapter
     (ReporteStrategyFactory ReporteStrategyFactory,
-     GenerarReporteGatewayIntPort objGenerarReporteGateway) {
-        GenerarReporteCUAdapter objGenerarReporteCU =  new GenerarReporteCUAdapter(ReporteStrategyFactory, objGenerarReporteGateway);
+     GenerarReporteGatewayIntPort objGenerarReporteGateway,
+     ReporteFormateadorResultadosIntPort objReporteFormateadorResultados) {
+        GenerarReporteCUAdapter objGenerarReporteCU =  new GenerarReporteCUAdapter(ReporteStrategyFactory, objGenerarReporteGateway, objReporteFormateadorResultados);
         return objGenerarReporteCU;
     }
 

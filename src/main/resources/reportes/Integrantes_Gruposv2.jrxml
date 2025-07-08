@@ -26,10 +26,6 @@
 	<parameter name="departamento" class="java.lang.String"/>
 	<parameter name="programas" class="java.lang.String"/>
 	<parameter name="entidad" class="java.lang.String"/>
-	<parameter name="codigoReporte" class="java.lang.String"/>
-	<parameter name="versionReporte" class="java.lang.String"/>
-	<parameter name="fechaReporte" class="java.lang.String"/>
-	<parameter name="tituloReporte" class="java.lang.String"/>
 	<field name="nombre" class="java.lang.String"/>
 	<field name="identificacion" class="java.lang.String"/>
 	<field name="grupo" class="java.lang.String"/>
@@ -61,15 +57,12 @@
 			</element>
 			<element kind="frame" uuid="55fd2271-5774-47dc-a937-be973d05195b" positionType="Float" x="67" y="0" width="1113" height="53">
 				<element kind="staticText" uuid="3c7c6b66-dc5c-4c71-8ce8-e86414877aa4" positionType="Float" x="-1" y="24" width="1102" height="14" fontName="Arial" hTextAlign="Center">
-					<text><![CDATA[]]></text>
+					<text><![CDATA[Información de la vigencia de contratos / Convenio / Proyectos]]></text>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</element>
 				<element kind="staticText" uuid="ae05606c-05d0-405a-8a6b-3b1a3bc75977" positionType="Float" x="-1" y="10" width="1102" height="14" fontName="Arial" hTextAlign="Center">
 					<text><![CDATA[Vicerrectoría Administrativa]]></text>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-				</element>
-				<element kind="textField" uuid="26cc80d9-bb81-4a3f-8c42-d380ae1e6e04" x="244" y="24" width="602" height="14" hTextAlign="Center">
-					<expression><![CDATA[$P{tituloReporte}]]></expression>
 				</element>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -84,7 +77,7 @@
 	</title>
 	<pageHeader height="29" splitType="Stretch">
 		<element kind="staticText" uuid="9fd617bc-7a13-436f-8df5-0d521c914ea7" positionType="Float" x="0" y="0" width="393" height="14" fontName="Arial" hTextAlign="Center">
-			<text><![CDATA[Código:]]></text>
+			<text><![CDATA[Código: R02]]></text>
 			<property name="com.jaspersoft.studio.unit.width" value="px"/>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
@@ -96,7 +89,7 @@
 			</box>
 		</element>
 		<element kind="staticText" uuid="07d8c1e6-18f2-411d-9c39-e9f144727ace" positionType="Float" x="393" y="0" width="393" height="14" fontName="Arial" hTextAlign="Center">
-			<text><![CDATA[Versión:]]></text>
+			<text><![CDATA[Versión: 0]]></text>
 			<property name="com.jaspersoft.studio.unit.width" value="px"/>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
@@ -108,7 +101,7 @@
 			</box>
 		</element>
 		<element kind="staticText" uuid="ab54c1b4-fc8b-4d42-9a24-d0447edebedb" positionType="Float" x="786" y="0" width="394" height="14" fontName="Arial" hTextAlign="Center">
-			<text><![CDATA[Fecha Reporte:]]></text>
+			<text><![CDATA[Fecha Reporte: dd-mm-aaaa]]></text>
 			<property name="com.jaspersoft.studio.unit.width" value="px"/>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
@@ -121,15 +114,6 @@
 		</element>
 		<element kind="staticText" uuid="32d6d490-dbea-493f-9f1b-9c1c1e7d49f1" x="0" y="14" width="1180" height="14">
 			<text><![CDATA[]]></text>
-		</element>
-		<element kind="textField" uuid="2505b7fb-a2a9-4bee-9f1d-9cf388c77f1e" x="220" y="0" width="90" height="14">
-			<expression><![CDATA[$P{codigoReporte}]]></expression>
-		</element>
-		<element kind="textField" uuid="bd219a4b-18e8-40a8-b191-934cde79c74c" x="610" y="0" width="90" height="14">
-			<expression><![CDATA[$P{versionReporte}]]></expression>
-		</element>
-		<element kind="textField" uuid="b6fc2897-de7c-4ff6-aee2-444a909d5df4" x="1020" y="0" width="90" height="14">
-			<expression><![CDATA[$P{fechaReporte}]]></expression>
 		</element>
 		<property name="com.jaspersoft.studio.unit.height" value="px"/>
 	</pageHeader>
@@ -268,7 +252,7 @@
 	</columnHeader>
 	<detail>
 		<band height="30" splitType="Stretch">
-			<element kind="textField" uuid="6c6741c6-23c0-4809-b98f-abe116946b0c" x="190" y="0" width="120" height="30" textAdjust="ScaleFont" linkType="None" linkTarget="Self">
+			<element kind="textField" uuid="6c6741c6-23c0-4809-b98f-abe116946b0c" x="190" y="0" width="120" height="30" textAdjust="ScaleFont">
 				<expression><![CDATA[$F{grupo}]]></expression>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				<box>
@@ -403,7 +387,7 @@
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 		</band>
 	</detail>
-	<columnFooter height="48" splitType="Stretch"/>
+	<columnFooter height="45" splitType="Stretch"/>
 	<pageFooter height="54" splitType="Stretch"/>
 	<summary height="42" splitType="Stretch"/>
 </jasperReport>

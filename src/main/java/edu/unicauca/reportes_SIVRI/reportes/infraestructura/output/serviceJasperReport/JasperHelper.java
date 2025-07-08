@@ -42,6 +42,9 @@ public class JasperHelper {
 
             Collection<?> data = (Collection<?>) parametrosYDatos.get("DATA_LIST");
             Map<String, Object> parametros = new HashMap<>(parametrosYDatos);
+
+
+
             parametros.remove("DATA_LIST");
             JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(data);
 

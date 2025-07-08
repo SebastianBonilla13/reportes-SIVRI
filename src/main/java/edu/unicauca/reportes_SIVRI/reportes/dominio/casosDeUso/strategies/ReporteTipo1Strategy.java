@@ -1,5 +1,6 @@
 package edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies;
 
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import edu.unicauca.reportes_SIVRI.reportes.infraestructura.input.controllerReportesProyectos.DTOPeticion.ReporteTipo1DTOPeticion;
+
 @Component
 public class ReporteTipo1Strategy implements ReporteStrategy<ReporteTipo1DTOPeticion> {
 
@@ -17,23 +19,19 @@ public class ReporteTipo1Strategy implements ReporteStrategy<ReporteTipo1DTOPeti
 
     @Override
     public Map<String, Object> prepararParametros(List<ReporteTipo1DTOPeticion> datos) {
+
+        // Preparar parámetros para el reporte
+        Map<String, Object> parametros = new HashMap<>();
+
+        // Parametros generales del reporte
+        parametros.put("tituloReporte", "Reporte de Integrantes de Grupos de Investigación y no sé que másssss");
+        parametros.put("codigoReporte", "R0111111");
+        parametros.put("versionReporte", "1.1.1.1");
         
-        // Usar el primer elemento para los parámetros simples
-        ReporteTipo1DTOPeticion dto = datos.get(0);
+        String fechaActual = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(java.time.LocalDate.now());
+        parametros.put("fechaReporte", fechaActual);
 
-        // Preparar los parámetros para el reporte
-       Map<String, Object> parametros = new HashMap<>();
-        parametros.put("titulo", dto.getTitulo());
-        parametros.put("idproyecto", dto.getIdProyecto());
-        parametros.put("diaini", String.format("%02d", dto.getFechaInicio().getDayOfMonth()));
-        parametros.put("mesini", String.format("%02d", dto.getFechaInicio().getMonthValue()));
-        parametros.put("anioini", dto.getFechaInicio().getYear());
-        parametros.put("diafin", String.format("%02d", dto.getFechaFinalizacion().getDayOfMonth()));
-        parametros.put("mesfin", String.format("%02d", dto.getFechaFinalizacion().getMonthValue()));
-        parametros.put("aniofin", dto.getFechaFinalizacion().getYear());
-        parametros.put("director", dto.getDirector());
-
-        // Convertir la lista de DTOs a una lista de mapas para el reporte
+        // Agregar datos tabla
         parametros.put("DATA_LIST", datos);
 
         return parametros;

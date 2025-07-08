@@ -39,6 +39,7 @@ public class ReportesRestController {
         return buildFileResponse(archivoReporteGenerado, formatoReporte.getNombreArchivo(), formatoReporte.getMediaType());
     }
 
+    // utilidades 
     private ResponseEntity<byte[]> buildFileResponse(byte[] file, String filename, MediaType mediaType) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(mediaType); // tipo de contenido dinámico, pdf, excel, etc.
