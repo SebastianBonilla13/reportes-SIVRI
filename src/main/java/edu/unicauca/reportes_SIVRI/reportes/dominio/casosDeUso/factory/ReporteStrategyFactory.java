@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteStrategy;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo1Strategy;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo2Strategy;
+import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo3Strategy;
 
 // Se está registra estrategias en el mapa strategies bajo una clave
 
@@ -18,14 +19,17 @@ public class ReporteStrategyFactory {
 
     /* @Autowired */
     public ReporteStrategyFactory(
-        ReporteTipo1Strategy reporteTipo1Strategy,
-        ReporteTipo2Strategy reporteTipo2Strategy
-        /* ReporteTipo2Strategy reporteTipo2Strategy */
-        // ...
+            ReporteTipo1Strategy reporteTipo1Strategy,
+            ReporteTipo2Strategy reporteTipo2Strategy,
+            ReporteTipo3Strategy reporteTipo3Strategy
+    /* ReporteTipo2Strategy reporteTipo2Strategy */
+    // ...
     ) {
         strategies = new HashMap<>();
         strategies.put("R01", reporteTipo1Strategy);
         strategies.put("R02", reporteTipo2Strategy);
+        strategies.put("R03", reporteTipo3Strategy);
+
         /* strategies.put("R02", reporteTipo2Strategy); */
         // ...
     }

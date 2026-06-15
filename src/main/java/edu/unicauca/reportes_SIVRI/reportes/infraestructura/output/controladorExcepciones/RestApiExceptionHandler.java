@@ -9,7 +9,6 @@ import java.util.Map;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.ConstraintViolationException;
 
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -34,6 +33,7 @@ public class RestApiExceptionHandler {
     public ResponseEntity<Error> handleGenericException(final HttpServletRequest req,
             final Exception ex, final Locale locale) {
         System.out.println("ENTRA A EXCEPTION GENERICA");
+        System.out.println(ex);
         final edu.unicauca.reportes_SIVRI.reportes.infraestructura.output.controladorExcepciones.estructuraExcepciones.Error error = ErrorUtils
                 .crearError(CodigoError.ERROR_GENERICO.getCodigo(),
                         CodigoError.ERROR_GENERICO.getLlaveMensaje(),

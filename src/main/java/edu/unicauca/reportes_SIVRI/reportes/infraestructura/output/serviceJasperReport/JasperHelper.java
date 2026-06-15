@@ -25,7 +25,8 @@ import net.sf.jasperreports.export.SimpleDocxReportConfiguration;
 @Component
 public class JasperHelper {
 
-    public static byte[] generarReporteDesdePlantilla(String plantillaJrxml, Map<String, Object> parametrosYDatos, String formato) {
+    public static byte[] generarReporteDesdePlantilla(String plantillaJrxml, Map<String, Object> parametrosYDatos,
+            String formato) {
         System.out.println(" ");
         System.out.println("ANTESS DE ENCONTRAR CARPETA: " + plantillaJrxml);
         System.out.println(" ");
@@ -42,8 +43,6 @@ public class JasperHelper {
 
             Collection<?> data = (Collection<?>) parametrosYDatos.get("DATA_LIST");
             Map<String, Object> parametros = new HashMap<>(parametrosYDatos);
-
-
 
             parametros.remove("DATA_LIST");
             JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(data);
@@ -76,7 +75,10 @@ public class JasperHelper {
             }
 
         } catch (Exception e) {
-            throw new RuntimeException("Error al generar el reporte desde archivo .jrxml", e);
+            e.printStackTrace();
+            throw new RuntimeException(
+                    "Error al generar el reporte desde archivo .jrxml",
+                    e);
         }
     }
 }

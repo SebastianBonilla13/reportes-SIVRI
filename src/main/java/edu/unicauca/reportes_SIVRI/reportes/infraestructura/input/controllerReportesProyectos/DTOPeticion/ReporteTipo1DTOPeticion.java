@@ -14,26 +14,19 @@ public class ReporteTipo1DTOPeticion {
 
     public ReporteTipo1DTOPeticion() {
     }
-    // Realizar Validaciones en el DTO
 
-    private Long idProyecto;
-    private String titulo;
-    private LocalDate fechaInicio;
-    private LocalDate fechaFinalizacion;
-    private String director;
-
-    /* private String estado;
-    private List<String> gruposInvestigacion;
-    private List<String> facultades;
-    private List<String> departamentos;
-    private String tipoProyecto;
-    private String nombreConvocatoria;
-    private String divisionVRI;
-    private String lugarEjecucion; */
+    private String idSemillero;
+    private String nombreSemilleroInvestigacion;
+    private String mentorSemillero;
+    private String coordinadorSemillero;
+    private String correoMentorSemillero;
+    private String correoSemilleroInvestigacion;
+    private String facultad;
+    private String programa;
+    private String departamento;
+    private String lineasInvestigacion;
+    private String objetivoSemillero;
+    private String disciplina;
+    private String fechaInicio;
+    private String fechaFin;
 }
-
-
-
-
-    
-
