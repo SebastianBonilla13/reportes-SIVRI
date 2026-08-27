@@ -60,8 +60,10 @@
 				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
 			</box>
 		</element>
-		<element kind="image" uuid="261404e5-5bee-4637-99dc-8e1dc0594c57" x="10" y="7" width="53" height="52" linkType="None" linkTarget="Self">
-			<expression><![CDATA["C:\\Users\\Usuario\\Desktop\\Tesis\\archivos Fichas Resumen\\Logo-Unicauca.PNG"]]></expression>
+		<element kind="image" uuid="45a64521-ae16-4b99-b277-cfaf9359cf66" x="13" y="0" width="40" height="49">
+			<expression class="java.io.InputStream"><![CDATA[
+						$P{REPORT_CLASS_LOADER}.getResourceAsStream("reportes/Escudo-Unicauca.png")]]>
+			</expression>
 		</element>
 	</title>
 	<detail>

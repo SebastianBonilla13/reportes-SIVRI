@@ -28,7 +28,7 @@ public class ReporteStrategyFactory {
         strategies = new HashMap<>();
         strategies.put("R01", reporteTipo1Strategy);
         strategies.put("R02", reporteTipo2Strategy);
-        strategies.put("R03", reporteTipo3Strategy);
+        strategies.put("VIG", reporteTipo3Strategy);
 
         /* strategies.put("R02", reporteTipo2Strategy); */
         // ...

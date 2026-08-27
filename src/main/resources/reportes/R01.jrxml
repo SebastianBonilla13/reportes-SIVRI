@@ -47,7 +47,9 @@
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<element kind="frame" uuid="57443d81-5e05-491c-aa12-e8d06d098d06" x="0" y="0" width="67" height="53">
 				<element kind="image" uuid="45a64521-ae16-4b99-b277-cfaf9359cf66" x="13" y="0" width="40" height="49">
-					<expression><![CDATA["C:\\Users\\Usuario\\Desktop\\Tesis\\Escudo-Unicauca.png"]]></expression>
+					<expression class="java.io.InputStream"><![CDATA[
+						$P{REPORT_CLASS_LOADER}.getResourceAsStream("reportes/Escudo-Unicauca.png")]]>
+					</expression>
 				</element>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<pen lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -119,8 +121,8 @@
 		</element>
 		<property name="com.jaspersoft.studio.unit.height" value="px"/>
 	</pageHeader>
-	<columnHeader height="19" splitType="Stretch">
-		<element kind="staticText" uuid="19fc0ad6-76fc-48f2-98c9-914491560338" x="190" y="0" width="100" height="14" bold="true">
+	<columnHeader height="15" splitType="Stretch">
+		<element kind="staticText" uuid="19fc0ad6-76fc-48f2-98c9-914491560338" x="170" y="0" width="100" height="14" bold="true">
 			<text><![CDATA[mentorSemillero]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -130,8 +132,9 @@
 				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 			</box>
 		</element>
-		<element kind="staticText" uuid="04298890-0b05-4a17-82f2-069f87e2dcb3" x="0" y="0" width="80" height="14" bold="true">
+		<element kind="staticText" uuid="04298890-0b05-4a17-82f2-069f87e2dcb3" x="0" y="0" width="40" height="14" bold="true">
 			<text><![CDATA[Id Semillero]]></text>
+			<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
 				<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
@@ -140,7 +143,7 @@
 				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 			</box>
 		</element>
-		<element kind="staticText" uuid="03a79ce4-cd4e-4dee-8462-cdd46543ca05" x="80" y="0" width="110" height="14" bold="true">
+		<element kind="staticText" uuid="03a79ce4-cd4e-4dee-8462-cdd46543ca05" x="40" y="0" width="130" height="14" bold="true">
 			<text><![CDATA[Nombre Semillero]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -150,7 +153,7 @@
 				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 			</box>
 		</element>
-		<element kind="staticText" uuid="b633f963-bdef-4914-afd9-4485cf5c9a49" x="290" y="0" width="70" height="14" bold="true">
+		<element kind="staticText" uuid="b633f963-bdef-4914-afd9-4485cf5c9a49" x="270" y="0" width="90" height="14" bold="true">
 			<text><![CDATA[coordinadorSemillero]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -180,7 +183,7 @@
 				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 			</box>
 		</element>
-		<element kind="staticText" uuid="5f42cfb3-90b9-4ef5-be4f-0fc1859b27b3" x="521" y="0" width="100" height="14" bold="true">
+		<element kind="staticText" uuid="5f42cfb3-90b9-4ef5-be4f-0fc1859b27b3" x="521" y="0" width="89" height="14" bold="true">
 			<text><![CDATA[facultad]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -190,7 +193,7 @@
 				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 			</box>
 		</element>
-		<element kind="staticText" uuid="62e1cdca-4ada-4973-8ef4-bd6ac6978ecd" x="620" y="0" width="50" height="14" bold="true">
+		<element kind="staticText" uuid="62e1cdca-4ada-4973-8ef4-bd6ac6978ecd" x="610" y="0" width="60" height="14" bold="true">
 			<text><![CDATA[programa]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -231,7 +234,7 @@
 				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 			</box>
 		</element>
-		<element kind="staticText" uuid="d7de745c-fea4-4e2a-af0c-bdf605c7328d" x="980" y="0" width="100" height="14" bold="true">
+		<element kind="staticText" uuid="d7de745c-fea4-4e2a-af0c-bdf605c7328d" x="980" y="0" width="80" height="14" bold="true">
 			<text><![CDATA[disciplina]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -241,7 +244,7 @@
 				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 			</box>
 		</element>
-		<element kind="staticText" uuid="23782824-5c64-44c4-b9cb-82c6c683c458" x="1080" y="0" width="49" height="14" bold="true">
+		<element kind="staticText" uuid="23782824-5c64-44c4-b9cb-82c6c683c458" x="1060" y="0" width="59" height="14" bold="true">
 			<text><![CDATA[fechaInicio]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -251,7 +254,7 @@
 				<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 			</box>
 		</element>
-		<element kind="staticText" uuid="007ebac8-3b0b-4abe-a4f3-f3967b7188d5" x="1129" y="0" width="49" height="14" bold="true">
+		<element kind="staticText" uuid="007ebac8-3b0b-4abe-a4f3-f3967b7188d5" x="1119" y="0" width="59" height="14" bold="true">
 			<text><![CDATA[fechaFin]]></text>
 			<box>
 				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -263,8 +266,8 @@
 		</element>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
-			<element kind="textField" uuid="6c6741c6-23c0-4809-b98f-abe116946b0c" x="190" y="0" width="100" height="30" textAdjust="ScaleFont">
+		<band height="31" splitType="Stretch">
+			<element kind="textField" uuid="6c6741c6-23c0-4809-b98f-abe116946b0c" x="170" y="0" width="100" height="30" textAdjust="ScaleFont">
 				<expression><![CDATA[$F{mentorSemillero}]]></expression>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				<box>
@@ -275,7 +278,7 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 				</box>
 			</element>
-			<element kind="textField" uuid="77a76699-14ab-4ca4-b8f6-172e47fa77d1" x="80" y="0" width="110" height="30">
+			<element kind="textField" uuid="77a76699-14ab-4ca4-b8f6-172e47fa77d1" x="40" y="0" width="130" height="30">
 				<expression><![CDATA[$F{nombreSemilleroInvestigacion}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -285,7 +288,7 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 				</box>
 			</element>
-			<element kind="textField" uuid="6faace56-451b-4793-ac77-6aebc29b10a5" x="0" y="0" width="80" height="30" textAdjust="ScaleFont" linkType="None" linkTarget="Self">
+			<element kind="textField" uuid="6faace56-451b-4793-ac77-6aebc29b10a5" x="0" y="0" width="40" height="30" textAdjust="ScaleFont" linkType="None" linkTarget="Self">
 				<expression><![CDATA[$F{idSemillero}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -295,7 +298,7 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 				</box>
 			</element>
-			<element kind="textField" uuid="a92f2e5f-a245-4c9d-9ccd-2c1968f5d14f" x="290" y="0" width="70" height="30">
+			<element kind="textField" uuid="a92f2e5f-a245-4c9d-9ccd-2c1968f5d14f" x="270" y="0" width="90" height="30">
 				<expression><![CDATA[$F{coordinadorSemillero}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -325,7 +328,7 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 				</box>
 			</element>
-			<element kind="textField" uuid="13302885-6155-4a0d-b61f-fa8f8cadad4e" x="521" y="0" width="100" height="30" textAdjust="ScaleFont">
+			<element kind="textField" uuid="13302885-6155-4a0d-b61f-fa8f8cadad4e" x="521" y="0" width="89" height="30" textAdjust="ScaleFont">
 				<expression><![CDATA[$F{facultad}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -335,7 +338,7 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 				</box>
 			</element>
-			<element kind="textField" uuid="0e5fc74c-9e8e-4c1c-b0ea-af3fbd7ac0ae" x="621" y="0" width="49" height="30">
+			<element kind="textField" uuid="0e5fc74c-9e8e-4c1c-b0ea-af3fbd7ac0ae" x="610" y="0" width="60" height="30">
 				<expression><![CDATA[$F{programa}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -376,7 +379,7 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 				</box>
 			</element>
-			<element kind="textField" uuid="af6e84b9-ebc7-469a-9d4d-3039679cb610" x="980" y="0" width="100" height="30" textAdjust="ScaleFont">
+			<element kind="textField" uuid="af6e84b9-ebc7-469a-9d4d-3039679cb610" x="980" y="0" width="80" height="30" textAdjust="ScaleFont">
 				<expression><![CDATA[$F{disciplina}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -386,7 +389,7 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 				</box>
 			</element>
-			<element kind="textField" uuid="978c4680-f00b-4ea2-9012-061fa9f61b0b" x="1080" y="0" width="48" height="30" textAdjust="ScaleFont">
+			<element kind="textField" uuid="978c4680-f00b-4ea2-9012-061fa9f61b0b" x="1060" y="0" width="59" height="30" textAdjust="ScaleFont">
 				<expression><![CDATA[$F{fechaInicio}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -396,7 +399,7 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
 				</box>
 			</element>
-			<element kind="textField" uuid="a46113c5-b36b-4bd2-a1f3-801f7f1a693a" x="1129" y="0" width="48" height="30" textAdjust="ScaleFont">
+			<element kind="textField" uuid="a46113c5-b36b-4bd2-a1f3-801f7f1a693a" x="1119" y="0" width="58" height="30" textAdjust="ScaleFont">
 				<expression><![CDATA[$F{fechaFin}]]></expression>
 				<box>
 					<pen lineWidth="0.5" lineColor="#CCCCCC"/>

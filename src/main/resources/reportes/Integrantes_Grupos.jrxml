@@ -49,8 +49,11 @@
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<element kind="frame" uuid="57443d81-5e05-491c-aa12-e8d06d098d06" x="0" y="0" width="67" height="53">
 				<element kind="image" uuid="45a64521-ae16-4b99-b277-cfaf9359cf66" x="13" y="0" width="40" height="49">
-					<expression><![CDATA["C:\\Users\\Usuario\\Desktop\\Tesis\\Escudo-Unicauca.png"]]></expression>
+					<expression class="java.io.InputStream"><![CDATA[
+						$P{REPORT_CLASS_LOADER}.getResourceAsStream("reportes/Escudo-Unicauca.png")]]>
+					</expression>
 				</element>
+
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<pen lineStyle="Solid" lineColor="#CCCCCC"/>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
