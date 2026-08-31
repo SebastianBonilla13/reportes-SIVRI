@@ -9,6 +9,7 @@ import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.Report
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo1Strategy;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo2Strategy;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo3Strategy;
+import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo4Strategy;
 
 // Se está registra estrategias en el mapa strategies bajo una clave
 
@@ -21,7 +22,8 @@ public class ReporteStrategyFactory {
     public ReporteStrategyFactory(
             ReporteTipo1Strategy reporteTipo1Strategy,
             ReporteTipo2Strategy reporteTipo2Strategy,
-            ReporteTipo3Strategy reporteTipo3Strategy
+            ReporteTipo3Strategy reporteTipo3Strategy,
+            ReporteTipo4Strategy reporteTipo4Strategy
     /* ReporteTipo2Strategy reporteTipo2Strategy */
     // ...
     ) {
@@ -29,6 +31,7 @@ public class ReporteStrategyFactory {
         strategies.put("R01", reporteTipo1Strategy);
         strategies.put("R02", reporteTipo2Strategy);
         strategies.put("VIG", reporteTipo3Strategy);
+        strategies.put("R04", reporteTipo4Strategy);
 
         /* strategies.put("R02", reporteTipo2Strategy); */
         // ...

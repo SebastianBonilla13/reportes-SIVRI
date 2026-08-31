@@ -1,0 +1,745 @@
+<!-- R04 - Integrantes Grupos de Investigación Universidad del Cauca -->
+<jasperReport
+	name="R04"
+	language="java"
+	columnCount="1"
+	pageWidth="1940"
+	pageHeight="842"
+	orientation="Landscape"
+	columnWidth="1900"
+	leftMargin="20"
+	rightMargin="20"
+	topMargin="20"
+	bottomMargin="20"
+	uuid="b3d67d19-4367-4e09-b0ea-040404040404">
+
+	<!-- ========================================================= -->
+	<!-- CONFIGURACIÓN PARA EXCEL                                  -->
+	<!-- ========================================================= -->
+
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.rows" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.columns" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.white.page.background" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.ignore.graphics" value="false"/>
+	<property name="net.sf.jasperreports.export.xls.detect.cell.type" value="true"/>
+
+	<property name="net.sf.jasperreports.export.xlsx.remove.empty.space.between.rows" value="true"/>
+	<property name="net.sf.jasperreports.export.xlsx.remove.empty.space.between.columns" value="true"/>
+	<property name="net.sf.jasperreports.export.xlsx.white.page.background" value="true"/>
+	<property name="net.sf.jasperreports.export.xlsx.ignore.graphics" value="false"/>
+	<property name="net.sf.jasperreports.export.xlsx.detect.cell.type" value="true"/>
+	<property name="net.sf.jasperreports.export.xlsx.one.page.per.sheet" value="false"/>
+
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+
+	<!-- ========================================================= -->
+	<!-- PARÁMETROS                                                -->
+	<!-- ========================================================= -->
+
+	<parameter name="codigoReporte" class="java.lang.String"/>
+	<parameter name="versionReporte" class="java.lang.String"/>
+	<parameter name="fechaReporte" class="java.lang.String"/>
+	<parameter name="tituloReporte" class="java.lang.String"/>
+
+	<!-- ========================================================= -->
+	<!-- CAMPOS R04                                                -->
+	<!-- ========================================================= -->
+
+	<field name="nombreCompletoDeIntegrante" class="java.lang.String"/>
+	<field name="numeroIdentificacion" class="java.lang.String"/>
+	<field name="nombreGrupoDeInvestigacion" class="java.lang.String"/>
+	<field name="idGrupo" class="java.lang.String"/>
+	<field name="codigoGruplac" class="java.lang.String"/>
+	<field name="enlaceGruplac" class="java.lang.String"/>
+	<field name="enlaceCvlac" class="java.lang.String"/>
+	<field name="historialRolesEnGrupo" class="java.lang.String"/>
+	<field name="fechaInicioRol" class="java.lang.String"/>
+	<field name="fechaFinRol" class="java.lang.String"/>
+	<field name="estadoGrupo" class="java.lang.String"/>
+	<field name="tipoVinculacion" class="java.lang.String"/>
+	<field name="facultad" class="java.lang.String"/>
+	<field name="departamento" class="java.lang.String"/>
+	<field name="programa" class="java.lang.String"/>
+
+	<background splitType="Stretch"/>
+
+	<!-- ========================================================= -->
+	<!-- TÍTULO                                                    -->
+	<!-- ========================================================= -->
+
+	<title height="72">
+
+		<!--
+			IMPORTANTE:
+			El logo ocupa exactamente la primera columna: 0 -> 160.
+			El resto del título empieza exactamente en 160.
+			Así no creamos divisiones adicionales en Excel.
+		-->
+
+		<element
+			kind="image"
+			uuid="04a00001-0001-4000-8000-000000000001"
+			x="0"
+			y="0"
+			width="160"
+			height="72"
+			hImageAlign="Center"
+			vImageAlign="Middle">
+
+			<expression class="java.io.InputStream"><![CDATA[
+				Thread.currentThread()
+					.getContextClassLoader()
+					.getResourceAsStream("reportes/Escudo-Unicauca.png")
+			]]></expression>
+
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+
+		</element>
+
+		<!-- Área responsable -->
+		<element
+			kind="staticText"
+			uuid="04a00001-0002-4000-8000-000000000002"
+			x="160"
+			y="0"
+			width="1740"
+			height="30"
+			fontName="Arial"
+			fontSize="11.0"
+			bold="true"
+			hTextAlign="Center"
+			vTextAlign="Middle">
+
+			<text><![CDATA[División Gestión de la Investigación]]></text>
+
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+
+		</element>
+
+		<!-- Nombre del reporte -->
+		<element
+			kind="textField"
+			uuid="04a00001-0003-4000-8000-000000000003"
+			x="160"
+			y="30"
+			width="1740"
+			height="42"
+			fontName="Arial"
+			fontSize="13.0"
+			bold="true"
+			hTextAlign="Center"
+			vTextAlign="Middle">
+
+			<expression><![CDATA[$P{tituloReporte}]]></expression>
+
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+
+		</element>
+
+	</title>
+
+	<!-- ========================================================= -->
+	<!-- INFORMACIÓN DEL REPORTE                                   -->
+	<!-- ========================================================= -->
+
+	<pageHeader height="28" splitType="Stretch">
+
+		<!--
+			Las divisiones utilizadas también coinciden con límites
+			que existen en la tabla:
+
+			0 | 620 | 1280 | 1900
+		-->
+
+		<element
+			kind="textField"
+			uuid="04a00002-0001-4000-8000-000000000001"
+			x="0"
+			y="0"
+			width="620"
+			height="28"
+			fontName="Arial"
+			fontSize="9.0"
+			bold="true"
+			hTextAlign="Center"
+			vTextAlign="Middle">
+
+			<expression><![CDATA[
+				"Código: " + ($P{codigoReporte} == null ? "" : $P{codigoReporte})
+			]]></expression>
+
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+
+		</element>
+
+		<element
+			kind="textField"
+			uuid="04a00002-0002-4000-8000-000000000002"
+			x="620"
+			y="0"
+			width="660"
+			height="28"
+			fontName="Arial"
+			fontSize="9.0"
+			bold="true"
+			hTextAlign="Center"
+			vTextAlign="Middle">
+
+			<expression><![CDATA[
+				"Versión: " + ($P{versionReporte} == null ? "" : $P{versionReporte})
+			]]></expression>
+
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+
+		</element>
+
+		<element
+			kind="textField"
+			uuid="04a00002-0003-4000-8000-000000000003"
+			x="1280"
+			y="0"
+			width="620"
+			height="28"
+			fontName="Arial"
+			fontSize="9.0"
+			bold="true"
+			hTextAlign="Center"
+			vTextAlign="Middle">
+
+			<expression><![CDATA[
+				"Fecha Reporte: " + ($P{fechaReporte} == null ? "" : $P{fechaReporte})
+			]]></expression>
+
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+
+		</element>
+
+	</pageHeader>
+
+	<!-- ========================================================= -->
+	<!-- COLUMNAS                                                  -->
+	<!-- ========================================================= -->
+
+	<columnHeader height="48" splitType="Stretch">
+
+		<element kind="staticText"
+			uuid="04a10001-0001-4000-8000-000000000001"
+			x="0" y="0" width="160" height="48"
+			fontName="Arial" fontSize="9.0" bold="true"
+			hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Nombre completo del integrante]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+
+		<element kind="staticText"
+			uuid="04a10001-0002-4000-8000-000000000002"
+			x="160" y="0" width="100" height="48"
+			fontName="Arial" fontSize="9.0" bold="true"
+			hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Número de identificación]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+
+		<element kind="staticText"
+			uuid="04a10001-0003-4000-8000-000000000003"
+			x="260" y="0" width="180" height="48"
+			fontName="Arial" fontSize="9.0" bold="true"
+			hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Nombre Grupo de Investigación]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+
+		<element kind="staticText"
+			uuid="04a10001-0004-4000-8000-000000000004"
+			x="440" y="0" width="70" height="48"
+			fontName="Arial" fontSize="9.0" bold="true"
+			hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[ID Grupo SIVRI]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+
+		<element kind="staticText"
+			uuid="04a10001-0005-4000-8000-000000000005"
+			x="510" y="0" width="110" height="48"
+			fontName="Arial" fontSize="9.0" bold="true"
+			hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Código GrupLAC]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+
+		<element kind="staticText"
+			uuid="04a10001-0006-4000-8000-000000000006"
+			x="620" y="0" width="150" height="48"
+			fontName="Arial" fontSize="9.0" bold="true"
+			hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Enlace GrupLAC]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+
+		<element kind="staticText"
+			uuid="04a10001-0007-4000-8000-000000000007"
+			x="770" y="0" width="150" height="48"
+			fontName="Arial" fontSize="9.0" bold="true"
+			hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Enlace CvLAC]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+
+		<element kind="staticText"
+			uuid="04a10001-0008-4000-8000-000000000008"
+			x="920" y="0" width="180" height="48"
+			fontName="Arial" fontSize="9.0" bold="true"
+			hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Historial Roles en el Grupo]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+
+		<element kind="staticText"
+			uuid="04a10001-0009-4000-8000-000000000009"
+			x="1100" y="0" width="90" height="48"
+			fontName="Arial" fontSize="9.0" bold="true"
+			hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Fecha inicio rol]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+
+		<element kind="staticText"
+			uuid="04a10001-0010-4000-8000-000000000010"
+			x="1190" y="0" width="90" height="48"
+			fontName="Arial" fontSize="9.0" bold="true"
+			hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Fecha finalización rol]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+
+		<element kind="staticText"
+			uuid="04a10001-0011-4000-8000-000000000011"
+			x="1280" y="0" width="80" height="48"
+			fontName="Arial" fontSize="9.0" bold="true"
+			hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Estado]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+
+		<element kind="staticText"
+			uuid="04a10001-0012-4000-8000-000000000012"
+			x="1360" y="0" width="110" height="48"
+			fontName="Arial" fontSize="9.0" bold="true"
+			hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Tipo de vinculación]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+
+		<element kind="staticText"
+			uuid="04a10001-0013-4000-8000-000000000013"
+			x="1470" y="0" width="160" height="48"
+			fontName="Arial" fontSize="9.0" bold="true"
+			hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Facultad]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+
+		<element kind="staticText"
+			uuid="04a10001-0014-4000-8000-000000000014"
+			x="1630" y="0" width="140" height="48"
+			fontName="Arial" fontSize="9.0" bold="true"
+			hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Departamento]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+
+		<element kind="staticText"
+			uuid="04a10001-0015-4000-8000-000000000015"
+			x="1770" y="0" width="130" height="48"
+			fontName="Arial" fontSize="9.0" bold="true"
+			hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Programa]]></text>
+			<box>
+				<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			</box>
+		</element>
+
+	</columnHeader>
+
+	<!-- ========================================================= -->
+	<!-- REGISTROS                                                 -->
+	<!-- ========================================================= -->
+
+	<detail>
+
+		<band height="38" splitType="Stretch">
+
+			<element kind="textField"
+				uuid="04a20001-0001-4000-8000-000000000001"
+				x="0" y="0" width="160" height="38"
+				fontName="Arial" fontSize="8.0"
+				textAdjust="ScaleFont"
+				vTextAlign="Middle">
+				<expression><![CDATA[$F{nombreCompletoDeIntegrante}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+
+			<element kind="textField"
+				uuid="04a20001-0002-4000-8000-000000000002"
+				x="160" y="0" width="100" height="38"
+				fontName="Arial" fontSize="8.0"
+				hTextAlign="Center"
+				vTextAlign="Middle">
+				<expression><![CDATA[$F{numeroIdentificacion}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+
+			<element kind="textField"
+				uuid="04a20001-0003-4000-8000-000000000003"
+				x="260" y="0" width="180" height="38"
+				fontName="Arial" fontSize="8.0"
+				textAdjust="ScaleFont"
+				vTextAlign="Middle">
+				<expression><![CDATA[$F{nombreGrupoDeInvestigacion}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+
+			<element kind="textField"
+				uuid="04a20001-0004-4000-8000-000000000004"
+				x="440" y="0" width="70" height="38"
+				fontName="Arial" fontSize="8.0"
+				hTextAlign="Center"
+				vTextAlign="Middle">
+				<expression><![CDATA[$F{idGrupo}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+
+			<element kind="textField"
+				uuid="04a20001-0005-4000-8000-000000000005"
+				x="510" y="0" width="110" height="38"
+				fontName="Arial" fontSize="8.0"
+				hTextAlign="Center"
+				vTextAlign="Middle">
+				<expression><![CDATA[$F{codigoGruplac}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+
+			<element kind="textField"
+				uuid="04a20001-0006-4000-8000-000000000006"
+				x="620" y="0" width="150" height="38"
+				fontName="Arial" fontSize="8.0"
+				textAdjust="ScaleFont"
+				vTextAlign="Middle">
+				<expression><![CDATA[$F{enlaceGruplac}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+
+			<element kind="textField"
+				uuid="04a20001-0007-4000-8000-000000000007"
+				x="770" y="0" width="150" height="38"
+				fontName="Arial" fontSize="8.0"
+				textAdjust="ScaleFont"
+				vTextAlign="Middle">
+				<expression><![CDATA[$F{enlaceCvlac}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+
+			<element kind="textField"
+				uuid="04a20001-0008-4000-8000-000000000008"
+				x="920" y="0" width="180" height="38"
+				fontName="Arial" fontSize="8.0"
+				textAdjust="ScaleFont"
+				vTextAlign="Middle">
+				<expression><![CDATA[$F{historialRolesEnGrupo}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+
+			<element kind="textField"
+				uuid="04a20001-0009-4000-8000-000000000009"
+				x="1100" y="0" width="90" height="38"
+				fontName="Arial" fontSize="8.0"
+				hTextAlign="Center"
+				vTextAlign="Middle">
+				<expression><![CDATA[$F{fechaInicioRol}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+
+			<element kind="textField"
+				uuid="04a20001-0010-4000-8000-000000000010"
+				x="1190" y="0" width="90" height="38"
+				fontName="Arial" fontSize="8.0"
+				hTextAlign="Center"
+				vTextAlign="Middle">
+				<expression><![CDATA[$F{fechaFinRol}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+
+			<element kind="textField"
+				uuid="04a20001-0011-4000-8000-000000000011"
+				x="1280" y="0" width="80" height="38"
+				fontName="Arial" fontSize="8.0"
+				hTextAlign="Center"
+				vTextAlign="Middle">
+				<expression><![CDATA[$F{estadoGrupo}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+
+			<element kind="textField"
+				uuid="04a20001-0012-4000-8000-000000000012"
+				x="1360" y="0" width="110" height="38"
+				fontName="Arial" fontSize="8.0"
+				textAdjust="ScaleFont"
+				hTextAlign="Center"
+				vTextAlign="Middle">
+				<expression><![CDATA[$F{tipoVinculacion}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+
+			<element kind="textField"
+				uuid="04a20001-0013-4000-8000-000000000013"
+				x="1470" y="0" width="160" height="38"
+				fontName="Arial" fontSize="8.0"
+				textAdjust="ScaleFont"
+				vTextAlign="Middle">
+				<expression><![CDATA[$F{facultad}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+
+			<element kind="textField"
+				uuid="04a20001-0014-4000-8000-000000000014"
+				x="1630" y="0" width="140" height="38"
+				fontName="Arial" fontSize="8.0"
+				textAdjust="ScaleFont"
+				vTextAlign="Middle">
+				<expression><![CDATA[$F{departamento}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+
+			<element kind="textField"
+				uuid="04a20001-0015-4000-8000-000000000015"
+				x="1770" y="0" width="130" height="38"
+				fontName="Arial" fontSize="8.0"
+				textAdjust="ScaleFont"
+				vTextAlign="Middle">
+				<expression><![CDATA[$F{programa}]]></expression>
+				<box>
+					<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+				</box>
+			</element>
+
+		</band>
+
+	</detail>
+
+	<columnFooter height="1" splitType="Stretch"/>
+	<pageFooter height="1" splitType="Stretch"/>
+	<summary height="1" splitType="Stretch"/>
+
+</jasperReport>
