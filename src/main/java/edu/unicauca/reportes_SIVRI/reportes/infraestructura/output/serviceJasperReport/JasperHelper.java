@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
+import net.sf.jasperreports.engine.JRParameter;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -45,6 +46,16 @@ public class JasperHelper {
             Map<String, Object> parametros = new HashMap<>(parametrosYDatos);
 
             parametros.remove("DATA_LIST");
+
+            if ("xlsx".equalsIgnoreCase(formato)
+                    || "excel".equalsIgnoreCase(formato)) {
+
+                parametros.put(
+                    JRParameter.IS_IGNORE_PAGINATION,
+                    Boolean.TRUE
+                );
+            }
+
             JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(data);
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(report, parametros, dataSource);

@@ -1,7 +1,6 @@
 package edu.unicauca.reportes_SIVRI.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
