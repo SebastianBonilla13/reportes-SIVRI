@@ -11,6 +11,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 
 import edu.unicauca.reportes_SIVRI.reportes.infraestructura.input.controllerReportesProyectos.DTOPeticion.ReporteTipo1DTOPeticion;
 
+
 @Component
 public class ReporteTipo1Strategy implements ReporteStrategy<ReporteTipo1DTOPeticion> {
 
@@ -20,21 +21,18 @@ public class ReporteTipo1Strategy implements ReporteStrategy<ReporteTipo1DTOPeti
     @Override
     public Map<String, Object> prepararParametros(List<ReporteTipo1DTOPeticion> datos) {
 
-        // Preparar parámetros para el reporte
         Map<String, Object> parametros = new HashMap<>();
 
-        // Parametros generales del reporte
-        parametros.put("tituloReporte", "Reporte de Integrantes de Grupos de Investigación y no sé que másssss");
+        parametros.put("tituloReporte", "Grupos de investigación");
         parametros.put("codigoReporte", "R01");
-        parametros.put("versionReporte", "1.1.1.1");
+        parametros.put("versionReporte", "1.0");
 
-        /*
-         * String fechaActual =
-         * DateTimeFormatter.ofPattern("dd/MM/yyyy").format(java.time.LocalDate.now());
-         * parametros.put("fechaReporte", fechaActual);
-         */
+        String fechaActual = DateTimeFormatter
+                .ofPattern("dd/MM/yyyy")
+                .format(java.time.LocalDate.now());
 
-        // Agregar datos tabla
+        parametros.put("fechaReporte", fechaActual);
+
         parametros.put("DATA_LIST", datos);
 
         return parametros;
@@ -55,5 +53,4 @@ public class ReporteTipo1Strategy implements ReporteStrategy<ReporteTipo1DTOPeti
     public Map<String, Object> getParametros() {
         return parametros;
     }
-
 }
