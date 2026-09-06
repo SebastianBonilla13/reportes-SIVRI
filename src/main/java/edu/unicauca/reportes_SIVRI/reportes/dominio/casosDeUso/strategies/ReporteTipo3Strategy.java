@@ -9,76 +9,47 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 
-import edu.unicauca.reportes_SIVRI.reportes.infraestructura.input.controllerReportesProyectos.DTOPeticion.ReporteTipo3DTOPeticion;
+import edu.unicauca.reportes_SIVRI.reportes.infraestructura
+        .input.controllerReportesProyectos.DTOPeticion.ReporteTipo3DTOPeticion;
 
 @Component
-public class ReporteTipo3Strategy implements ReporteStrategy<ReporteTipo3DTOPeticion> {
+public class ReporteTipo3Strategy
+        implements ReporteStrategy<ReporteTipo3DTOPeticion> {
 
-    private static final String Plantilla = "/reportes/ReporteTipo1.jrxml";
-    private static final Map<String, Object> parametros = new HashMap<>();
+    private static final String Plantilla = "/reportes/R03.jrxml";
 
-//    @Override
-//    public Map<String, Object> prepararParametros(List<ReporteTipo3DTOPeticion> datos) {
-//
-//        // Preparar parámetros para el reporte
-//        Map<String, Object> parametros = new HashMap<>();
-//
-//        // Parametros generales del reporte
-//        parametros.put("tituloReporte", "Reporte de Integrantes de Grupos de Investigación y no sé que másssss");
-//        parametros.put("codigoReporte", "R03");
-//        parametros.put("versionReporte", "1.1.1.1");
-//
-//        String fechaActual = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(java.time.LocalDate.now());
-//        parametros.put("fechaReporte", fechaActual);
-//
-//        // Agregar datos tabla
-//        parametros.put("DATA_LIST", datos);
-//
-
-
-//        return parametros;
-//    }
+    private static final Map<String, Object> parametros =
+            new HashMap<>();
 
     @Override
-    public Map<String, Object> prepararParametros(List<ReporteTipo3DTOPeticion> datos) {
+    public Map<String, Object> prepararParametros(
+            List<ReporteTipo3DTOPeticion> datos) {
+
         Map<String, Object> parametros = new HashMap<>();
 
-        if (datos != null && !datos.isEmpty()) {
-            ReporteTipo3DTOPeticion proyecto = datos.get(0);
+        parametros.put(
+                "tituloReporte",
+                "Categorización Grupos de investigación"
+        );
 
-            // 1. Mapeo para que Jasper reemplace los $P{}
-            parametros.put("titulo", proyecto.getTitulo());
-            parametros.put("idproyecto", proyecto.getIdProyecto());
-            parametros.put("director", proyecto.getDirector());
-
-            if (proyecto.getFechaInicio() != null) {
-                parametros.put("diaini", String.format("%02d", proyecto.getFechaInicio().getDayOfMonth()));
-                parametros.put("mesini", String.format("%02d", proyecto.getFechaInicio().getMonthValue()));
-                parametros.put("anioini", proyecto.getFechaInicio().getYear());
-            }
-
-            if (proyecto.getFechaFinalizacion() != null) {
-                parametros.put("diafin", String.format("%02d", proyecto.getFechaFinalizacion().getDayOfMonth()));
-                parametros.put("mesfin", String.format("%02d", proyecto.getFechaFinalizacion().getMonthValue()));
-                parametros.put("aniofin", proyecto.getFechaFinalizacion().getYear());
-            }
-        }
-
-        parametros.put("tituloReporte", "Reporte de Integrantes de Grupos de Investigación y no sé que másssss");
         parametros.put("codigoReporte", "R03");
-        parametros.put("versionReporte", "1.1.1.1");
+        parametros.put("versionReporte", "1.0");
 
-        String fechaActual = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(java.time.LocalDate.now());
+        String fechaActual = DateTimeFormatter
+                .ofPattern("dd/MM/yyyy")
+                .format(java.time.LocalDate.now());
+
         parametros.put("fechaReporte", fechaActual);
 
-        // 2. ¡CLAVE! Devolver la lista al mapa para que Jasper imprima la banda <detail>
         parametros.put("DATA_LIST", datos);
 
         return parametros;
     }
 
     @Override
-    public TypeReference<List<ReporteTipo3DTOPeticion>> getTypeReference() {
+    public TypeReference<List<ReporteTipo3DTOPeticion>>
+            getTypeReference() {
+
         return new TypeReference<List<ReporteTipo3DTOPeticion>>() {
         };
     }
@@ -92,5 +63,4 @@ public class ReporteTipo3Strategy implements ReporteStrategy<ReporteTipo3DTOPeti
     public Map<String, Object> getParametros() {
         return parametros;
     }
-
 }

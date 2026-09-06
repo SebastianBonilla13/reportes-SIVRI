@@ -10,17 +10,14 @@ public class ReporteTipo2DTOPeticion {
     public ReporteTipo2DTOPeticion() {
     }
 
-    private String nombre;
-    private String identificacion;
-    private String grupo;
     private String idGrupo;
-    private String codigoGrupLAC;
-    private String enlaceGrupLAC;
-    private String historialRoles;
-    private String estado;
-    private String tipoVinculacion;
-    private String facultad;
-    private String departamento;
-    private String programas;
-    private String entidad;
+    private String nombreGrupo;
+    private String codigoGruplac;
+    private String enlaceGruplac;
+    private String directorGrupo;
+    private String correoDirectorGrupo;
+    private String correoGrupo;
+    private String lineasInvestigacionGrupo;
+    private String categorizacionGrupo;
+    private String disciplinasGrupo;
 }
