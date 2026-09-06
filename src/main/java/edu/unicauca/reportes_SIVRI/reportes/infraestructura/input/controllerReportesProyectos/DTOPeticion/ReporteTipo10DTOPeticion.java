@@ -5,24 +5,30 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class ReporteTipo4DTOPeticion {
+public class ReporteTipo10DTOPeticion {
 
-    public ReporteTipo4DTOPeticion() {
+    public ReporteTipo10DTOPeticion() {
     }
 
-    private String nombreIntegrante;
-    private String numeroIdentificacion;
     private String nombreGrupo;
     private String idGrupo;
     private String codigoGruplac;
-    private String enlaceGruplac;
-    private String enlaceCvlac;
+    private String fechaCreacionGruplac;
+
+    private String facultadGrupo;
+    private String departamentoGrupo;
+
+    private String nombreIntegrante;
+    private String numeroIdentificacion;
+    private String estadoVinculacion;
+
     private String historialRolesEnGrupo;
     private String fechaInicioRol;
     private String fechaFinRol;
-    private String estadoIntegranteGrupo;
-    private String tipoVinculacionIntegrante;
+
     private String facultadIntegrante;
     private String departamentoIntegrante;
     private String programaIntegrante;
+
+    private String tipoVinculacionIntegrante;
 }
