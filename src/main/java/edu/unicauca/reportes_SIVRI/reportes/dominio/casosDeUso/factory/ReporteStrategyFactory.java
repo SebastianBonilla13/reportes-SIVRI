@@ -14,12 +14,12 @@ import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.Report
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo4Strategy;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo4CStrategy;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo5Strategy;
-import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo6Strategy;
-import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo7Strategy;
-import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo8Strategy;
-import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo10Strategy;
-import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo11Strategy;
-import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipoVIGStrategy;
+import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipoS01Strategy;
+import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipoS01CStrategy;
+import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipoS02Strategy;
+import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipoS03Strategy;
+import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipoS04Strategy;
+import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipoS05Strategy;
 
 // Se está registra estrategias en el mapa strategies bajo una clave
 
@@ -38,12 +38,12 @@ public class ReporteStrategyFactory {
             ReporteTipo4Strategy reporteTipo4Strategy,
             ReporteTipo4CStrategy reporteTipo4CStrategy,
             ReporteTipo5Strategy reporteTipo5Strategy,
-            ReporteTipo6Strategy reporteTipo6Strategy,
-            ReporteTipo7Strategy reporteTipo7Strategy,
-            ReporteTipo8Strategy reporteTipo8Strategy,
-            ReporteTipo10Strategy reporteTipo10Strategy,
-            ReporteTipo11Strategy reporteTipo11Strategy,
-            ReporteTipoVIGStrategy reporteTipoVIGStrategy
+            ReporteTipoS01Strategy reporteTipoS01Strategy,
+            ReporteTipoS01CStrategy reporteTipoS01CStrategy,
+            ReporteTipoS02Strategy reporteTipoS02Strategy,
+            ReporteTipoS03Strategy reporteTipoS03Strategy,
+            ReporteTipoS04Strategy reporteTipoS04Strategy,
+            ReporteTipoS05Strategy reporteTipoS05Strategy
     ) {
         strategies = new HashMap<>();
         strategies.put("R01", reporteTipo1Strategy);
@@ -54,12 +54,12 @@ public class ReporteStrategyFactory {
         strategies.put("R04", reporteTipo4Strategy);
         strategies.put("R04-C", reporteTipo4CStrategy);
         strategies.put("R05", reporteTipo5Strategy);
-        strategies.put("R06", reporteTipo6Strategy);
-        strategies.put("R07", reporteTipo7Strategy);
-        strategies.put("R08", reporteTipo8Strategy);
-        strategies.put("R10", reporteTipo10Strategy);
-        strategies.put("R11", reporteTipo11Strategy);
-        strategies.put("VIG", reporteTipoVIGStrategy);
+        strategies.put("S01", reporteTipoS01Strategy);
+        strategies.put("S01-C", reporteTipoS01CStrategy);
+        strategies.put("S02", reporteTipoS02Strategy);
+        strategies.put("S03", reporteTipoS03Strategy);
+        strategies.put("S04", reporteTipoS04Strategy);
+        strategies.put("S05", reporteTipoS05Strategy);
     }
 
     public ReporteStrategy<?> getStrategy(String tipoReporte) {

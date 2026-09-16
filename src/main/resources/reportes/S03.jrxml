@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jasperReport
+    name="S03"
+    language="java"
+    columnCount="1"
+    pageWidth="2350"
+    pageHeight="842"
+    orientation="Landscape"
+    columnWidth="2310"
+    leftMargin="20"
+    rightMargin="20"
+    topMargin="20"
+    bottomMargin="20"
+    uuid="e6030001-0000-4000-8000-000000000001">
+
+    <!-- ========================================================= -->
+    <!-- CONFIGURACIÓN EXCEL                                      -->
+    <!-- ========================================================= -->
+
+    <property
+        name="net.sf.jasperreports.export.xls.remove.empty.space.between.rows"
+        value="true"/>
+
+    <property
+        name="net.sf.jasperreports.export.xls.remove.empty.space.between.columns"
+        value="true"/>
+
+    <property
+        name="net.sf.jasperreports.export.xls.white.page.background"
+        value="true"/>
+
+    <property
+        name="net.sf.jasperreports.export.xls.ignore.graphics"
+        value="false"/>
+
+    <property
+        name="net.sf.jasperreports.export.xls.detect.cell.type"
+        value="true"/>
+
+    <property
+        name="net.sf.jasperreports.export.xlsx.remove.empty.space.between.rows"
+        value="true"/>
+
+    <property
+        name="net.sf.jasperreports.export.xlsx.remove.empty.space.between.columns"
+        value="true"/>
+
+    <property
+        name="net.sf.jasperreports.export.xlsx.white.page.background"
+        value="true"/>
+
+    <property
+        name="net.sf.jasperreports.export.xlsx.ignore.graphics"
+        value="false"/>
+
+    <property
+        name="net.sf.jasperreports.export.xlsx.detect.cell.type"
+        value="true"/>
+
+    <property
+        name="net.sf.jasperreports.export.xlsx.one.page.per.sheet"
+        value="false"/>
+
+    <property
+        name="com.jaspersoft.studio.data.defaultdataadapter"
+        value="One Empty Record"/>
+
+    <property name="com.jaspersoft.studio.unit." value="pixel"/>
+    <property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+    <property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+    <property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+    <property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+    <property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+    <property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+    <property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+
+    <!-- ========================================================= -->
+    <!-- PARÁMETROS                                               -->
+    <!-- ========================================================= -->
+
+    <parameter name="tituloReporte" class="java.lang.String"/>
+    <parameter name="codigoReporte" class="java.lang.String"/>
+    <parameter name="versionReporte" class="java.lang.String"/>
+    <parameter name="fechaReporte" class="java.lang.String"/>
+
+    <!-- ========================================================= -->
+    <!-- CAMPOS S03                                               -->
+    <!-- ========================================================= -->
+
+    <field name="idProyecto" class="java.lang.String"/>
+    <field name="tituloProyecto" class="java.lang.String"/>
+    <field name="estadoProyecto" class="java.lang.String"/>
+
+    <field name="fechaInicioProyecto" class="java.lang.String"/>
+    <field name="fechaFinProyecto" class="java.lang.String"/>
+
+    <field name="directorProyecto" class="java.lang.String"/>
+
+    <field name="nombreGrupo" class="java.lang.String"/>
+
+    <field name="facultadProyecto" class="java.lang.String"/>
+    <field name="departamentoDocente" class="java.lang.String"/>
+
+    <field name="nombreSemillero" class="java.lang.String"/>
+
+    <field name="tipoProyecto" class="java.lang.String"/>
+    <field name="nombreConvocatoria" class="java.lang.String"/>
+
+    <field name="elementoMisional" class="java.lang.String"/>
+
+    <field name="horasDedicacionSemanal" class="java.lang.Integer"/>
+
+    <background splitType="Stretch"/>
+
+    <!-- ========================================================= -->
+    <!-- CABECERA INSTITUCIONAL                                   -->
+    <!-- ========================================================= -->
+
+    <pageHeader
+        height="126"
+        splitType="Stretch">
+
+        <element
+            kind="frame"
+            uuid="e6030001-0001-4000-8000-000000000001"
+            x="0"
+            y="0"
+            width="260"
+            height="60">
+
+            <element
+                kind="image"
+                uuid="e6030001-0001-4000-8000-000000000002"
+                x="95"
+                y="2"
+                width="70"
+                height="56">
+
+                <expression class="java.io.InputStream"><![CDATA[
+                    Thread.currentThread()
+                        .getContextClassLoader()
+                        .getResourceAsStream(
+                            "reportes/Escudo-Unicauca.png"
+                        )
+                ]]></expression>
+
+            </element>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <element
+            kind="staticText"
+            uuid="e6030001-0002-4000-8000-000000000001"
+            x="260"
+            y="0"
+            width="2050"
+            height="26"
+            fontName="Arial"
+            fontSize="11"
+            bold="true"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+
+            <text><![CDATA[Universidad del Cauca]]></text>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <element
+            kind="textField"
+            uuid="e6030001-0003-4000-8000-000000000001"
+            x="260"
+            y="26"
+            width="2050"
+            height="34"
+            fontName="Arial"
+            fontSize="13"
+            bold="true"
+            hTextAlign="Center"
+            vTextAlign="Middle"
+            textAdjust="ScaleFont">
+
+            <expression><![CDATA[
+                $P{tituloReporte}
+            ]]></expression>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- CÓDIGO -->
+
+        <element
+            kind="textField"
+            uuid="e6030001-0004-4000-8000-000000000001"
+            x="0"
+            y="60"
+            width="770"
+            height="22"
+            fontName="Arial"
+            fontSize="9"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+
+            <expression><![CDATA[
+                "Código: "
+                + ($P{codigoReporte} == null
+                    ? ""
+                    : $P{codigoReporte})
+            ]]></expression>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- VERSIÓN -->
+
+        <element
+            kind="textField"
+            uuid="e6030001-0005-4000-8000-000000000001"
+            x="770"
+            y="60"
+            width="770"
+            height="22"
+            fontName="Arial"
+            fontSize="9"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+
+            <expression><![CDATA[
+                "Versión: "
+                + ($P{versionReporte} == null
+                    ? ""
+                    : $P{versionReporte})
+            ]]></expression>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- FECHA -->
+
+        <element
+            kind="textField"
+            uuid="e6030001-0006-4000-8000-000000000001"
+            x="1540"
+            y="60"
+            width="770"
+            height="22"
+            fontName="Arial"
+            fontSize="9"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+
+            <expression><![CDATA[
+                "Fecha Reporte: "
+                + ($P{fechaReporte} == null
+                    ? ""
+                    : $P{fechaReporte})
+            ]]></expression>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- ÁREA -->
+
+        <element
+            kind="staticText"
+            uuid="e6030001-0007-4000-8000-000000000001"
+            x="0"
+            y="82"
+            width="520"
+            height="22"
+            fontName="Arial"
+            fontSize="9"
+            bold="true"
+            vTextAlign="Middle">
+
+            <text><![CDATA[Área que genera el reporte:]]></text>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <element
+            kind="staticText"
+            uuid="e6030001-0008-4000-8000-000000000001"
+            x="520"
+            y="82"
+            width="1790"
+            height="22"
+            fontName="Arial"
+            fontSize="9"
+            vTextAlign="Middle">
+
+            <text><![CDATA[
+                División Gestión de la Investigación
+            ]]></text>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- DIRIGIDO A -->
+
+        <element
+            kind="staticText"
+            uuid="e6030001-0009-4000-8000-000000000001"
+            x="0"
+            y="104"
+            width="520"
+            height="22"
+            fontName="Arial"
+            fontSize="9"
+            bold="true"
+            vTextAlign="Middle">
+
+            <text><![CDATA[Dirigido a:]]></text>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <element
+            kind="staticText"
+            uuid="e6030001-0010-4000-8000-000000000001"
+            x="520"
+            y="104"
+            width="1790"
+            height="22"
+            fontName="Arial"
+            fontSize="9"
+            vTextAlign="Middle">
+
+            <text><![CDATA[Universidad del Cauca]]></text>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+    </pageHeader>
+
+    <!-- ========================================================= -->
+    <!-- CABECERAS DE COLUMNAS                                    -->
+    <!-- TOTAL = 2310                                             -->
+    <!-- ========================================================= -->
+
+    <columnHeader
+        height="58"
+        splitType="Stretch">
+
+        <element kind="staticText"
+            uuid="e6030001-0101-4000-8000-000000000001"
+            x="0" y="0"
+            width="100" height="58"
+            fontName="Arial" fontSize="7" bold="true"
+            hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[ID proyecto]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <element kind="staticText"
+            uuid="e6030001-0102-4000-8000-000000000001"
+            x="100" y="0"
+            width="240" height="58"
+            fontName="Arial" fontSize="7" bold="true"
+            hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[Título proyecto]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <element kind="staticText"
+            uuid="e6030001-0103-4000-8000-000000000001"
+            x="340" y="0"
+            width="140" height="58"
+            fontName="Arial" fontSize="7" bold="true"
+            hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[Estado proyecto]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <element kind="staticText"
+            uuid="e6030001-0104-4000-8000-000000000001"
+            x="480" y="0"
+            width="120" height="58"
+            fontName="Arial" fontSize="7" bold="true"
+            hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[Fecha de inicio]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <element kind="staticText"
+            uuid="e6030001-0105-4000-8000-000000000001"
+            x="600" y="0"
+            width="120" height="58"
+            fontName="Arial" fontSize="7" bold="true"
+            hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[Fecha de finalización]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <element kind="staticText"
+            uuid="e6030001-0106-4000-8000-000000000001"
+            x="720" y="0"
+            width="170" height="58"
+            fontName="Arial" fontSize="7" bold="true"
+            hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[Director proyecto]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <element kind="staticText"
+            uuid="e6030001-0107-4000-8000-000000000001"
+            x="890" y="0"
+            width="180" height="58"
+            fontName="Arial" fontSize="7" bold="true"
+            hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[Grupo(s) de investigación]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <element kind="staticText"
+            uuid="e6030001-0108-4000-8000-000000000001"
+            x="1070" y="0"
+            width="220" height="58"
+            fontName="Arial" fontSize="7" bold="true"
+            hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[Facultad(es)]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <element kind="staticText"
+            uuid="e6030001-0109-4000-8000-000000000001"
+            x="1290" y="0"
+            width="180" height="58"
+            fontName="Arial" fontSize="7" bold="true"
+            hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[Departamento(s)]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <element kind="staticText"
+            uuid="e6030001-0110-4000-8000-000000000001"
+            x="1470" y="0"
+            width="220" height="58"
+            fontName="Arial" fontSize="7" bold="true"
+            hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[Semillero de Investigación]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <element kind="staticText"
+            uuid="e6030001-0111-4000-8000-000000000001"
+            x="1690" y="0"
+            width="100" height="58"
+            fontName="Arial" fontSize="7" bold="true"
+            hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[Tipo proyecto]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <element kind="staticText"
+            uuid="e6030001-0112-4000-8000-000000000001"
+            x="1790" y="0"
+            width="180" height="58"
+            fontName="Arial" fontSize="7" bold="true"
+            hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[Nombre Convocatoria]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <element kind="staticText"
+            uuid="e6030001-0113-4000-8000-000000000001"
+            x="1970" y="0"
+            width="240" height="58"
+            fontName="Arial" fontSize="7" bold="true"
+            hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[División VRI / Elemento misional]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <element kind="staticText"
+            uuid="e6030001-0114-4000-8000-000000000001"
+            x="2210" y="0"
+            width="100" height="58"
+            fontName="Arial" fontSize="7" bold="true"
+            hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[Horas dedicación semanal]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+    </columnHeader>
+
+    <!-- ========================================================= -->
+    <!-- DETALLE                                                  -->
+    <!-- ========================================================= -->
+
+    <detail>
+
+        <band
+            height="42"
+            splitType="Stretch">
+
+            <element kind="textField"
+                uuid="e6030001-0201-4000-8000-000000000001"
+                x="0" y="0"
+                width="100" height="42"
+                fontName="Arial" fontSize="8"
+                hTextAlign="Center"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+                <expression><![CDATA[$F{idProyecto}]]></expression>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+            </element>
+
+            <element kind="textField"
+                uuid="e6030001-0202-4000-8000-000000000001"
+                x="100" y="0"
+                width="240" height="42"
+                fontName="Arial" fontSize="8"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+                <expression><![CDATA[$F{tituloProyecto}]]></expression>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+            </element>
+
+            <element kind="textField"
+                uuid="e6030001-0203-4000-8000-000000000001"
+                x="340" y="0"
+                width="140" height="42"
+                fontName="Arial" fontSize="8"
+                hTextAlign="Center"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+                <expression><![CDATA[$F{estadoProyecto}]]></expression>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+            </element>
+
+            <element kind="textField"
+                uuid="e6030001-0204-4000-8000-000000000001"
+                x="480" y="0"
+                width="120" height="42"
+                fontName="Arial" fontSize="7"
+                hTextAlign="Center"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+                <expression><![CDATA[$F{fechaInicioProyecto}]]></expression>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+            </element>
+
+            <element kind="textField"
+                uuid="e6030001-0205-4000-8000-000000000001"
+                x="600" y="0"
+                width="120" height="42"
+                fontName="Arial" fontSize="7"
+                hTextAlign="Center"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+                <expression><![CDATA[$F{fechaFinProyecto}]]></expression>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+            </element>
+
+            <element kind="textField"
+                uuid="e6030001-0206-4000-8000-000000000001"
+                x="720" y="0"
+                width="170" height="42"
+                fontName="Arial" fontSize="8"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+                <expression><![CDATA[$F{directorProyecto}]]></expression>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+            </element>
+
+            <element kind="textField"
+                uuid="e6030001-0207-4000-8000-000000000001"
+                x="890" y="0"
+                width="180" height="42"
+                fontName="Arial" fontSize="8"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+                <expression><![CDATA[$F{nombreGrupo}]]></expression>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+            </element>
+
+            <element kind="textField"
+                uuid="e6030001-0208-4000-8000-000000000001"
+                x="1070" y="0"
+                width="220" height="42"
+                fontName="Arial" fontSize="7"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+                <expression><![CDATA[$F{facultadProyecto}]]></expression>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+            </element>
+
+            <element kind="textField"
+                uuid="e6030001-0209-4000-8000-000000000001"
+                x="1290" y="0"
+                width="180" height="42"
+                fontName="Arial" fontSize="8"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+                <expression><![CDATA[$F{departamentoDocente}]]></expression>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+            </element>
+
+            <element kind="textField"
+                uuid="e6030001-0210-4000-8000-000000000001"
+                x="1470" y="0"
+                width="220" height="42"
+                fontName="Arial" fontSize="8"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+                <expression><![CDATA[$F{nombreSemillero}]]></expression>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+            </element>
+
+            <element kind="textField"
+                uuid="e6030001-0211-4000-8000-000000000001"
+                x="1690" y="0"
+                width="100" height="42"
+                fontName="Arial" fontSize="8"
+                hTextAlign="Center"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+                <expression><![CDATA[$F{tipoProyecto}]]></expression>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+            </element>
+
+            <element kind="textField"
+                uuid="e6030001-0212-4000-8000-000000000001"
+                x="1790" y="0"
+                width="180" height="42"
+                fontName="Arial" fontSize="8"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+                <expression><![CDATA[$F{nombreConvocatoria}]]></expression>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+            </element>
+
+            <element kind="textField"
+                uuid="e6030001-0213-4000-8000-000000000001"
+                x="1970" y="0"
+                width="240" height="42"
+                fontName="Arial" fontSize="7"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+                <expression><![CDATA[$F{elementoMisional}]]></expression>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+            </element>
+
+            <element kind="textField"
+                uuid="e6030001-0214-4000-8000-000000000001"
+                x="2210" y="0"
+                width="100" height="42"
+                fontName="Arial" fontSize="8"
+                hTextAlign="Center"
+                vTextAlign="Middle">
+                <expression><![CDATA[$F{horasDedicacionSemanal}]]></expression>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+            </element>
+
+        </band>
+
+    </detail>
+
+</jasperReport>
