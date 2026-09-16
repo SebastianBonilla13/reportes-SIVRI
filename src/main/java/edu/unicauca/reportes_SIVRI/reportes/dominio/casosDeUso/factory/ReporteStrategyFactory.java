@@ -20,6 +20,7 @@ import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.Report
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipoS03Strategy;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipoS04Strategy;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipoS05Strategy;
+import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipoX01Strategy;
 
 // Se está registra estrategias en el mapa strategies bajo una clave
 
@@ -43,7 +44,8 @@ public class ReporteStrategyFactory {
             ReporteTipoS02Strategy reporteTipoS02Strategy,
             ReporteTipoS03Strategy reporteTipoS03Strategy,
             ReporteTipoS04Strategy reporteTipoS04Strategy,
-            ReporteTipoS05Strategy reporteTipoS05Strategy
+            ReporteTipoS05Strategy reporteTipoS05Strategy,
+            ReporteTipoX01Strategy reporteTipoX01Strategy
     ) {
         strategies = new HashMap<>();
         strategies.put("R01", reporteTipo1Strategy);
@@ -60,6 +62,7 @@ public class ReporteStrategyFactory {
         strategies.put("S03", reporteTipoS03Strategy);
         strategies.put("S04", reporteTipoS04Strategy);
         strategies.put("S05", reporteTipoS05Strategy);
+        strategies.put("X01", reporteTipoX01Strategy);
     }
 
     public ReporteStrategy<?> getStrategy(String tipoReporte) {
