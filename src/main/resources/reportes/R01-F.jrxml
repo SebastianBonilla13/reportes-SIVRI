@@ -1,0 +1,1631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jasperReport
+    name="R01_F"
+    language="java"
+    pageWidth="595"
+    pageHeight="842"
+    columnWidth="555"
+    leftMargin="20"
+    rightMargin="20"
+    topMargin="20"
+    bottomMargin="20"
+    whenNoDataType="AllSectionsNoDetail"
+    uuid="f0100001-0000-4000-8000-000000000001">
+
+    <!-- ========================================================= -->
+    <!-- ESTILOS                                                   -->
+    <!-- ========================================================= -->
+
+    <style
+        name="TableHeader"
+        mode="Opaque"
+        backcolor="#D9D9D9"
+        fontName="Arial"
+        fontSize="7"
+        bold="true">
+
+        <box>
+            <pen
+                lineWidth="0.5"
+                lineColor="#A6A6A6"/>
+        </box>
+
+    </style>
+
+    <style
+        name="TableCell"
+        fontName="Arial"
+        fontSize="7">
+
+        <box>
+            <pen
+                lineWidth="0.5"
+                lineColor="#CCCCCC"/>
+        </box>
+
+    </style>
+
+    <!-- ========================================================= -->
+    <!-- DATASET INTEGRANTES                                       -->
+    <!-- ========================================================= -->
+
+    <dataset
+        name="IntegrantesDataset"
+        uuid="f0100002-0000-4000-8000-000000000001">
+
+        <field
+            name="numeroIdentificacion"
+            class="java.lang.String"/>
+
+        <field
+            name="nombreIntegrante"
+            class="java.lang.String"/>
+
+        <field
+            name="historialRolesEnGrupo"
+            class="java.lang.String"/>
+
+        <field
+            name="estadoIntegranteGrupo"
+            class="java.lang.String"/>
+
+    </dataset>
+
+    <!-- ========================================================= -->
+    <!-- DATASET PROYECTOS                                         -->
+    <!-- ========================================================= -->
+
+    <dataset
+        name="ProyectosDataset"
+        uuid="f0100003-0000-4000-8000-000000000001">
+
+        <field
+            name="idProyecto"
+            class="java.lang.String"/>
+
+        <field
+            name="tipoProyecto"
+            class="java.lang.String"/>
+
+        <field
+            name="nombreConvocatoria"
+            class="java.lang.String"/>
+
+    </dataset>
+
+    <!-- ========================================================= -->
+    <!-- DATASET SEMILLEROS                                        -->
+    <!-- ========================================================= -->
+
+    <dataset
+        name="SemillerosDataset"
+        uuid="f0100004-0000-4000-8000-000000000001">
+
+        <field
+            name="idSemillero"
+            class="java.lang.String"/>
+
+        <field
+            name="nombreSemillero"
+            class="java.lang.String"/>
+
+        <field
+            name="fechaCreacionSemillero"
+            class="java.lang.String"/>
+
+        <field
+            name="estadoSemillero"
+            class="java.lang.String"/>
+
+    </dataset>
+
+    <!-- ========================================================= -->
+    <!-- DATASET PRODUCTOS ENTREGADOS                              -->
+    <!-- ========================================================= -->
+
+    <dataset
+        name="ProductosEntregadosDataset"
+        uuid="f0100005-0000-4000-8000-000000000001">
+
+        <field
+            name="representanteProductoEntregado"
+            class="java.lang.String"/>
+
+        <field
+            name="tipoProductoEntregado"
+            class="java.lang.String"/>
+
+        <field
+            name="nombreResponsableProductoEntregado"
+            class="java.lang.String"/>
+
+    </dataset>
+
+    <!-- ========================================================= -->
+    <!-- DATASET PRODUCTOS PENDIENTES                              -->
+    <!-- ========================================================= -->
+
+    <dataset
+        name="ProductosPendientesDataset"
+        uuid="f0100006-0000-4000-8000-000000000001">
+
+        <field
+            name="representanteProductoPendiente"
+            class="java.lang.String"/>
+
+        <field
+            name="tipoProductoPendiente"
+            class="java.lang.String"/>
+
+        <field
+            name="nombreResponsableProductoPendiente"
+            class="java.lang.String"/>
+
+    </dataset>
+
+    <!-- ========================================================= -->
+    <!-- PARÁMETROS GENERALES                                     -->
+    <!-- ========================================================= -->
+
+    <parameter
+        name="tituloReporte"
+        class="java.lang.String"/>
+
+    <parameter
+        name="codigoReporte"
+        class="java.lang.String"/>
+
+    <parameter
+        name="versionReporte"
+        class="java.lang.String"/>
+
+    <parameter
+        name="fechaReporte"
+        class="java.lang.String"/>
+
+    <!-- ========================================================= -->
+    <!-- DATOS DEL GRUPO                                          -->
+    <!-- ========================================================= -->
+
+    <parameter
+        name="idGrupo"
+        class="java.lang.String"/>
+
+    <parameter
+        name="nombreGrupo"
+        class="java.lang.String"/>
+
+    <parameter
+        name="codigoGruplac"
+        class="java.lang.String"/>
+
+    <parameter
+        name="categorizacionGrupo"
+        class="java.lang.String"/>
+
+    <parameter
+        name="facultadGrupo"
+        class="java.lang.String"/>
+
+    <!-- ========================================================= -->
+    <!-- LISTAS                                                    -->
+    <!-- ========================================================= -->
+
+    <parameter
+        name="LISTA_INTEGRANTES"
+        class="java.util.List"/>
+
+    <parameter
+        name="LISTA_PROYECTOS"
+        class="java.util.List"/>
+
+    <parameter
+        name="LISTA_SEMILLEROS"
+        class="java.util.List"/>
+
+    <parameter
+        name="LISTA_PRODUCTOS_ENTREGADOS"
+        class="java.util.List"/>
+
+    <parameter
+        name="LISTA_PRODUCTOS_PENDIENTES"
+        class="java.util.List"/>
+
+    <background splitType="Stretch"/>
+
+    <!-- ========================================================= -->
+    <!-- CABECERA INSTITUCIONAL                                   -->
+    <!-- ========================================================= -->
+
+    <pageHeader
+        height="78"
+        splitType="Stretch">
+
+        <element
+            kind="frame"
+            uuid="f0100010-0000-4000-8000-000000000001"
+            x="0"
+            y="0"
+            width="100"
+            height="56">
+
+            <element
+                kind="image"
+                uuid="f0100010-0000-4000-8000-000000000002"
+                x="20"
+                y="2"
+                width="60"
+                height="52">
+
+                <expression class="java.io.InputStream"><![CDATA[
+                    Thread.currentThread()
+                        .getContextClassLoader()
+                        .getResourceAsStream(
+                            "reportes/Escudo-Unicauca.png"
+                        )
+                ]]></expression>
+
+            </element>
+
+            <box>
+                <pen
+                    lineWidth="0.5"
+                    lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <element
+            kind="staticText"
+            uuid="f0100011-0000-4000-8000-000000000001"
+            x="100"
+            y="0"
+            width="455"
+            height="24"
+            fontName="Arial"
+            fontSize="10"
+            bold="true"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+
+            <text><![CDATA[Universidad del Cauca]]></text>
+
+            <box>
+                <pen
+                    lineWidth="0.5"
+                    lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <element
+            kind="textField"
+            uuid="f0100012-0000-4000-8000-000000000001"
+            x="100"
+            y="24"
+            width="455"
+            height="32"
+            fontName="Arial"
+            fontSize="11"
+            bold="true"
+            hTextAlign="Center"
+            vTextAlign="Middle"
+            textAdjust="ScaleFont">
+
+            <expression><![CDATA[
+                $P{tituloReporte}
+            ]]></expression>
+
+            <box>
+                <pen
+                    lineWidth="0.5"
+                    lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- Código -->
+
+        <element
+            kind="textField"
+            uuid="f0100013-0000-4000-8000-000000000001"
+            x="0"
+            y="56"
+            width="185"
+            height="22"
+            fontName="Arial"
+            fontSize="8"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+
+            <expression><![CDATA[
+                "Código: "
+                + ($P{codigoReporte} == null
+                    ? ""
+                    : $P{codigoReporte})
+            ]]></expression>
+
+            <box>
+                <pen
+                    lineWidth="0.5"
+                    lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- Versión -->
+
+        <element
+            kind="textField"
+            uuid="f0100014-0000-4000-8000-000000000001"
+            x="185"
+            y="56"
+            width="185"
+            height="22"
+            fontName="Arial"
+            fontSize="8"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+
+            <expression><![CDATA[
+                "Versión: "
+                + ($P{versionReporte} == null
+                    ? ""
+                    : $P{versionReporte})
+            ]]></expression>
+
+            <box>
+                <pen
+                    lineWidth="0.5"
+                    lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- Fecha -->
+
+        <element
+            kind="textField"
+            uuid="f0100015-0000-4000-8000-000000000001"
+            x="370"
+            y="56"
+            width="185"
+            height="22"
+            fontName="Arial"
+            fontSize="8"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+
+            <expression><![CDATA[
+                "Fecha Reporte: "
+                + ($P{fechaReporte} == null
+                    ? ""
+                    : $P{fechaReporte})
+            ]]></expression>
+
+            <box>
+                <pen
+                    lineWidth="0.5"
+                    lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+    </pageHeader>
+
+    <!-- ========================================================= -->
+    <!-- DATOS GENERALES                                          -->
+    <!-- ========================================================= -->
+
+    <title
+        height="78"
+        splitType="Stretch">
+
+        <element
+            kind="staticText"
+            uuid="f0100020-0000-4000-8000-000000000001"
+            x="0"
+            y="0"
+            width="555"
+            height="22"
+            mode="Opaque"
+            backcolor="#D9D9D9"
+            fontName="Arial"
+            fontSize="9"
+            bold="true"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+
+            <text><![CDATA[
+                INFORMACIÓN GENERAL DEL GRUPO DE INVESTIGACIÓN
+            ]]></text>
+
+            <box>
+                <pen
+                    lineWidth="0.5"
+                    lineColor="#A6A6A6"/>
+            </box>
+
+        </element>
+
+        <!-- ID -->
+
+        <element
+            kind="staticText"
+            uuid="f0100021-0000-4000-8000-000000000001"
+            x="0"
+            y="22"
+            width="85"
+            height="28"
+            fontName="Arial"
+            fontSize="7"
+            bold="true"
+            vTextAlign="Middle">
+
+            <text><![CDATA[ID Grupo SIVRI]]></text>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <element
+            kind="textField"
+            uuid="f0100022-0000-4000-8000-000000000001"
+            x="85"
+            y="22"
+            width="95"
+            height="28"
+            fontName="Arial"
+            fontSize="7"
+            vTextAlign="Middle"
+            textAdjust="ScaleFont">
+
+            <expression><![CDATA[$P{idGrupo}]]></expression>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- Nombre -->
+
+        <element
+            kind="staticText"
+            uuid="f0100023-0000-4000-8000-000000000001"
+            x="180"
+            y="22"
+            width="95"
+            height="28"
+            fontName="Arial"
+            fontSize="7"
+            bold="true"
+            vTextAlign="Middle">
+
+            <text><![CDATA[Nombre Grupo]]></text>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <element
+            kind="textField"
+            uuid="f0100024-0000-4000-8000-000000000001"
+            x="275"
+            y="22"
+            width="280"
+            height="28"
+            fontName="Arial"
+            fontSize="7"
+            vTextAlign="Middle"
+            textAdjust="ScaleFont">
+
+            <expression><![CDATA[$P{nombreGrupo}]]></expression>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- Código -->
+
+        <element
+            kind="staticText"
+            uuid="f0100025-0000-4000-8000-000000000001"
+            x="0"
+            y="50"
+            width="85"
+            height="28"
+            fontName="Arial"
+            fontSize="7"
+            bold="true"
+            vTextAlign="Middle">
+
+            <text><![CDATA[Código GrupLAC]]></text>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <element
+            kind="textField"
+            uuid="f0100026-0000-4000-8000-000000000001"
+            x="85"
+            y="50"
+            width="95"
+            height="28"
+            fontName="Arial"
+            fontSize="7"
+            vTextAlign="Middle"
+            textAdjust="ScaleFont">
+
+            <expression><![CDATA[$P{codigoGruplac}]]></expression>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- Categoría -->
+
+        <element
+            kind="staticText"
+            uuid="f0100027-0000-4000-8000-000000000001"
+            x="180"
+            y="50"
+            width="85"
+            height="28"
+            fontName="Arial"
+            fontSize="7"
+            bold="true"
+            vTextAlign="Middle">
+
+            <text><![CDATA[Categorización]]></text>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <element
+            kind="textField"
+            uuid="f0100028-0000-4000-8000-000000000001"
+            x="265"
+            y="50"
+            width="95"
+            height="28"
+            fontName="Arial"
+            fontSize="7"
+            vTextAlign="Middle"
+            textAdjust="ScaleFont">
+
+            <expression><![CDATA[
+                $P{categorizacionGrupo}
+            ]]></expression>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- Facultad -->
+
+        <element
+            kind="staticText"
+            uuid="f0100029-0000-4000-8000-000000000001"
+            x="360"
+            y="50"
+            width="75"
+            height="28"
+            fontName="Arial"
+            fontSize="7"
+            bold="true"
+            vTextAlign="Middle">
+
+            <text><![CDATA[Facultad]]></text>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <element
+            kind="textField"
+            uuid="f0100030-0000-4000-8000-000000000001"
+            x="435"
+            y="50"
+            width="120"
+            height="28"
+            fontName="Arial"
+            fontSize="7"
+            vTextAlign="Middle"
+            textAdjust="ScaleFont">
+
+            <expression><![CDATA[$P{facultadGrupo}]]></expression>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+    </title>
+
+    <!-- ========================================================= -->
+    <!-- TABLAS                                                    -->
+    <!-- ========================================================= -->
+
+    <detail>
+
+        <!-- ===================================================== -->
+        <!-- 1. INTEGRANTES                                       -->
+        <!-- ===================================================== -->
+
+        <band
+            height="64"
+            splitType="Stretch">
+
+            <element
+                kind="staticText"
+                uuid="f0100100-0000-4000-8000-000000000001"
+                x="0"
+                y="4"
+                width="555"
+                height="20"
+                mode="Opaque"
+                backcolor="#D9D9D9"
+                fontName="Arial"
+                fontSize="8"
+                bold="true"
+                vTextAlign="Middle">
+
+                <text><![CDATA[
+                    Integrantes por Grupo
+                ]]></text>
+
+                <box>
+                    <pen lineWidth="0.5" lineColor="#A6A6A6"/>
+                </box>
+
+            </element>
+
+            <element
+                kind="component"
+                uuid="f0100101-0000-4000-8000-000000000001"
+                x="0"
+                y="24"
+                width="555"
+                height="40">
+
+                <component kind="table">
+
+                    <datasetRun
+                        uuid="f0100102-0000-4000-8000-000000000001"
+                        subDataset="IntegrantesDataset">
+
+                        <dataSourceExpression><![CDATA[
+                            new net.sf.jasperreports.engine.data
+                                .JRBeanCollectionDataSource(
+                                    $P{LISTA_INTEGRANTES}
+                                )
+                        ]]></dataSourceExpression>
+
+                    </datasetRun>
+
+                    <!-- IDENTIFICACIÓN -->
+
+                    <column
+                        kind="single"
+                        uuid="f0100103-0000-4000-8000-000000000001"
+                        width="100">
+
+                        <columnHeader
+                            height="22"
+                            style="TableHeader">
+
+                            <element
+                                kind="staticText"
+                                x="0"
+                                y="0"
+                                width="100"
+                                height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+
+                                <text><![CDATA[Identificación]]></text>
+
+                            </element>
+
+                        </columnHeader>
+
+                        <detailCell
+                            height="22"
+                            style="TableCell">
+
+                            <element
+                                kind="textField"
+                                x="0"
+                                y="0"
+                                width="100"
+                                height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                hTextAlign="Center"
+                                vTextAlign="Middle"
+                                textAdjust="StretchHeight">
+
+                                <expression><![CDATA[
+                                    $F{numeroIdentificacion}
+                                ]]></expression>
+
+                            </element>
+
+                        </detailCell>
+
+                    </column>
+
+                    <!-- NOMBRE -->
+
+                    <column
+                        kind="single"
+                        uuid="f0100104-0000-4000-8000-000000000001"
+                        width="220">
+
+                        <columnHeader height="22" style="TableHeader">
+
+                            <element
+                                kind="staticText"
+                                x="0"
+                                y="0"
+                                width="220"
+                                height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+
+                                <text><![CDATA[Nombre integrante]]></text>
+
+                            </element>
+
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+
+                            <element
+                                kind="textField"
+                                x="0"
+                                y="0"
+                                width="220"
+                                height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                vTextAlign="Middle"
+                                textAdjust="StretchHeight">
+
+                                <expression><![CDATA[
+                                    $F{nombreIntegrante}
+                                ]]></expression>
+
+                            </element>
+
+                        </detailCell>
+
+                    </column>
+
+                    <!-- ROL -->
+
+                    <column
+                        kind="single"
+                        uuid="f0100105-0000-4000-8000-000000000001"
+                        width="135">
+
+                        <columnHeader height="22" style="TableHeader">
+
+                            <element
+                                kind="staticText"
+                                x="0"
+                                y="0"
+                                width="135"
+                                height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+
+                                <text><![CDATA[Rol]]></text>
+
+                            </element>
+
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+
+                            <element
+                                kind="textField"
+                                x="0"
+                                y="0"
+                                width="135"
+                                height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                hTextAlign="Center"
+                                vTextAlign="Middle"
+                                textAdjust="StretchHeight">
+
+                                <expression><![CDATA[
+                                    $F{historialRolesEnGrupo}
+                                ]]></expression>
+
+                            </element>
+
+                        </detailCell>
+
+                    </column>
+
+                    <!-- ESTADO -->
+
+                    <column
+                        kind="single"
+                        uuid="f0100106-0000-4000-8000-000000000001"
+                        width="100">
+
+                        <columnHeader height="22" style="TableHeader">
+
+                            <element
+                                kind="staticText"
+                                x="0"
+                                y="0"
+                                width="100"
+                                height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+
+                                <text><![CDATA[Estado]]></text>
+
+                            </element>
+
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+
+                            <element
+                                kind="textField"
+                                x="0"
+                                y="0"
+                                width="100"
+                                height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+
+                                <expression><![CDATA[
+                                    $F{estadoIntegranteGrupo}
+                                ]]></expression>
+
+                            </element>
+
+                        </detailCell>
+
+                    </column>
+
+                </component>
+
+            </element>
+
+        </band>
+
+        <!-- ===================================================== -->
+        <!-- 2. PROYECTOS                                         -->
+        <!-- ===================================================== -->
+
+        <band height="64" splitType="Stretch">
+
+            <element
+                kind="staticText"
+                uuid="f0100200-0000-4000-8000-000000000001"
+                x="0"
+                y="4"
+                width="555"
+                height="20"
+                mode="Opaque"
+                backcolor="#D9D9D9"
+                fontName="Arial"
+                fontSize="8"
+                bold="true"
+                vTextAlign="Middle">
+
+                <text><![CDATA[
+                    Proyectos de investigación en los últimos 5 años
+                ]]></text>
+
+                <box>
+                    <pen lineWidth="0.5" lineColor="#A6A6A6"/>
+                </box>
+
+            </element>
+
+            <element
+                kind="component"
+                uuid="f0100201-0000-4000-8000-000000000001"
+                x="0"
+                y="24"
+                width="555"
+                height="40">
+
+                <component kind="table">
+
+                    <datasetRun
+                        uuid="f0100202-0000-4000-8000-000000000001"
+                        subDataset="ProyectosDataset">
+
+                        <dataSourceExpression><![CDATA[
+                            new net.sf.jasperreports.engine.data
+                                .JRBeanCollectionDataSource(
+                                    $P{LISTA_PROYECTOS}
+                                )
+                        ]]></dataSourceExpression>
+
+                    </datasetRun>
+
+                    <column kind="single"
+                        uuid="f0100203-0000-4000-8000-000000000001"
+                        width="100">
+
+                        <columnHeader height="22" style="TableHeader">
+                            <element kind="staticText"
+                                x="0" y="0"
+                                width="100" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <text><![CDATA[ID Proyecto]]></text>
+                            </element>
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+                            <element kind="textField"
+                                x="0" y="0"
+                                width="100" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <expression><![CDATA[
+                                    $F{idProyecto}
+                                ]]></expression>
+                            </element>
+                        </detailCell>
+
+                    </column>
+
+                    <column kind="single"
+                        uuid="f0100204-0000-4000-8000-000000000001"
+                        width="100">
+
+                        <columnHeader height="22" style="TableHeader">
+                            <element kind="staticText"
+                                x="0" y="0"
+                                width="100" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <text><![CDATA[Tipo Proyecto]]></text>
+                            </element>
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+                            <element kind="textField"
+                                x="0" y="0"
+                                width="100" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <expression><![CDATA[
+                                    $F{tipoProyecto}
+                                ]]></expression>
+                            </element>
+                        </detailCell>
+
+                    </column>
+
+                    <column kind="single"
+                        uuid="f0100205-0000-4000-8000-000000000001"
+                        width="355">
+
+                        <columnHeader height="22" style="TableHeader">
+                            <element kind="staticText"
+                                x="0" y="0"
+                                width="355" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <text><![CDATA[Convocatoria]]></text>
+                            </element>
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+                            <element kind="textField"
+                                x="0" y="0"
+                                width="355" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                vTextAlign="Middle"
+                                textAdjust="StretchHeight">
+                                <expression><![CDATA[
+                                    $F{nombreConvocatoria}
+                                ]]></expression>
+                            </element>
+                        </detailCell>
+
+                    </column>
+
+                </component>
+
+            </element>
+
+        </band>
+
+        <!-- ===================================================== -->
+        <!-- 3. SEMILLEROS                                        -->
+        <!-- ===================================================== -->
+
+        <band height="64" splitType="Stretch">
+
+            <element
+                kind="staticText"
+                uuid="f0100300-0000-4000-8000-000000000001"
+                x="0"
+                y="4"
+                width="555"
+                height="20"
+                mode="Opaque"
+                backcolor="#D9D9D9"
+                fontName="Arial"
+                fontSize="8"
+                bold="true"
+                vTextAlign="Middle">
+
+                <text><![CDATA[
+                    Semilleros asociados al grupo en los últimos 5 años
+                ]]></text>
+
+                <box>
+                    <pen lineWidth="0.5" lineColor="#A6A6A6"/>
+                </box>
+
+            </element>
+
+            <element
+                kind="component"
+                uuid="f0100301-0000-4000-8000-000000000001"
+                x="0"
+                y="24"
+                width="555"
+                height="40">
+
+                <component kind="table">
+
+                    <datasetRun
+                        uuid="f0100302-0000-4000-8000-000000000001"
+                        subDataset="SemillerosDataset">
+
+                        <dataSourceExpression><![CDATA[
+                            new net.sf.jasperreports.engine.data
+                                .JRBeanCollectionDataSource(
+                                    $P{LISTA_SEMILLEROS}
+                                )
+                        ]]></dataSourceExpression>
+
+                    </datasetRun>
+
+                    <column kind="single"
+                        uuid="f0100303-0000-4000-8000-000000000001"
+                        width="90">
+
+                        <columnHeader height="22" style="TableHeader">
+                            <element kind="staticText"
+                                x="0" y="0"
+                                width="90" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <text><![CDATA[ID Semillero]]></text>
+                            </element>
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+                            <element kind="textField"
+                                x="0" y="0"
+                                width="90" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <expression><![CDATA[
+                                    $F{idSemillero}
+                                ]]></expression>
+                            </element>
+                        </detailCell>
+
+                    </column>
+
+                    <column kind="single"
+                        uuid="f0100304-0000-4000-8000-000000000001"
+                        width="255">
+
+                        <columnHeader height="22" style="TableHeader">
+                            <element kind="staticText"
+                                x="0" y="0"
+                                width="255" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <text><![CDATA[Nombre Semillero]]></text>
+                            </element>
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+                            <element kind="textField"
+                                x="0" y="0"
+                                width="255" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                vTextAlign="Middle"
+                                textAdjust="StretchHeight">
+                                <expression><![CDATA[
+                                    $F{nombreSemillero}
+                                ]]></expression>
+                            </element>
+                        </detailCell>
+
+                    </column>
+
+                    <column kind="single"
+                        uuid="f0100305-0000-4000-8000-000000000001"
+                        width="120">
+
+                        <columnHeader height="22" style="TableHeader">
+                            <element kind="staticText"
+                                x="0" y="0"
+                                width="120" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <text><![CDATA[Fecha creación]]></text>
+                            </element>
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+                            <element kind="textField"
+                                x="0" y="0"
+                                width="120" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <expression><![CDATA[
+                                    $F{fechaCreacionSemillero}
+                                ]]></expression>
+                            </element>
+                        </detailCell>
+
+                    </column>
+
+                    <column kind="single"
+                        uuid="f0100306-0000-4000-8000-000000000001"
+                        width="90">
+
+                        <columnHeader height="22" style="TableHeader">
+                            <element kind="staticText"
+                                x="0" y="0"
+                                width="90" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <text><![CDATA[Estado]]></text>
+                            </element>
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+                            <element kind="textField"
+                                x="0" y="0"
+                                width="90" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <expression><![CDATA[
+                                    $F{estadoSemillero}
+                                ]]></expression>
+                            </element>
+                        </detailCell>
+
+                    </column>
+
+                </component>
+
+            </element>
+
+        </band>
+
+        <!-- ===================================================== -->
+        <!-- 4. PRODUCTOS ENTREGADOS                              -->
+        <!-- ===================================================== -->
+
+        <band height="64" splitType="Stretch">
+
+            <element
+                kind="staticText"
+                uuid="f0100400-0000-4000-8000-000000000001"
+                x="0"
+                y="4"
+                width="555"
+                height="20"
+                mode="Opaque"
+                backcolor="#D9D9D9"
+                fontName="Arial"
+                fontSize="8"
+                bold="true"
+                vTextAlign="Middle">
+
+                <text><![CDATA[
+                    Productos entregados o cumplidos en los últimos 5 años
+                ]]></text>
+
+                <box>
+                    <pen lineWidth="0.5" lineColor="#A6A6A6"/>
+                </box>
+
+            </element>
+
+            <element
+                kind="component"
+                uuid="f0100401-0000-4000-8000-000000000001"
+                x="0"
+                y="24"
+                width="555"
+                height="40">
+
+                <component kind="table">
+
+                    <datasetRun
+                        uuid="f0100402-0000-4000-8000-000000000001"
+                        subDataset="ProductosEntregadosDataset">
+
+                        <dataSourceExpression><![CDATA[
+                            new net.sf.jasperreports.engine.data
+                                .JRBeanCollectionDataSource(
+                                    $P{LISTA_PRODUCTOS_ENTREGADOS}
+                                )
+                        ]]></dataSourceExpression>
+
+                    </datasetRun>
+
+                    <column kind="single"
+                        uuid="f0100403-0000-4000-8000-000000000001"
+                        width="180">
+
+                        <columnHeader height="22" style="TableHeader">
+                            <element kind="staticText"
+                                x="0" y="0"
+                                width="180" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <text><![CDATA[Representante]]></text>
+                            </element>
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+                            <element kind="textField"
+                                x="0" y="0"
+                                width="180" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                vTextAlign="Middle"
+                                textAdjust="StretchHeight">
+                                <expression><![CDATA[
+                                    $F{representanteProductoEntregado}
+                                ]]></expression>
+                            </element>
+                        </detailCell>
+
+                    </column>
+
+                    <column kind="single"
+                        uuid="f0100404-0000-4000-8000-000000000001"
+                        width="175">
+
+                        <columnHeader height="22" style="TableHeader">
+                            <element kind="staticText"
+                                x="0" y="0"
+                                width="175" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <text><![CDATA[Tipo producto]]></text>
+                            </element>
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+                            <element kind="textField"
+                                x="0" y="0"
+                                width="175" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                vTextAlign="Middle"
+                                textAdjust="StretchHeight">
+                                <expression><![CDATA[
+                                    $F{tipoProductoEntregado}
+                                ]]></expression>
+                            </element>
+                        </detailCell>
+
+                    </column>
+
+                    <column kind="single"
+                        uuid="f0100405-0000-4000-8000-000000000001"
+                        width="200">
+
+                        <columnHeader height="22" style="TableHeader">
+                            <element kind="staticText"
+                                x="0" y="0"
+                                width="200" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <text><![CDATA[Responsable]]></text>
+                            </element>
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+                            <element kind="textField"
+                                x="0" y="0"
+                                width="200" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                vTextAlign="Middle"
+                                textAdjust="StretchHeight">
+                                <expression><![CDATA[
+                                    $F{nombreResponsableProductoEntregado}
+                                ]]></expression>
+                            </element>
+                        </detailCell>
+
+                    </column>
+
+                </component>
+
+            </element>
+
+        </band>
+
+        <!-- ===================================================== -->
+        <!-- 5. PRODUCTOS PENDIENTES                              -->
+        <!-- ===================================================== -->
+
+        <band height="64" splitType="Stretch">
+
+            <element
+                kind="staticText"
+                uuid="f0100500-0000-4000-8000-000000000001"
+                x="0"
+                y="4"
+                width="555"
+                height="20"
+                mode="Opaque"
+                backcolor="#D9D9D9"
+                fontName="Arial"
+                fontSize="8"
+                bold="true"
+                vTextAlign="Middle">
+
+                <text><![CDATA[
+                    Productos pendientes por entrega en los últimos 5 años
+                ]]></text>
+
+                <box>
+                    <pen lineWidth="0.5" lineColor="#A6A6A6"/>
+                </box>
+
+            </element>
+
+            <element
+                kind="component"
+                uuid="f0100501-0000-4000-8000-000000000001"
+                x="0"
+                y="24"
+                width="555"
+                height="40">
+
+                <component kind="table">
+
+                    <datasetRun
+                        uuid="f0100502-0000-4000-8000-000000000001"
+                        subDataset="ProductosPendientesDataset">
+
+                        <dataSourceExpression><![CDATA[
+                            new net.sf.jasperreports.engine.data
+                                .JRBeanCollectionDataSource(
+                                    $P{LISTA_PRODUCTOS_PENDIENTES}
+                                )
+                        ]]></dataSourceExpression>
+
+                    </datasetRun>
+
+                    <column kind="single"
+                        uuid="f0100503-0000-4000-8000-000000000001"
+                        width="180">
+
+                        <columnHeader height="22" style="TableHeader">
+                            <element kind="staticText"
+                                x="0" y="0"
+                                width="180" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <text><![CDATA[Representante]]></text>
+                            </element>
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+                            <element kind="textField"
+                                x="0" y="0"
+                                width="180" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                vTextAlign="Middle"
+                                textAdjust="StretchHeight">
+                                <expression><![CDATA[
+                                    $F{representanteProductoPendiente}
+                                ]]></expression>
+                            </element>
+                        </detailCell>
+
+                    </column>
+
+                    <column kind="single"
+                        uuid="f0100504-0000-4000-8000-000000000001"
+                        width="175">
+
+                        <columnHeader height="22" style="TableHeader">
+                            <element kind="staticText"
+                                x="0" y="0"
+                                width="175" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <text><![CDATA[Tipo producto]]></text>
+                            </element>
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+                            <element kind="textField"
+                                x="0" y="0"
+                                width="175" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                vTextAlign="Middle"
+                                textAdjust="StretchHeight">
+                                <expression><![CDATA[
+                                    $F{tipoProductoPendiente}
+                                ]]></expression>
+                            </element>
+                        </detailCell>
+
+                    </column>
+
+                    <column kind="single"
+                        uuid="f0100505-0000-4000-8000-000000000001"
+                        width="200">
+
+                        <columnHeader height="22" style="TableHeader">
+                            <element kind="staticText"
+                                x="0" y="0"
+                                width="200" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                bold="true"
+                                hTextAlign="Center"
+                                vTextAlign="Middle">
+                                <text><![CDATA[Responsable]]></text>
+                            </element>
+                        </columnHeader>
+
+                        <detailCell height="22" style="TableCell">
+                            <element kind="textField"
+                                x="0" y="0"
+                                width="200" height="22"
+                                fontName="Arial"
+                                fontSize="7"
+                                vTextAlign="Middle"
+                                textAdjust="StretchHeight">
+                                <expression><![CDATA[
+                                    $F{nombreResponsableProductoPendiente}
+                                ]]></expression>
+                            </element>
+                        </detailCell>
+
+                    </column>
+
+                </component>
+
+            </element>
+
+        </band>
+
+    </detail>
+
+    <!-- ========================================================= -->
+    <!-- PIE DE PÁGINA                                            -->
+    <!-- ========================================================= -->
+
+    <pageFooter height="18">
+
+        <element
+            kind="textField"
+            uuid="f0100600-0000-4000-8000-000000000001"
+            x="455"
+            y="2"
+            width="100"
+            height="14"
+            fontName="Arial"
+            fontSize="7"
+            hTextAlign="Right">
+
+            <expression><![CDATA[
+                "Página " + $V{PAGE_NUMBER}
+            ]]></expression>
+
+        </element>
+
+    </pageFooter>
+
+</jasperReport>
