@@ -11,33 +11,33 @@ import com.fasterxml.jackson.core.type.TypeReference;
 
 import edu.unicauca.reportes_SIVRI.reportes.infraestructura
         .input.controllerReportesProyectos.DTOPeticion
-        .ReporteTipo2DTOPeticion;
+        .ReporteTipo5DTOPeticion;
 
 @Component
-public class ReporteTipo2Strategy
-        implements ReporteStrategy<ReporteTipo2DTOPeticion> {
+public class ReporteTipo5Strategy
+        implements ReporteStrategy<ReporteTipo5DTOPeticion> {
 
     private static final String Plantilla =
-            "/reportes/R02.jrxml";
+            "/reportes/R05.jrxml";
 
     private static final Map<String, Object> parametros =
             new HashMap<>();
 
     @Override
     public Map<String, Object> prepararParametros(
-            List<ReporteTipo2DTOPeticion> datos) {
+            List<ReporteTipo5DTOPeticion> datos) {
 
         Map<String, Object> parametros =
                 new HashMap<>();
 
         parametros.put(
                 "tituloReporte",
-                "Integrantes Grupos de Investigación"
+                "Productos de Investigación - Compromisos proyectos"
         );
 
         parametros.put(
                 "codigoReporte",
-                "R02"
+                "R05"
         );
 
         parametros.put(
@@ -55,9 +55,9 @@ public class ReporteTipo2Strategy
         );
 
         /*
-         * La petición de R02 es una lista plana.
-         * Cada objeto corresponde a una vinculación
-         * integrante - grupo.
+         * R05 es una lista plana.
+         * Cada fila representa un producto/compromiso
+         * asociado a un proyecto.
          */
         parametros.put(
                 "DATA_LIST",
@@ -68,11 +68,11 @@ public class ReporteTipo2Strategy
     }
 
     @Override
-    public TypeReference<List<ReporteTipo2DTOPeticion>>
+    public TypeReference<List<ReporteTipo5DTOPeticion>>
             getTypeReference() {
 
         return new TypeReference<
-                List<ReporteTipo2DTOPeticion>>() {
+                List<ReporteTipo5DTOPeticion>>() {
         };
     }
 

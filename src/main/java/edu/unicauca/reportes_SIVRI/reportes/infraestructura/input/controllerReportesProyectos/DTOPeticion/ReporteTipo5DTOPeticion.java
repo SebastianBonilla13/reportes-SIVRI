@@ -1,7 +1,5 @@
 package edu.unicauca.reportes_SIVRI.reportes.infraestructura.input.controllerReportesProyectos.DTOPeticion;
 
-import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,33 +7,27 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReporteTipo3DTOPeticion {
+public class ReporteTipo5DTOPeticion {
 
     private String idProyecto;
     private String tituloProyecto;
+    private String directorProyecto;
+
     private String estadoProyecto;
 
     private String fechaInicioProyecto;
     private String fechaFinProyecto;
 
-    private String directorProyecto;
+    private String tipologiaProducto;
+    private String categoriaProducto;
 
-    /*
-     * En el JSON real este campo llega como arreglo:
-     *
-     * "gruposInvestigacion": [
-     *     "Grupo 1",
-     *     "Grupo 2"
-     * ]
-     */
-    private List<String> gruposInvestigacion;
+    private String nombreResponsableProducto;
+    private String grupoInvestigacionResponsable;
 
-    private String facultadesProyecto;
-    private String departamentoDirector;
+    private String estadoProducto;
 
     private String tipoProyecto;
     private String nombreConvocatoria;
 
     private String elementoMisional;
-    private String palabrasClaves;
 }

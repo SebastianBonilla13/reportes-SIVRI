@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <jasperReport
-    name="R04"
+    name="R05"
     language="java"
     columnCount="1"
-    pageWidth="2880"
+    pageWidth="2350"
     pageHeight="842"
     orientation="Landscape"
-    columnWidth="2840"
+    columnWidth="2310"
     leftMargin="20"
     rightMargin="20"
     topMargin="20"
     bottomMargin="20"
-    uuid="d4040001-0000-4000-8000-000000000001">
+    uuid="f5050001-0000-4000-8000-000000000001">
 
     <!-- ========================================================= -->
     <!-- CONFIGURACIÓN DE EXPORTACIÓN                              -->
@@ -76,7 +76,7 @@
     <property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 
     <!-- ========================================================= -->
-    <!-- PARÁMETROS                                                -->
+    <!-- PARÁMETROS GENERALES                                     -->
     <!-- ========================================================= -->
 
     <parameter
@@ -96,15 +96,11 @@
         class="java.lang.String"/>
 
     <!-- ========================================================= -->
-    <!-- CAMPOS R04                                                -->
+    <!-- CAMPOS R05                                                -->
     <!-- ========================================================= -->
 
     <field
-        name="numeroIdentificacion"
-        class="java.lang.String"/>
-
-    <field
-        name="nombreIntegrante"
+        name="idProyecto"
         class="java.lang.String"/>
 
     <field
@@ -112,11 +108,11 @@
         class="java.lang.String"/>
 
     <field
-        name="idProyecto"
+        name="directorProyecto"
         class="java.lang.String"/>
 
     <field
-        name="tipoProyecto"
+        name="estadoProyecto"
         class="java.lang.String"/>
 
     <field
@@ -128,23 +124,27 @@
         class="java.lang.String"/>
 
     <field
-        name="estadoProyecto"
+        name="tipologiaProducto"
         class="java.lang.String"/>
 
     <field
-        name="fechaVinculacionRol"
+        name="categoriaProducto"
         class="java.lang.String"/>
 
     <field
-        name="historialRolesEnProyecto"
+        name="nombreResponsableProducto"
         class="java.lang.String"/>
 
     <field
-        name="grupoInvestigacionVinculado"
+        name="grupoInvestigacionResponsable"
         class="java.lang.String"/>
 
     <field
-        name="semilleroInvestigacionVinculado"
+        name="estadoProducto"
+        class="java.lang.String"/>
+
+    <field
+        name="tipoProyecto"
         class="java.lang.String"/>
 
     <field
@@ -153,22 +153,6 @@
 
     <field
         name="elementoMisional"
-        class="java.lang.String"/>
-
-    <field
-        name="horasDedicacionSemanal"
-        class="java.lang.Integer"/>
-
-    <field
-        name="facultadIntegrante"
-        class="java.lang.String"/>
-
-    <field
-        name="departamentoIntegrante"
-        class="java.lang.String"/>
-
-    <field
-        name="programaIntegrante"
         class="java.lang.String"/>
 
     <background splitType="Stretch"/>
@@ -185,7 +169,7 @@
 
         <element
             kind="frame"
-            uuid="d4040001-0001-4000-8000-000000000001"
+            uuid="f5050001-0001-4000-8000-000000000001"
             x="0"
             y="0"
             width="260"
@@ -193,7 +177,7 @@
 
             <element
                 kind="image"
-                uuid="d4040001-0001-4000-8000-000000000002"
+                uuid="f5050001-0001-4000-8000-000000000002"
                 x="95"
                 y="2"
                 width="70"
@@ -223,10 +207,10 @@
 
         <element
             kind="staticText"
-            uuid="d4040001-0002-4000-8000-000000000001"
+            uuid="f5050001-0002-4000-8000-000000000001"
             x="260"
             y="0"
-            width="2580"
+            width="2050"
             height="26"
             fontName="Arial"
             fontSize="11"
@@ -250,10 +234,10 @@
 
         <element
             kind="textField"
-            uuid="d4040001-0003-4000-8000-000000000001"
+            uuid="f5050001-0003-4000-8000-000000000001"
             x="260"
             y="26"
-            width="2580"
+            width="2050"
             height="34"
             fontName="Arial"
             fontSize="13"
@@ -280,10 +264,10 @@
 
         <element
             kind="textField"
-            uuid="d4040001-0004-4000-8000-000000000001"
+            uuid="f5050001-0004-4000-8000-000000000001"
             x="0"
             y="60"
-            width="940"
+            width="770"
             height="22"
             fontName="Arial"
             fontSize="9"
@@ -311,10 +295,10 @@
 
         <element
             kind="textField"
-            uuid="d4040001-0005-4000-8000-000000000001"
-            x="940"
+            uuid="f5050001-0005-4000-8000-000000000001"
+            x="770"
             y="60"
-            width="950"
+            width="770"
             height="22"
             fontName="Arial"
             fontSize="9"
@@ -342,10 +326,10 @@
 
         <element
             kind="textField"
-            uuid="d4040001-0006-4000-8000-000000000001"
-            x="1890"
+            uuid="f5050001-0006-4000-8000-000000000001"
+            x="1540"
             y="60"
-            width="950"
+            width="770"
             height="22"
             fontName="Arial"
             fontSize="9"
@@ -369,11 +353,11 @@
 
         </element>
 
-        <!-- ÁREA -->
+        <!-- ÁREA QUE GENERA -->
 
         <element
             kind="staticText"
-            uuid="d4040001-0007-4000-8000-000000000001"
+            uuid="f5050001-0007-4000-8000-000000000001"
             x="0"
             y="82"
             width="520"
@@ -397,10 +381,10 @@
 
         <element
             kind="staticText"
-            uuid="d4040001-0008-4000-8000-000000000001"
+            uuid="f5050001-0008-4000-8000-000000000001"
             x="520"
             y="82"
-            width="2320"
+            width="1790"
             height="22"
             fontName="Arial"
             fontSize="9"
@@ -422,7 +406,7 @@
 
         <element
             kind="staticText"
-            uuid="d4040001-0009-4000-8000-000000000001"
+            uuid="f5050001-0009-4000-8000-000000000001"
             x="0"
             y="104"
             width="520"
@@ -446,10 +430,10 @@
 
         <element
             kind="staticText"
-            uuid="d4040001-0010-4000-8000-000000000001"
+            uuid="f5050001-0010-4000-8000-000000000001"
             x="520"
             y="104"
-            width="2320"
+            width="1790"
             height="22"
             fontName="Arial"
             fontSize="9"
@@ -471,63 +455,19 @@
 
     <!-- ========================================================= -->
     <!-- CABECERA DE COLUMNAS                                     -->
+    <!-- Ancho total = 2310                                      -->
     <!-- ========================================================= -->
 
     <columnHeader
-        height="56"
+        height="55"
         splitType="Stretch">
 
-        <!-- 1 -->
+        <!-- 1 ID PROYECTO -->
 
         <element kind="staticText"
-            uuid="d4040001-0101-4000-8000-000000000001"
+            uuid="f5050001-0101-4000-8000-000000000001"
             x="0" y="0"
-            width="110" height="56"
-            fontName="Arial"
-            fontSize="7"
-            bold="true"
-            hTextAlign="Center"
-            vTextAlign="Middle">
-            <text><![CDATA[Número de identificación]]></text>
-            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
-        </element>
-
-        <!-- 2 -->
-
-        <element kind="staticText"
-            uuid="d4040001-0102-4000-8000-000000000001"
-            x="110" y="0"
-            width="180" height="56"
-            fontName="Arial"
-            fontSize="7"
-            bold="true"
-            hTextAlign="Center"
-            vTextAlign="Middle">
-            <text><![CDATA[Nombre completo integrante]]></text>
-            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
-        </element>
-
-        <!-- 3 -->
-
-        <element kind="staticText"
-            uuid="d4040001-0103-4000-8000-000000000001"
-            x="290" y="0"
-            width="260" height="56"
-            fontName="Arial"
-            fontSize="7"
-            bold="true"
-            hTextAlign="Center"
-            vTextAlign="Middle">
-            <text><![CDATA[Título proyecto]]></text>
-            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
-        </element>
-
-        <!-- 4 -->
-
-        <element kind="staticText"
-            uuid="d4040001-0104-4000-8000-000000000001"
-            x="550" y="0"
-            width="90" height="56"
+            width="90" height="55"
             fontName="Arial"
             fontSize="7"
             bold="true"
@@ -537,57 +477,42 @@
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
-        <!-- 5 -->
+        <!-- 2 TÍTULO -->
 
         <element kind="staticText"
-            uuid="d4040001-0105-4000-8000-000000000001"
-            x="640" y="0"
-            width="100" height="56"
+            uuid="f5050001-0102-4000-8000-000000000001"
+            x="90" y="0"
+            width="260" height="55"
             fontName="Arial"
             fontSize="7"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
-            <text><![CDATA[Tipo proyecto]]></text>
+            <text><![CDATA[Título proyecto]]></text>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
-        <!-- 6 -->
+        <!-- 3 DIRECTOR -->
 
         <element kind="staticText"
-            uuid="d4040001-0106-4000-8000-000000000001"
-            x="740" y="0"
-            width="110" height="56"
+            uuid="f5050001-0103-4000-8000-000000000001"
+            x="350" y="0"
+            width="170" height="55"
             fontName="Arial"
             fontSize="7"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
-            <text><![CDATA[Fecha inicio proyecto]]></text>
+            <text><![CDATA[Director proyecto]]></text>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
-        <!-- 7 -->
+        <!-- 4 ESTADO PROYECTO -->
 
         <element kind="staticText"
-            uuid="d4040001-0107-4000-8000-000000000001"
-            x="850" y="0"
-            width="110" height="56"
-            fontName="Arial"
-            fontSize="7"
-            bold="true"
-            hTextAlign="Center"
-            vTextAlign="Middle">
-            <text><![CDATA[Fecha finalización proyecto]]></text>
-            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
-        </element>
-
-        <!-- 8 -->
-
-        <element kind="staticText"
-            uuid="d4040001-0108-4000-8000-000000000001"
-            x="960" y="0"
-            width="100" height="56"
+            uuid="f5050001-0104-4000-8000-000000000001"
+            x="520" y="0"
+            width="130" height="55"
             fontName="Arial"
             fontSize="7"
             bold="true"
@@ -597,72 +522,132 @@
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
-        <!-- 9 -->
+        <!-- 5 FECHA INICIO -->
 
         <element kind="staticText"
-            uuid="d4040001-0109-4000-8000-000000000001"
-            x="1060" y="0"
-            width="120" height="56"
+            uuid="f5050001-0105-4000-8000-000000000001"
+            x="650" y="0"
+            width="110" height="55"
             fontName="Arial"
             fontSize="7"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
-            <text><![CDATA[Fecha vinculación al proyecto por rol]]></text>
+            <text><![CDATA[Fecha inicio proyecto]]></text>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
-        <!-- 10 -->
+        <!-- 6 FECHA FIN -->
 
         <element kind="staticText"
-            uuid="d4040001-0110-4000-8000-000000000001"
-            x="1180" y="0"
-            width="150" height="56"
+            uuid="f5050001-0106-4000-8000-000000000001"
+            x="760" y="0"
+            width="110" height="55"
             fontName="Arial"
             fontSize="7"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
-            <text><![CDATA[Historial de Roles en el proyecto]]></text>
+            <text><![CDATA[Fecha finalización proyecto]]></text>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
-        <!-- 11 -->
+        <!-- 7 TIPOLOGÍA -->
 
         <element kind="staticText"
-            uuid="d4040001-0111-4000-8000-000000000001"
-            x="1330" y="0"
-            width="260" height="56"
+            uuid="f5050001-0107-4000-8000-000000000001"
+            x="870" y="0"
+            width="180" height="55"
             fontName="Arial"
             fontSize="7"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
-            <text><![CDATA[Grupo de investigación vinculado]]></text>
+            <text><![CDATA[Tipología de producto]]></text>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
-        <!-- 12 -->
+        <!-- 8 CATEGORÍA -->
 
         <element kind="staticText"
-            uuid="d4040001-0112-4000-8000-000000000001"
-            x="1590" y="0"
-            width="220" height="56"
+            uuid="f5050001-0108-4000-8000-000000000001"
+            x="1050" y="0"
+            width="190" height="55"
             fontName="Arial"
             fontSize="7"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
-            <text><![CDATA[Semillero de investigación vinculado]]></text>
+            <text><![CDATA[Categoría producto]]></text>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
-        <!-- 13 -->
+        <!-- 9 RESPONSABLE -->
 
         <element kind="staticText"
-            uuid="d4040001-0113-4000-8000-000000000001"
-            x="1810" y="0"
-            width="220" height="56"
+            uuid="f5050001-0109-4000-8000-000000000001"
+            x="1240" y="0"
+            width="180" height="55"
+            fontName="Arial"
+            fontSize="7"
+            bold="true"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+            <text><![CDATA[Nombre Responsable producto]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <!-- 10 GRUPO -->
+
+        <element kind="staticText"
+            uuid="f5050001-0110-4000-8000-000000000001"
+            x="1420" y="0"
+            width="240" height="55"
+            fontName="Arial"
+            fontSize="7"
+            bold="true"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+            <text><![CDATA[Grupo de investigación responsable]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <!-- 11 ESTADO PRODUCTO -->
+
+        <element kind="staticText"
+            uuid="f5050001-0111-4000-8000-000000000001"
+            x="1660" y="0"
+            width="110" height="55"
+            fontName="Arial"
+            fontSize="7"
+            bold="true"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+            <text><![CDATA[Estado producto]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <!-- 12 TIPO PROYECTO -->
+
+        <element kind="staticText"
+            uuid="f5050001-0112-4000-8000-000000000001"
+            x="1770" y="0"
+            width="100" height="55"
+            fontName="Arial"
+            fontSize="7"
+            bold="true"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+            <text><![CDATA[Tipo proyecto]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <!-- 13 CONVOCATORIA -->
+
+        <element kind="staticText"
+            uuid="f5050001-0113-4000-8000-000000000001"
+            x="1870" y="0"
+            width="220" height="55"
             fontName="Arial"
             fontSize="7"
             bold="true"
@@ -672,78 +657,18 @@
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
-        <!-- 14 -->
+        <!-- 14 ELEMENTO MISIONAL -->
 
         <element kind="staticText"
-            uuid="d4040001-0114-4000-8000-000000000001"
-            x="2030" y="0"
-            width="200" height="56"
+            uuid="f5050001-0114-4000-8000-000000000001"
+            x="2090" y="0"
+            width="220" height="55"
             fontName="Arial"
             fontSize="7"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
             <text><![CDATA[División VRI / Elemento misional]]></text>
-            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
-        </element>
-
-        <!-- 15 -->
-
-        <element kind="staticText"
-            uuid="d4040001-0115-4000-8000-000000000001"
-            x="2230" y="0"
-            width="90" height="56"
-            fontName="Arial"
-            fontSize="7"
-            bold="true"
-            hTextAlign="Center"
-            vTextAlign="Middle">
-            <text><![CDATA[Horas dedicación semanal]]></text>
-            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
-        </element>
-
-        <!-- 16 -->
-
-        <element kind="staticText"
-            uuid="d4040001-0116-4000-8000-000000000001"
-            x="2320" y="0"
-            width="200" height="56"
-            fontName="Arial"
-            fontSize="7"
-            bold="true"
-            hTextAlign="Center"
-            vTextAlign="Middle">
-            <text><![CDATA[Facultad]]></text>
-            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
-        </element>
-
-        <!-- 17 -->
-
-        <element kind="staticText"
-            uuid="d4040001-0117-4000-8000-000000000001"
-            x="2520" y="0"
-            width="160" height="56"
-            fontName="Arial"
-            fontSize="7"
-            bold="true"
-            hTextAlign="Center"
-            vTextAlign="Middle">
-            <text><![CDATA[Departamento]]></text>
-            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
-        </element>
-
-        <!-- 18 -->
-
-        <element kind="staticText"
-            uuid="d4040001-0118-4000-8000-000000000001"
-            x="2680" y="0"
-            width="160" height="56"
-            fontName="Arial"
-            fontSize="7"
-            bold="true"
-            hTextAlign="Center"
-            vTextAlign="Middle">
-            <text><![CDATA[Programa]]></text>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
@@ -759,72 +684,11 @@
             height="42"
             splitType="Stretch">
 
-            <!-- 1 -->
+            <!-- 1 ID PROYECTO -->
 
             <element kind="textField"
-                uuid="d4040001-0201-4000-8000-000000000001"
+                uuid="f5050001-0201-4000-8000-000000000001"
                 x="0" y="0"
-                width="110" height="42"
-                fontName="Arial"
-                fontSize="8"
-                hTextAlign="Center"
-                vTextAlign="Middle"
-                textAdjust="ScaleFont">
-
-                <expression><![CDATA[
-                    $F{numeroIdentificacion}
-                ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
-            </element>
-
-            <!-- 2 -->
-
-            <element kind="textField"
-                uuid="d4040001-0202-4000-8000-000000000001"
-                x="110" y="0"
-                width="180" height="42"
-                fontName="Arial"
-                fontSize="8"
-                vTextAlign="Middle"
-                textAdjust="ScaleFont">
-
-                <expression><![CDATA[
-                    $F{nombreIntegrante}
-                ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
-            </element>
-
-            <!-- 3 -->
-
-            <element kind="textField"
-                uuid="d4040001-0203-4000-8000-000000000001"
-                x="290" y="0"
-                width="260" height="42"
-                fontName="Arial"
-                fontSize="8"
-                vTextAlign="Middle"
-                textAdjust="ScaleFont">
-
-                <expression><![CDATA[
-                    $F{tituloProyecto}
-                ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
-            </element>
-
-            <!-- 4 -->
-
-            <element kind="textField"
-                uuid="d4040001-0204-4000-8000-000000000001"
-                x="550" y="0"
                 width="90" height="42"
                 fontName="Arial"
                 fontSize="8"
@@ -841,20 +705,19 @@
                 </box>
             </element>
 
-            <!-- 5 -->
+            <!-- 2 TÍTULO -->
 
             <element kind="textField"
-                uuid="d4040001-0205-4000-8000-000000000001"
-                x="640" y="0"
-                width="100" height="42"
+                uuid="f5050001-0202-4000-8000-000000000001"
+                x="90" y="0"
+                width="260" height="42"
                 fontName="Arial"
                 fontSize="8"
-                hTextAlign="Center"
                 vTextAlign="Middle"
                 textAdjust="ScaleFont">
 
                 <expression><![CDATA[
-                    $F{tipoProyecto}
+                    $F{tituloProyecto}
                 ]]></expression>
 
                 <box>
@@ -862,11 +725,52 @@
                 </box>
             </element>
 
-            <!-- 6 -->
+            <!-- 3 DIRECTOR -->
 
             <element kind="textField"
-                uuid="d4040001-0206-4000-8000-000000000001"
-                x="740" y="0"
+                uuid="f5050001-0203-4000-8000-000000000001"
+                x="350" y="0"
+                width="170" height="42"
+                fontName="Arial"
+                fontSize="8"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+
+                <expression><![CDATA[
+                    $F{directorProyecto}
+                ]]></expression>
+
+                <box>
+                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                </box>
+            </element>
+
+            <!-- 4 ESTADO PROYECTO -->
+
+            <element kind="textField"
+                uuid="f5050001-0204-4000-8000-000000000001"
+                x="520" y="0"
+                width="130" height="42"
+                fontName="Arial"
+                fontSize="8"
+                hTextAlign="Center"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+
+                <expression><![CDATA[
+                    $F{estadoProyecto}
+                ]]></expression>
+
+                <box>
+                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                </box>
+            </element>
+
+            <!-- 5 FECHA INICIO -->
+
+            <element kind="textField"
+                uuid="f5050001-0205-4000-8000-000000000001"
+                x="650" y="0"
                 width="110" height="42"
                 fontName="Arial"
                 fontSize="8"
@@ -883,11 +787,11 @@
                 </box>
             </element>
 
-            <!-- 7 -->
+            <!-- 6 FECHA FIN -->
 
             <element kind="textField"
-                uuid="d4040001-0207-4000-8000-000000000001"
-                x="850" y="0"
+                uuid="f5050001-0206-4000-8000-000000000001"
+                x="760" y="0"
                 width="110" height="42"
                 fontName="Arial"
                 fontSize="8"
@@ -904,11 +808,112 @@
                 </box>
             </element>
 
-            <!-- 8 -->
+            <!-- 7 TIPOLOGÍA -->
 
             <element kind="textField"
-                uuid="d4040001-0208-4000-8000-000000000001"
-                x="960" y="0"
+                uuid="f5050001-0207-4000-8000-000000000001"
+                x="870" y="0"
+                width="180" height="42"
+                fontName="Arial"
+                fontSize="7"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+
+                <expression><![CDATA[
+                    $F{tipologiaProducto}
+                ]]></expression>
+
+                <box>
+                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                </box>
+            </element>
+
+            <!-- 8 CATEGORÍA -->
+
+            <element kind="textField"
+                uuid="f5050001-0208-4000-8000-000000000001"
+                x="1050" y="0"
+                width="190" height="42"
+                fontName="Arial"
+                fontSize="7"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+
+                <expression><![CDATA[
+                    $F{categoriaProducto}
+                ]]></expression>
+
+                <box>
+                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                </box>
+            </element>
+
+            <!-- 9 RESPONSABLE -->
+
+            <element kind="textField"
+                uuid="f5050001-0209-4000-8000-000000000001"
+                x="1240" y="0"
+                width="180" height="42"
+                fontName="Arial"
+                fontSize="8"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+
+                <expression><![CDATA[
+                    $F{nombreResponsableProducto}
+                ]]></expression>
+
+                <box>
+                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                </box>
+            </element>
+
+            <!-- 10 GRUPO -->
+
+            <element kind="textField"
+                uuid="f5050001-0210-4000-8000-000000000001"
+                x="1420" y="0"
+                width="240" height="42"
+                fontName="Arial"
+                fontSize="7"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+
+                <expression><![CDATA[
+                    $F{grupoInvestigacionResponsable}
+                ]]></expression>
+
+                <box>
+                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                </box>
+            </element>
+
+            <!-- 11 ESTADO PRODUCTO -->
+
+            <element kind="textField"
+                uuid="f5050001-0211-4000-8000-000000000001"
+                x="1660" y="0"
+                width="110" height="42"
+                fontName="Arial"
+                fontSize="8"
+                hTextAlign="Center"
+                vTextAlign="Middle"
+                textAdjust="ScaleFont">
+
+                <expression><![CDATA[
+                    $F{estadoProducto}
+                ]]></expression>
+
+                <box>
+                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                </box>
+            </element>
+
+            <!-- 12 TIPO PROYECTO -->
+
+            <element kind="textField"
+                uuid="f5050001-0212-4000-8000-000000000001"
+                x="1770" y="0"
                 width="100" height="42"
                 fontName="Arial"
                 fontSize="8"
@@ -917,7 +922,7 @@
                 textAdjust="ScaleFont">
 
                 <expression><![CDATA[
-                    $F{estadoProyecto}
+                    $F{tipoProyecto}
                 ]]></expression>
 
                 <box>
@@ -925,93 +930,11 @@
                 </box>
             </element>
 
-            <!-- 9 -->
+            <!-- 13 CONVOCATORIA -->
 
             <element kind="textField"
-                uuid="d4040001-0209-4000-8000-000000000001"
-                x="1060" y="0"
-                width="120" height="42"
-                fontName="Arial"
-                fontSize="8"
-                hTextAlign="Center"
-                vTextAlign="Middle"
-                textAdjust="ScaleFont">
-
-                <expression><![CDATA[
-                    $F{fechaVinculacionRol}
-                ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
-            </element>
-
-            <!-- 10 -->
-
-            <element kind="textField"
-                uuid="d4040001-0210-4000-8000-000000000001"
-                x="1180" y="0"
-                width="150" height="42"
-                fontName="Arial"
-                fontSize="7"
-                hTextAlign="Center"
-                vTextAlign="Middle"
-                textAdjust="ScaleFont">
-
-                <expression><![CDATA[
-                    $F{historialRolesEnProyecto}
-                ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
-            </element>
-
-            <!-- 11 -->
-
-            <element kind="textField"
-                uuid="d4040001-0211-4000-8000-000000000001"
-                x="1330" y="0"
-                width="260" height="42"
-                fontName="Arial"
-                fontSize="7"
-                vTextAlign="Middle"
-                textAdjust="ScaleFont">
-
-                <expression><![CDATA[
-                    $F{grupoInvestigacionVinculado}
-                ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
-            </element>
-
-            <!-- 12 -->
-
-            <element kind="textField"
-                uuid="d4040001-0212-4000-8000-000000000001"
-                x="1590" y="0"
-                width="220" height="42"
-                fontName="Arial"
-                fontSize="7"
-                vTextAlign="Middle"
-                textAdjust="ScaleFont">
-
-                <expression><![CDATA[
-                    $F{semilleroInvestigacionVinculado}
-                ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
-            </element>
-
-            <!-- 13 -->
-
-            <element kind="textField"
-                uuid="d4040001-0213-4000-8000-000000000001"
-                x="1810" y="0"
+                uuid="f5050001-0213-4000-8000-000000000001"
+                x="1870" y="0"
                 width="220" height="42"
                 fontName="Arial"
                 fontSize="7"
@@ -1027,12 +950,12 @@
                 </box>
             </element>
 
-            <!-- 14 -->
+            <!-- 14 ELEMENTO MISIONAL -->
 
             <element kind="textField"
-                uuid="d4040001-0214-4000-8000-000000000001"
-                x="2030" y="0"
-                width="200" height="42"
+                uuid="f5050001-0214-4000-8000-000000000001"
+                x="2090" y="0"
+                width="220" height="42"
                 fontName="Arial"
                 fontSize="7"
                 vTextAlign="Middle"
@@ -1040,86 +963,6 @@
 
                 <expression><![CDATA[
                     $F{elementoMisional}
-                ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
-            </element>
-
-            <!-- 15 -->
-
-            <element kind="textField"
-                uuid="d4040001-0215-4000-8000-000000000001"
-                x="2230" y="0"
-                width="90" height="42"
-                fontName="Arial"
-                fontSize="8"
-                hTextAlign="Center"
-                vTextAlign="Middle">
-
-                <expression><![CDATA[
-                    $F{horasDedicacionSemanal}
-                ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
-            </element>
-
-            <!-- 16 -->
-
-            <element kind="textField"
-                uuid="d4040001-0216-4000-8000-000000000001"
-                x="2320" y="0"
-                width="200" height="42"
-                fontName="Arial"
-                fontSize="7"
-                vTextAlign="Middle"
-                textAdjust="ScaleFont">
-
-                <expression><![CDATA[
-                    $F{facultadIntegrante}
-                ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
-            </element>
-
-            <!-- 17 -->
-
-            <element kind="textField"
-                uuid="d4040001-0217-4000-8000-000000000001"
-                x="2520" y="0"
-                width="160" height="42"
-                fontName="Arial"
-                fontSize="7"
-                vTextAlign="Middle"
-                textAdjust="ScaleFont">
-
-                <expression><![CDATA[
-                    $F{departamentoIntegrante}
-                ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
-            </element>
-
-            <!-- 18 -->
-
-            <element kind="textField"
-                uuid="d4040001-0218-4000-8000-000000000001"
-                x="2680" y="0"
-                width="160" height="42"
-                fontName="Arial"
-                fontSize="7"
-                vTextAlign="Middle"
-                textAdjust="ScaleFont">
-
-                <expression><![CDATA[
-                    $F{programaIntegrante}
                 ]]></expression>
 
                 <box>

@@ -7,9 +7,13 @@ import org.springframework.stereotype.Component;
 
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteStrategy;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo1Strategy;
+import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo1CStrategy;
+import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo1FStrategy;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo2Strategy;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo3Strategy;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo4Strategy;
+import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo4CStrategy;
+import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo5Strategy;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo6Strategy;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo7Strategy;
 import edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies.ReporteTipo8Strategy;
@@ -27,9 +31,13 @@ public class ReporteStrategyFactory {
     /* @Autowired */
     public ReporteStrategyFactory(
             ReporteTipo1Strategy reporteTipo1Strategy,
+            ReporteTipo1CStrategy reporteTipo1CStrategy,
+            ReporteTipo1FStrategy reporteTipo1FStrategy,
             ReporteTipo2Strategy reporteTipo2Strategy,
             ReporteTipo3Strategy reporteTipo3Strategy,
             ReporteTipo4Strategy reporteTipo4Strategy,
+            ReporteTipo4CStrategy reporteTipo4CStrategy,
+            ReporteTipo5Strategy reporteTipo5Strategy,
             ReporteTipo6Strategy reporteTipo6Strategy,
             ReporteTipo7Strategy reporteTipo7Strategy,
             ReporteTipo8Strategy reporteTipo8Strategy,
@@ -39,9 +47,13 @@ public class ReporteStrategyFactory {
     ) {
         strategies = new HashMap<>();
         strategies.put("R01", reporteTipo1Strategy);
+        strategies.put("R01-C", reporteTipo1CStrategy);
+        strategies.put("R01-F", reporteTipo1FStrategy);
         strategies.put("R02", reporteTipo2Strategy);
         strategies.put("R03", reporteTipo3Strategy);
         strategies.put("R04", reporteTipo4Strategy);
+        strategies.put("R04-C", reporteTipo4CStrategy);
+        strategies.put("R05", reporteTipo5Strategy);
         strategies.put("R06", reporteTipo6Strategy);
         strategies.put("R07", reporteTipo7Strategy);
         strategies.put("R08", reporteTipo8Strategy);
