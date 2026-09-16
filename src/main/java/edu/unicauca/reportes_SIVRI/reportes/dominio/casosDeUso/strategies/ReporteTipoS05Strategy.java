@@ -10,46 +10,64 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import edu.unicauca.reportes_SIVRI.reportes.infraestructura
-        .input.controllerReportesProyectos.DTOPeticion.ReporteTipo7DTOPeticion;
+        .input.controllerReportesProyectos.DTOPeticion
+        .ReporteTipoS05DTOPeticion;
 
 @Component
-public class ReporteTipo7Strategy
-        implements ReporteStrategy<ReporteTipo7DTOPeticion> {
+public class ReporteTipoS05Strategy
+        implements ReporteStrategy<ReporteTipoS05DTOPeticion> {
 
-    private static final String Plantilla = "/reportes/R07.jrxml";
+    private static final String Plantilla =
+            "/reportes/S05.jrxml";
 
     private static final Map<String, Object> parametros =
             new HashMap<>();
 
     @Override
     public Map<String, Object> prepararParametros(
-            List<ReporteTipo7DTOPeticion> datos) {
+            List<ReporteTipoS05DTOPeticion> datos) {
 
-        Map<String, Object> parametros = new HashMap<>();
+        Map<String, Object> parametros =
+                new HashMap<>();
 
         parametros.put(
                 "tituloReporte",
-                "Integrantes Proyectos de Investigación"
+                "Productos de Investigación - Compromisos proyectos de Semilleros"
         );
 
-        parametros.put("codigoReporte", "R07");
-        parametros.put("versionReporte", "1.0");
+        parametros.put(
+                "codigoReporte",
+                "S05"
+        );
+
+        parametros.put(
+                "versionReporte",
+                "1.0"
+        );
 
         String fechaActual = DateTimeFormatter
                 .ofPattern("dd/MM/yyyy")
                 .format(java.time.LocalDate.now());
 
-        parametros.put("fechaReporte", fechaActual);
-        parametros.put("DATA_LIST", datos);
+        parametros.put(
+                "fechaReporte",
+                fechaActual
+        );
+
+        parametros.put(
+                "DATA_LIST",
+                datos
+        );
 
         return parametros;
     }
 
     @Override
-    public TypeReference<List<ReporteTipo7DTOPeticion>>
+    public TypeReference<List<ReporteTipoS05DTOPeticion>>
             getTypeReference() {
 
-        return new TypeReference<List<ReporteTipo7DTOPeticion>>() {
+        return new TypeReference<
+                List<ReporteTipoS05DTOPeticion>>() {
         };
     }
 
