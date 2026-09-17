@@ -141,11 +141,15 @@
     <!-- CABECERA DEL CERTIFICADO                                 -->
     <!-- ========================================================= -->
 
-    <pageHeader
+    <!-- ========================================================= -->
+    <!-- PRIMERA PÁGINA: CABECERA + INFORMACIÓN DEL INTEGRANTE     -->
+    <!-- ========================================================= -->
+
+    <title
         height="154"
         splitType="Stretch">
 
-        <!-- LOGO -->
+<!-- LOGO -->
 
         <element
             kind="frame"
@@ -556,6 +560,261 @@
                 <pen
                     lineWidth="0.5"
                     lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+    </title>
+
+    <!-- ========================================================= -->
+    <!-- PÁGINAS SIGUIENTES: SOLO CABECERA INSTITUCIONAL           -->
+    <!-- ========================================================= -->
+
+    <pageHeader
+        height="104"
+        splitType="Stretch">
+
+        <printWhenExpression><![CDATA[
+            $V{PAGE_NUMBER} > 1
+        ]]></printWhenExpression>
+
+
+
+        <!-- LOGO -->
+
+        <element
+            kind="frame"
+            uuid="e4040001-0001-4000-8000-000000000001"
+            x="0"
+            y="0"
+            width="180"
+            height="60">
+
+            <element
+                kind="image"
+                uuid="e4040001-0001-4000-8000-000000000002"
+                x="55"
+                y="2"
+                width="70"
+                height="56">
+
+                <expression class="java.io.InputStream"><![CDATA[
+                    Thread.currentThread()
+                        .getContextClassLoader()
+                        .getResourceAsStream(
+                            "reportes/Escudo-Unicauca.png"
+                        )
+                ]]></expression>
+
+            </element>
+
+            <box>
+                <pen
+                    lineWidth="0.5"
+                    lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- UNIVERSIDAD -->
+
+        <element
+            kind="staticText"
+            uuid="e4040001-0002-4000-8000-000000000001"
+            x="180"
+            y="0"
+            width="971"
+            height="26"
+            fontName="Arial"
+            fontSize="11"
+            bold="true"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+
+            <text><![CDATA[
+                Universidad del Cauca
+            ]]></text>
+
+            <box>
+                <pen
+                    lineWidth="0.5"
+                    lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- TÍTULO -->
+
+        <element
+            kind="textField"
+            uuid="e4040001-0003-4000-8000-000000000001"
+            x="180"
+            y="26"
+            width="971"
+            height="34"
+            fontName="Arial"
+            fontSize="12"
+            bold="true"
+            hTextAlign="Center"
+            vTextAlign="Middle"
+            textAdjust="ScaleFont">
+
+            <expression><![CDATA[
+                $P{tituloReporte}
+            ]]></expression>
+
+            <box>
+                <pen
+                    lineWidth="0.5"
+                    lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- CÓDIGO -->
+
+        <element
+            kind="textField"
+            uuid="e4040001-0004-4000-8000-000000000001"
+            x="0"
+            y="60"
+            width="383"
+            height="22"
+            fontName="Arial"
+            fontSize="8"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+
+            <expression><![CDATA[
+                "Código: "
+                + ($P{codigoReporte} == null
+                    ? ""
+                    : $P{codigoReporte})
+            ]]></expression>
+
+            <box>
+                <pen
+                    lineWidth="0.5"
+                    lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- VERSIÓN -->
+
+        <element
+            kind="textField"
+            uuid="e4040001-0005-4000-8000-000000000001"
+            x="383"
+            y="60"
+            width="384"
+            height="22"
+            fontName="Arial"
+            fontSize="8"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+
+            <expression><![CDATA[
+                "Versión: "
+                + ($P{versionReporte} == null
+                    ? ""
+                    : $P{versionReporte})
+            ]]></expression>
+
+            <box>
+                <pen
+                    lineWidth="0.5"
+                    lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- FECHA -->
+
+        <element
+            kind="textField"
+            uuid="e4040001-0006-4000-8000-000000000001"
+            x="767"
+            y="60"
+            width="384"
+            height="22"
+            fontName="Arial"
+            fontSize="8"
+            hTextAlign="Center"
+            vTextAlign="Middle">
+
+            <expression><![CDATA[
+                "Fecha Reporte: "
+                + ($P{fechaReporte} == null
+                    ? ""
+                    : $P{fechaReporte})
+            ]]></expression>
+
+            <box>
+                <pen
+                    lineWidth="0.5"
+                    lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- ===================================================== -->
+        <!-- ÁREA / DIRIGIDO A - UNA SOLA FILA 50 / 50           -->
+        <!-- Los valores no se dejan quemados en el JRXML         -->
+        <!-- ===================================================== -->
+
+        <element
+            kind="textField"
+            uuid="e4040001-0007-4000-8000-000000000001"
+            x="0"
+            y="82"
+            width="575"
+            height="22"
+            fontName="Arial"
+            fontSize="8"
+            bold="true"
+            vTextAlign="Middle">
+
+            <expression><![CDATA[
+                "Área que genera el reporte:"
+                + (
+                    $P{areaGeneraReporte} == null
+                    || $P{areaGeneraReporte}.trim().isEmpty()
+                        ? ""
+                        : " " + $P{areaGeneraReporte}
+                )
+            ]]></expression>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <element
+            kind="textField"
+            uuid="e4040001-0008-4000-8000-000000000001"
+            x="575"
+            y="82"
+            width="576"
+            height="22"
+            fontName="Arial"
+            fontSize="8"
+            bold="true"
+            vTextAlign="Middle">
+
+            <expression><![CDATA[
+                "Dirigido a:"
+                + (
+                    $P{dirigidoA} == null
+                    || $P{dirigidoA}.trim().isEmpty()
+                        ? ""
+                        : " " + $P{dirigidoA}
+                )
+            ]]></expression>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
             </box>
 
         </element>
