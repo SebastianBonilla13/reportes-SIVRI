@@ -232,6 +232,18 @@
         name="LISTA_PRODUCTOS_PENDIENTES"
         class="java.util.List"/>
 
+
+    <!-- ========================================================= -->
+    <!-- CAMPOS RAÍZ PARA LAS LISTAS ANIDADAS                     -->
+    <!-- Se leen directamente desde el objeto recibido del front   -->
+    <!-- ========================================================= -->
+
+    <field name="integrantes" class="java.util.List"/>
+    <field name="proyectos" class="java.util.List"/>
+    <field name="semilleros" class="java.util.List"/>
+    <field name="productosEntregados" class="java.util.List"/>
+    <field name="productosPendientes" class="java.util.List"/>
+
     <background splitType="Stretch"/>
 
     <!-- ========================================================= -->
@@ -239,7 +251,7 @@
     <!-- ========================================================= -->
 
     <pageHeader
-        height="78"
+        height="100"
         splitType="Stretch">
 
         <element
@@ -412,15 +424,74 @@
 
         </element>
 
+
+        <!-- Área / Dirigido a -->
+
+        <element
+            kind="staticText"
+            uuid="f0100016-0000-4000-8000-000000000001"
+            x="0"
+            y="78"
+            width="277"
+            height="22"
+            fontName="Arial"
+            fontSize="8"
+            bold="true"
+            vTextAlign="Middle">
+
+            <text><![CDATA[Área que genera el reporte:]]></text>
+
+            <box>
+                <pen
+                    lineWidth="0.5"
+                    lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <element
+            kind="staticText"
+            uuid="f0100017-0000-4000-8000-000000000001"
+            x="277"
+            y="78"
+            width="278"
+            height="22"
+            fontName="Arial"
+            fontSize="8"
+            bold="true"
+            vTextAlign="Middle">
+
+            <text><![CDATA[Dirigido a:]]></text>
+
+            <box>
+                <pen
+                    lineWidth="0.5"
+                    lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
     </pageHeader>
 
     <!-- ========================================================= -->
     <!-- DATOS GENERALES                                          -->
     <!-- ========================================================= -->
 
-    <title
-        height="78"
-        splitType="Stretch">
+
+    <!-- ========================================================= -->
+    <!-- TABLAS                                                    -->
+    <!-- ========================================================= -->
+
+    <detail>
+
+        <!-- ===================================================== -->
+        <!-- INFORMACIÓN GENERAL DEL GRUPO                        -->
+        <!-- Se ubica después de la cabecera institucional        -->
+        <!-- ===================================================== -->
+
+        <band
+            height="78"
+            splitType="Stretch">
 
         <element
             kind="staticText"
@@ -661,13 +732,8 @@
 
         </element>
 
-    </title>
+        </band>
 
-    <!-- ========================================================= -->
-    <!-- TABLAS                                                    -->
-    <!-- ========================================================= -->
-
-    <detail>
 
         <!-- ===================================================== -->
         <!-- 1. INTEGRANTES                                       -->
@@ -718,7 +784,7 @@
                         <dataSourceExpression><![CDATA[
                             new net.sf.jasperreports.engine.data
                                 .JRBeanCollectionDataSource(
-                                    $P{LISTA_INTEGRANTES}
+                                    $F{integrantes}
                                 )
                         ]]></dataSourceExpression>
 
@@ -983,7 +1049,7 @@
                         <dataSourceExpression><![CDATA[
                             new net.sf.jasperreports.engine.data
                                 .JRBeanCollectionDataSource(
-                                    $P{LISTA_PROYECTOS}
+                                    $F{proyectos}
                                 )
                         ]]></dataSourceExpression>
 
@@ -1141,7 +1207,7 @@
                         <dataSourceExpression><![CDATA[
                             new net.sf.jasperreports.engine.data
                                 .JRBeanCollectionDataSource(
-                                    $P{LISTA_SEMILLEROS}
+                                    $F{semilleros}
                                 )
                         ]]></dataSourceExpression>
 
@@ -1332,7 +1398,7 @@
                         <dataSourceExpression><![CDATA[
                             new net.sf.jasperreports.engine.data
                                 .JRBeanCollectionDataSource(
-                                    $P{LISTA_PRODUCTOS_ENTREGADOS}
+                                    $F{productosEntregados}
                                 )
                         ]]></dataSourceExpression>
 
@@ -1490,7 +1556,7 @@
                         <dataSourceExpression><![CDATA[
                             new net.sf.jasperreports.engine.data
                                 .JRBeanCollectionDataSource(
-                                    $P{LISTA_PRODUCTOS_PENDIENTES}
+                                    $F{productosPendientes}
                                 )
                         ]]></dataSourceExpression>
 

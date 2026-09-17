@@ -23,7 +23,7 @@
     <parameter name="fechaReporte" class="java.lang.String"/>
 
     <!-- ========================================================= -->
-    <!-- DATOS GENERALES DEL GRUPO                                -->
+    <!-- DATOS GENERALES DEL GRUPO: CAMPOS 1 AL 14                -->
     <!-- ========================================================= -->
 
     <parameter name="idGrupo" class="java.lang.String"/>
@@ -43,36 +43,31 @@
 
     <parameter name="categorizacionGrupo" class="java.lang.String"/>
     <parameter name="estadoGrupo" class="java.lang.String"/>
-
     <parameter name="fechaCreacionGruplac" class="java.lang.String"/>
 
     <!-- ========================================================= -->
-    <!-- CAMPOS DE LA TABLA DE INTEGRANTES                        -->
+    <!-- CAMPOS DE LA LISTA DE INTEGRANTES: CAMPOS 15 AL 24       -->
     <!-- ========================================================= -->
 
     <field name="nombreIntegrante" class="java.lang.String"/>
     <field name="numeroIdentificacion" class="java.lang.String"/>
-
     <field name="estadoIntegranteGrupo" class="java.lang.String"/>
     <field name="historialRolesEnGrupo" class="java.lang.String"/>
-
     <field name="fechaInicioRol" class="java.lang.String"/>
     <field name="fechaFinRol" class="java.lang.String"/>
-
     <field name="facultadIntegrante" class="java.lang.String"/>
     <field name="departamentoIntegrante" class="java.lang.String"/>
     <field name="programaIntegrante" class="java.lang.String"/>
-
     <field name="tipoVinculacionIntegrante" class="java.lang.String"/>
 
     <background splitType="Stretch"/>
 
     <!-- ========================================================= -->
-    <!-- CABECERA + INFORMACIÓN DEL GRUPO                         -->
+    <!-- CABECERA + INFORMACIÓN GENERAL DEL GRUPO                 -->
     <!-- ========================================================= -->
 
     <pageHeader
-        height="264"
+        height="308"
         splitType="Stretch">
 
         <!-- LOGO -->
@@ -132,6 +127,10 @@
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
             </box>
 
         </element>
@@ -153,11 +152,15 @@
             textAdjust="ScaleFont">
 
             <expression><![CDATA[
-                $P{tituloReporte}
+                $P{tituloReporte} == null ? "" : $P{tituloReporte}
             ]]></expression>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
             </box>
 
         </element>
@@ -178,13 +181,15 @@
 
             <expression><![CDATA[
                 "Código: "
-                + ($P{codigoReporte} == null
-                    ? ""
-                    : $P{codigoReporte})
+                + ($P{codigoReporte} == null ? "" : $P{codigoReporte})
             ]]></expression>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
             </box>
 
         </element>
@@ -203,13 +208,15 @@
 
             <expression><![CDATA[
                 "Versión: "
-                + ($P{versionReporte} == null
-                    ? ""
-                    : $P{versionReporte})
+                + ($P{versionReporte} == null ? "" : $P{versionReporte})
             ]]></expression>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
             </box>
 
         </element>
@@ -228,13 +235,65 @@
 
             <expression><![CDATA[
                 "Fecha Reporte: "
-                + ($P{fechaReporte} == null
-                    ? ""
-                    : $P{fechaReporte})
+                + ($P{fechaReporte} == null ? "" : $P{fechaReporte})
             ]]></expression>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <!-- ÁREA / DIRIGIDO A EN UNA SOLA FILA -->
+
+        <element
+            kind="staticText"
+            uuid="c1010001-0007-4000-8000-000000000001"
+            x="0"
+            y="82"
+            width="401"
+            height="22"
+            fontName="Arial"
+            fontSize="8"
+            bold="true"
+            vTextAlign="Middle">
+
+            <text><![CDATA[Área que genera el reporte:]]></text>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
+            </box>
+
+        </element>
+
+        <element
+            kind="staticText"
+            uuid="c1010001-0008-4000-8000-000000000001"
+            x="401"
+            y="82"
+            width="401"
+            height="22"
+            fontName="Arial"
+            fontSize="8"
+            bold="true"
+            vTextAlign="Middle">
+
+            <text><![CDATA[Dirigido a:]]></text>
+
+            <box>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
             </box>
 
         </element>
@@ -244,8 +303,10 @@
         <element
             kind="staticText"
             uuid="c1010001-0010-4000-8000-000000000001"
+            mode="Opaque"
+            backcolor="#D9D9D9"
             x="0"
-            y="88"
+            y="110"
             width="802"
             height="22"
             fontName="Arial"
@@ -254,19 +315,23 @@
             hTextAlign="Center"
             vTextAlign="Middle">
 
-            <text><![CDATA[INFORMACIÓN DEL GRUPO DE INVESTIGACIÓN]]></text>
+            <text><![CDATA[INFORMACIÓN GENERAL DEL GRUPO DE INVESTIGACIÓN]]></text>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
             </box>
 
         </element>
 
-        <!-- FILA 1 -->
+        <!-- FILA 1: ID / NOMBRE -->
 
         <element kind="staticText"
             uuid="c1010001-0011-4000-8000-000000000001"
-            x="0" y="110" width="90" height="22"
+            x="0" y="132" width="90" height="22"
             fontName="Arial" fontSize="7" bold="true"
             vTextAlign="Middle">
             <text><![CDATA[ID Grupo SIVRI]]></text>
@@ -275,17 +340,19 @@
 
         <element kind="textField"
             uuid="c1010001-0012-4000-8000-000000000001"
-            x="90" y="110" width="160" height="22"
+            x="90" y="132" width="160" height="22"
             fontName="Arial" fontSize="7"
             vTextAlign="Middle"
             textAdjust="ScaleFont">
-            <expression><![CDATA[$P{idGrupo}]]></expression>
+            <expression><![CDATA[
+                $P{idGrupo} == null ? "" : $P{idGrupo}
+            ]]></expression>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
         <element kind="staticText"
             uuid="c1010001-0013-4000-8000-000000000001"
-            x="250" y="110" width="110" height="22"
+            x="250" y="132" width="110" height="22"
             fontName="Arial" fontSize="7" bold="true"
             vTextAlign="Middle">
             <text><![CDATA[Nombre Grupo]]></text>
@@ -294,19 +361,21 @@
 
         <element kind="textField"
             uuid="c1010001-0014-4000-8000-000000000001"
-            x="360" y="110" width="442" height="22"
+            x="360" y="132" width="442" height="22"
             fontName="Arial" fontSize="7"
             vTextAlign="Middle"
             textAdjust="ScaleFont">
-            <expression><![CDATA[$P{nombreGrupo}]]></expression>
+            <expression><![CDATA[
+                $P{nombreGrupo} == null ? "" : $P{nombreGrupo}
+            ]]></expression>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
-        <!-- FILA 2 -->
+        <!-- FILA 2: CÓDIGO / ENLACE -->
 
         <element kind="staticText"
             uuid="c1010001-0015-4000-8000-000000000001"
-            x="0" y="132" width="90" height="22"
+            x="0" y="154" width="90" height="22"
             fontName="Arial" fontSize="7" bold="true"
             vTextAlign="Middle">
             <text><![CDATA[Código GrupLAC]]></text>
@@ -315,17 +384,19 @@
 
         <element kind="textField"
             uuid="c1010001-0016-4000-8000-000000000001"
-            x="90" y="132" width="160" height="22"
+            x="90" y="154" width="160" height="22"
             fontName="Arial" fontSize="7"
             vTextAlign="Middle"
             textAdjust="ScaleFont">
-            <expression><![CDATA[$P{codigoGruplac}]]></expression>
+            <expression><![CDATA[
+                $P{codigoGruplac} == null ? "" : $P{codigoGruplac}
+            ]]></expression>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
         <element kind="staticText"
             uuid="c1010001-0017-4000-8000-000000000001"
-            x="250" y="132" width="110" height="22"
+            x="250" y="154" width="110" height="22"
             fontName="Arial" fontSize="7" bold="true"
             vTextAlign="Middle">
             <text><![CDATA[Enlace GrupLAC]]></text>
@@ -334,19 +405,21 @@
 
         <element kind="textField"
             uuid="c1010001-0018-4000-8000-000000000001"
-            x="360" y="132" width="442" height="22"
+            x="360" y="154" width="442" height="22"
             fontName="Arial" fontSize="7"
             vTextAlign="Middle"
             textAdjust="ScaleFont">
-            <expression><![CDATA[$P{enlaceGruplac}]]></expression>
+            <expression><![CDATA[
+                $P{enlaceGruplac} == null ? "" : $P{enlaceGruplac}
+            ]]></expression>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
-        <!-- FILA 3 -->
+        <!-- FILA 3: DIRECTOR / CORREO DIRECTOR -->
 
         <element kind="staticText"
             uuid="c1010001-0019-4000-8000-000000000001"
-            x="0" y="154" width="90" height="22"
+            x="0" y="176" width="90" height="22"
             fontName="Arial" fontSize="7" bold="true"
             vTextAlign="Middle">
             <text><![CDATA[Director (a) Grupo]]></text>
@@ -355,17 +428,19 @@
 
         <element kind="textField"
             uuid="c1010001-0020-4000-8000-000000000001"
-            x="90" y="154" width="310" height="22"
+            x="90" y="176" width="310" height="22"
             fontName="Arial" fontSize="7"
             vTextAlign="Middle"
             textAdjust="ScaleFont">
-            <expression><![CDATA[$P{directorGrupo}]]></expression>
+            <expression><![CDATA[
+                $P{directorGrupo} == null ? "" : $P{directorGrupo}
+            ]]></expression>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
         <element kind="staticText"
             uuid="c1010001-0021-4000-8000-000000000001"
-            x="400" y="154" width="120" height="22"
+            x="400" y="176" width="120" height="22"
             fontName="Arial" fontSize="7" bold="true"
             vTextAlign="Middle">
             <text><![CDATA[Correo Director (a)]]></text>
@@ -374,19 +449,21 @@
 
         <element kind="textField"
             uuid="c1010001-0022-4000-8000-000000000001"
-            x="520" y="154" width="282" height="22"
+            x="520" y="176" width="282" height="22"
             fontName="Arial" fontSize="7"
             vTextAlign="Middle"
             textAdjust="ScaleFont">
-            <expression><![CDATA[$P{correoDirectorGrupo}]]></expression>
+            <expression><![CDATA[
+                $P{correoDirectorGrupo} == null ? "" : $P{correoDirectorGrupo}
+            ]]></expression>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
-        <!-- FILA 4 -->
+        <!-- FILA 4: CORREO GRUPO / FACULTAD -->
 
         <element kind="staticText"
             uuid="c1010001-0023-4000-8000-000000000001"
-            x="0" y="176" width="90" height="22"
+            x="0" y="198" width="90" height="22"
             fontName="Arial" fontSize="7" bold="true"
             vTextAlign="Middle">
             <text><![CDATA[Correo Grupo]]></text>
@@ -395,17 +472,19 @@
 
         <element kind="textField"
             uuid="c1010001-0024-4000-8000-000000000001"
-            x="90" y="176" width="310" height="22"
+            x="90" y="198" width="310" height="22"
             fontName="Arial" fontSize="7"
             vTextAlign="Middle"
             textAdjust="ScaleFont">
-            <expression><![CDATA[$P{correoGrupo}]]></expression>
+            <expression><![CDATA[
+                $P{correoGrupo} == null ? "" : $P{correoGrupo}
+            ]]></expression>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
         <element kind="staticText"
             uuid="c1010001-0025-4000-8000-000000000001"
-            x="400" y="176" width="120" height="22"
+            x="400" y="198" width="120" height="22"
             fontName="Arial" fontSize="7" bold="true"
             vTextAlign="Middle">
             <text><![CDATA[Facultad principal]]></text>
@@ -414,19 +493,21 @@
 
         <element kind="textField"
             uuid="c1010001-0026-4000-8000-000000000001"
-            x="520" y="176" width="282" height="22"
+            x="520" y="198" width="282" height="22"
             fontName="Arial" fontSize="7"
             vTextAlign="Middle"
             textAdjust="ScaleFont">
-            <expression><![CDATA[$P{facultadGrupo}]]></expression>
+            <expression><![CDATA[
+                $P{facultadGrupo} == null ? "" : $P{facultadGrupo}
+            ]]></expression>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
-        <!-- FILA 5 -->
+        <!-- FILA 5: DEPARTAMENTO / CATEGORIZACIÓN -->
 
         <element kind="staticText"
             uuid="c1010001-0027-4000-8000-000000000001"
-            x="0" y="198" width="90" height="22"
+            x="0" y="220" width="90" height="22"
             fontName="Arial" fontSize="7" bold="true"
             vTextAlign="Middle">
             <text><![CDATA[Departamento(s)]]></text>
@@ -435,17 +516,19 @@
 
         <element kind="textField"
             uuid="c1010001-0028-4000-8000-000000000001"
-            x="90" y="198" width="310" height="22"
+            x="90" y="220" width="310" height="22"
             fontName="Arial" fontSize="7"
             vTextAlign="Middle"
             textAdjust="ScaleFont">
-            <expression><![CDATA[$P{departamentoDirector}]]></expression>
+            <expression><![CDATA[
+                $P{departamentoDirector} == null ? "" : $P{departamentoDirector}
+            ]]></expression>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
         <element kind="staticText"
             uuid="c1010001-0029-4000-8000-000000000001"
-            x="400" y="198" width="120" height="22"
+            x="400" y="220" width="120" height="22"
             fontName="Arial" fontSize="7" bold="true"
             vTextAlign="Middle">
             <text><![CDATA[Categorización]]></text>
@@ -454,19 +537,21 @@
 
         <element kind="textField"
             uuid="c1010001-0030-4000-8000-000000000001"
-            x="520" y="198" width="282" height="22"
+            x="520" y="220" width="282" height="22"
             fontName="Arial" fontSize="7"
             vTextAlign="Middle"
             textAdjust="ScaleFont">
-            <expression><![CDATA[$P{categorizacionGrupo}]]></expression>
+            <expression><![CDATA[
+                $P{categorizacionGrupo} == null ? "" : $P{categorizacionGrupo}
+            ]]></expression>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
-        <!-- FILA 6 -->
+        <!-- FILA 6: ESTADO / FECHA CREACIÓN -->
 
         <element kind="staticText"
             uuid="c1010001-0031-4000-8000-000000000001"
-            x="0" y="220" width="90" height="22"
+            x="0" y="242" width="90" height="22"
             fontName="Arial" fontSize="7" bold="true"
             vTextAlign="Middle">
             <text><![CDATA[Estado Grupo]]></text>
@@ -475,18 +560,44 @@
 
         <element kind="textField"
             uuid="c1010001-0032-4000-8000-000000000001"
-            x="90" y="220" width="100" height="22"
+            x="90" y="242" width="310" height="22"
             fontName="Arial" fontSize="7"
             hTextAlign="Center"
             vTextAlign="Middle"
             textAdjust="ScaleFont">
-            <expression><![CDATA[$P{estadoGrupo}]]></expression>
+            <expression><![CDATA[
+                $P{estadoGrupo} == null ? "" : $P{estadoGrupo}
+            ]]></expression>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
         <element kind="staticText"
             uuid="c1010001-0033-4000-8000-000000000001"
-            x="190" y="220" width="110" height="22"
+            x="400" y="242" width="120" height="22"
+            fontName="Arial" fontSize="7" bold="true"
+            vTextAlign="Middle">
+            <text><![CDATA[Fecha creación GrupLAC]]></text>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <element kind="textField"
+            uuid="c1010001-0034-4000-8000-000000000001"
+            x="520" y="242" width="282" height="22"
+            fontName="Arial" fontSize="7"
+            hTextAlign="Center"
+            vTextAlign="Middle"
+            textAdjust="ScaleFont">
+            <expression><![CDATA[
+                $P{fechaCreacionGruplac} == null ? "" : $P{fechaCreacionGruplac}
+            ]]></expression>
+            <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
+        </element>
+
+        <!-- FILA 7: LÍNEAS -->
+
+        <element kind="staticText"
+            uuid="c1010001-0035-4000-8000-000000000001"
+            x="0" y="264" width="120" height="22"
             fontName="Arial" fontSize="7" bold="true"
             vTextAlign="Middle">
             <text><![CDATA[Líneas Investigación]]></text>
@@ -494,20 +605,22 @@
         </element>
 
         <element kind="textField"
-            uuid="c1010001-0034-4000-8000-000000000001"
-            x="300" y="220" width="502" height="22"
+            uuid="c1010001-0036-4000-8000-000000000001"
+            x="120" y="264" width="682" height="22"
             fontName="Arial" fontSize="7"
             vTextAlign="Middle"
             textAdjust="ScaleFont">
-            <expression><![CDATA[$P{lineasInvestigacionGrupo}]]></expression>
+            <expression><![CDATA[
+                $P{lineasInvestigacionGrupo} == null ? "" : $P{lineasInvestigacionGrupo}
+            ]]></expression>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
-        <!-- FILA 7 -->
+        <!-- FILA 8: DISCIPLINAS -->
 
         <element kind="staticText"
-            uuid="c1010001-0035-4000-8000-000000000001"
-            x="0" y="242" width="90" height="22"
+            uuid="c1010001-0037-4000-8000-000000000001"
+            x="0" y="286" width="120" height="22"
             fontName="Arial" fontSize="7" bold="true"
             vTextAlign="Middle">
             <text><![CDATA[Disciplinas]]></text>
@@ -515,129 +628,122 @@
         </element>
 
         <element kind="textField"
-            uuid="c1010001-0036-4000-8000-000000000001"
-            x="90" y="242" width="712" height="22"
+            uuid="c1010001-0038-4000-8000-000000000001"
+            x="120" y="286" width="682" height="22"
             fontName="Arial" fontSize="7"
             vTextAlign="Middle"
             textAdjust="ScaleFont">
-            <expression><![CDATA[$P{disciplinasGrupo}]]></expression>
+            <expression><![CDATA[
+                $P{disciplinasGrupo} == null ? "" : $P{disciplinasGrupo}
+            ]]></expression>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
 
     </pageHeader>
 
     <!-- ========================================================= -->
-    <!-- TABLA 14 - 24                                            -->
+    <!-- TABLA DE INTEGRANTES: CAMPOS 15 AL 24                    -->
     <!-- ========================================================= -->
 
     <columnHeader
-        height="58"
+        height="80"
         splitType="Stretch">
 
-        <!-- 14 -->
         <element kind="staticText"
-            uuid="c1010001-0101-4000-8000-000000000001"
-            x="0" y="0" width="72" height="58"
-            fontName="Arial" fontSize="6" bold="true"
+            uuid="c1010001-0100-4000-8000-000000000001"
+            mode="Opaque"
+            backcolor="#D9D9D9"
+            x="0" y="0" width="802" height="22"
+            fontName="Arial" fontSize="9" bold="true"
             hTextAlign="Center" vTextAlign="Middle">
-            <text><![CDATA[Fecha creación grupo GrupLAC]]></text>
+            <text><![CDATA[INTEGRANTES DEL GRUPO DE INVESTIGACIÓN]]></text>
             <box><pen lineWidth="0.5" lineColor="#999999"/></box>
         </element>
 
-        <!-- 15 -->
         <element kind="staticText"
-            uuid="c1010001-0102-4000-8000-000000000001"
-            x="72" y="0" width="100" height="58"
+            uuid="c1010001-0101-4000-8000-000000000001"
+            x="0" y="22" width="100" height="58"
             fontName="Arial" fontSize="6" bold="true"
             hTextAlign="Center" vTextAlign="Middle">
             <text><![CDATA[Nombre integrante]]></text>
             <box><pen lineWidth="0.5" lineColor="#999999"/></box>
         </element>
 
-        <!-- 16 -->
         <element kind="staticText"
-            uuid="c1010001-0103-4000-8000-000000000001"
-            x="172" y="0" width="70" height="58"
+            uuid="c1010001-0102-4000-8000-000000000001"
+            x="100" y="22" width="70" height="58"
             fontName="Arial" fontSize="6" bold="true"
             hTextAlign="Center" vTextAlign="Middle">
             <text><![CDATA[Identificación]]></text>
             <box><pen lineWidth="0.5" lineColor="#999999"/></box>
         </element>
 
-        <!-- 17 -->
         <element kind="staticText"
-            uuid="c1010001-0104-4000-8000-000000000001"
-            x="242" y="0" width="55" height="58"
+            uuid="c1010001-0103-4000-8000-000000000001"
+            x="170" y="22" width="60" height="58"
             fontName="Arial" fontSize="6" bold="true"
             hTextAlign="Center" vTextAlign="Middle">
             <text><![CDATA[Estado vinculación]]></text>
             <box><pen lineWidth="0.5" lineColor="#999999"/></box>
         </element>
 
-        <!-- 18 -->
         <element kind="staticText"
-            uuid="c1010001-0105-4000-8000-000000000001"
-            x="297" y="0" width="75" height="58"
+            uuid="c1010001-0104-4000-8000-000000000001"
+            x="230" y="22" width="80" height="58"
             fontName="Arial" fontSize="6" bold="true"
             hTextAlign="Center" vTextAlign="Middle">
             <text><![CDATA[Historial roles]]></text>
             <box><pen lineWidth="0.5" lineColor="#999999"/></box>
         </element>
 
-        <!-- 19 -->
         <element kind="staticText"
-            uuid="c1010001-0106-4000-8000-000000000001"
-            x="372" y="0" width="70" height="58"
+            uuid="c1010001-0105-4000-8000-000000000001"
+            x="310" y="22" width="75" height="58"
             fontName="Arial" fontSize="6" bold="true"
             hTextAlign="Center" vTextAlign="Middle">
             <text><![CDATA[Fecha inicio rol]]></text>
             <box><pen lineWidth="0.5" lineColor="#999999"/></box>
         </element>
 
-        <!-- 20 -->
         <element kind="staticText"
-            uuid="c1010001-0107-4000-8000-000000000001"
-            x="442" y="0" width="70" height="58"
+            uuid="c1010001-0106-4000-8000-000000000001"
+            x="385" y="22" width="75" height="58"
             fontName="Arial" fontSize="6" bold="true"
             hTextAlign="Center" vTextAlign="Middle">
             <text><![CDATA[Fecha fin rol]]></text>
             <box><pen lineWidth="0.5" lineColor="#999999"/></box>
         </element>
 
-        <!-- 21 -->
         <element kind="staticText"
-            uuid="c1010001-0108-4000-8000-000000000001"
-            x="512" y="0" width="95" height="58"
+            uuid="c1010001-0107-4000-8000-000000000001"
+            x="460" y="22" width="95" height="58"
             fontName="Arial" fontSize="6" bold="true"
             hTextAlign="Center" vTextAlign="Middle">
             <text><![CDATA[Facultad integrante]]></text>
             <box><pen lineWidth="0.5" lineColor="#999999"/></box>
         </element>
 
-        <!-- 22 -->
         <element kind="staticText"
-            uuid="c1010001-0109-4000-8000-000000000001"
-            x="607" y="0" width="80" height="58"
+            uuid="c1010001-0108-4000-8000-000000000001"
+            x="555" y="22" width="85" height="58"
             fontName="Arial" fontSize="6" bold="true"
             hTextAlign="Center" vTextAlign="Middle">
             <text><![CDATA[Departamento integrante]]></text>
             <box><pen lineWidth="0.5" lineColor="#999999"/></box>
         </element>
 
-        <!-- 23 -->
         <element kind="staticText"
-            uuid="c1010001-0110-4000-8000-000000000001"
-            x="687" y="0" width="70" height="58"
+            uuid="c1010001-0109-4000-8000-000000000001"
+            x="640" y="22" width="75" height="58"
             fontName="Arial" fontSize="6" bold="true"
             hTextAlign="Center" vTextAlign="Middle">
             <text><![CDATA[Programa integrante]]></text>
             <box><pen lineWidth="0.5" lineColor="#999999"/></box>
         </element>
 
-        <!-- 24 -->
         <element kind="staticText"
-            uuid="c1010001-0111-4000-8000-000000000001"
-            x="757" y="0" width="45" height="58"
+            uuid="c1010001-0110-4000-8000-000000000001"
+            x="715" y="22" width="87" height="58"
             fontName="Arial" fontSize="6" bold="true"
             hTextAlign="Center" vTextAlign="Middle">
             <text><![CDATA[Tipo vinculación]]></text>
@@ -656,197 +762,130 @@
             height="36"
             splitType="Stretch">
 
-            <!-- 14 -->
             <element kind="textField"
                 uuid="c1010001-0201-4000-8000-000000000001"
-                x="0" y="0" width="72" height="36"
+                x="0" y="0" width="100" height="36"
                 fontName="Arial" fontSize="6"
-                hTextAlign="Center"
                 vTextAlign="Middle"
                 textAdjust="ScaleFont">
-
                 <expression><![CDATA[
-                    $P{fechaCreacionGruplac}
+                    $F{nombreIntegrante} == null ? "" : $F{nombreIntegrante}
                 ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
             </element>
 
-            <!-- 15 -->
             <element kind="textField"
                 uuid="c1010001-0202-4000-8000-000000000001"
-                x="72" y="0" width="100" height="36"
+                x="100" y="0" width="70" height="36"
                 fontName="Arial" fontSize="6"
+                hTextAlign="Center"
                 vTextAlign="Middle"
                 textAdjust="ScaleFont">
-
                 <expression><![CDATA[
-                    $F{nombreIntegrante}
+                    $F{numeroIdentificacion} == null ? "" : $F{numeroIdentificacion}
                 ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
             </element>
 
-            <!-- 16 -->
             <element kind="textField"
                 uuid="c1010001-0203-4000-8000-000000000001"
-                x="172" y="0" width="70" height="36"
+                x="170" y="0" width="60" height="36"
                 fontName="Arial" fontSize="6"
                 hTextAlign="Center"
                 vTextAlign="Middle"
                 textAdjust="ScaleFont">
-
                 <expression><![CDATA[
-                    $F{numeroIdentificacion}
+                    $F{estadoIntegranteGrupo} == null ? "" : $F{estadoIntegranteGrupo}
                 ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
             </element>
 
-            <!-- 17 -->
             <element kind="textField"
                 uuid="c1010001-0204-4000-8000-000000000001"
-                x="242" y="0" width="55" height="36"
+                x="230" y="0" width="80" height="36"
                 fontName="Arial" fontSize="6"
                 hTextAlign="Center"
                 vTextAlign="Middle"
                 textAdjust="ScaleFont">
-
                 <expression><![CDATA[
-                    $F{estadoIntegranteGrupo}
+                    $F{historialRolesEnGrupo} == null ? "" : $F{historialRolesEnGrupo}
                 ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
             </element>
 
-            <!-- 18 -->
             <element kind="textField"
                 uuid="c1010001-0205-4000-8000-000000000001"
-                x="297" y="0" width="75" height="36"
+                x="310" y="0" width="75" height="36"
                 fontName="Arial" fontSize="6"
+                hTextAlign="Center"
                 vTextAlign="Middle"
                 textAdjust="ScaleFont">
-
                 <expression><![CDATA[
-                    $F{historialRolesEnGrupo}
+                    $F{fechaInicioRol} == null ? "" : $F{fechaInicioRol}
                 ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
             </element>
 
-            <!-- 19 -->
             <element kind="textField"
                 uuid="c1010001-0206-4000-8000-000000000001"
-                x="372" y="0" width="70" height="36"
+                x="385" y="0" width="75" height="36"
                 fontName="Arial" fontSize="6"
                 hTextAlign="Center"
                 vTextAlign="Middle"
                 textAdjust="ScaleFont">
-
                 <expression><![CDATA[
-                    $F{fechaInicioRol}
+                    $F{fechaFinRol} == null ? "" : $F{fechaFinRol}
                 ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
             </element>
 
-            <!-- 20 -->
             <element kind="textField"
                 uuid="c1010001-0207-4000-8000-000000000001"
-                x="442" y="0" width="70" height="36"
+                x="460" y="0" width="95" height="36"
                 fontName="Arial" fontSize="6"
-                hTextAlign="Center"
                 vTextAlign="Middle"
                 textAdjust="ScaleFont">
-
                 <expression><![CDATA[
-                    $F{fechaFinRol}
+                    $F{facultadIntegrante} == null ? "" : $F{facultadIntegrante}
                 ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
             </element>
 
-            <!-- 21 -->
             <element kind="textField"
                 uuid="c1010001-0208-4000-8000-000000000001"
-                x="512" y="0" width="95" height="36"
+                x="555" y="0" width="85" height="36"
                 fontName="Arial" fontSize="6"
                 vTextAlign="Middle"
                 textAdjust="ScaleFont">
-
                 <expression><![CDATA[
-                    $F{facultadIntegrante}
+                    $F{departamentoIntegrante} == null ? "" : $F{departamentoIntegrante}
                 ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
             </element>
 
-            <!-- 22 -->
             <element kind="textField"
                 uuid="c1010001-0209-4000-8000-000000000001"
-                x="607" y="0" width="80" height="36"
+                x="640" y="0" width="75" height="36"
                 fontName="Arial" fontSize="6"
                 vTextAlign="Middle"
                 textAdjust="ScaleFont">
-
                 <expression><![CDATA[
-                    $F{departamentoIntegrante}
+                    $F{programaIntegrante} == null ? "" : $F{programaIntegrante}
                 ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
             </element>
 
-            <!-- 23 -->
             <element kind="textField"
                 uuid="c1010001-0210-4000-8000-000000000001"
-                x="687" y="0" width="70" height="36"
-                fontName="Arial" fontSize="6"
-                vTextAlign="Middle"
-                textAdjust="ScaleFont">
-
-                <expression><![CDATA[
-                    $F{programaIntegrante}
-                ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
-            </element>
-
-            <!-- 24 -->
-            <element kind="textField"
-                uuid="c1010001-0211-4000-8000-000000000001"
-                x="757" y="0" width="45" height="36"
+                x="715" y="0" width="87" height="36"
                 fontName="Arial" fontSize="6"
                 hTextAlign="Center"
                 vTextAlign="Middle"
                 textAdjust="ScaleFont">
-
                 <expression><![CDATA[
-                    $F{tipoVinculacionIntegrante}
+                    $F{tipoVinculacionIntegrante} == null ? "" : $F{tipoVinculacionIntegrante}
                 ]]></expression>
-
-                <box>
-                    <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                </box>
+                <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
             </element>
 
         </band>

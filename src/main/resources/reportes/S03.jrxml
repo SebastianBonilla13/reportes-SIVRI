@@ -84,6 +84,11 @@
     <parameter name="versionReporte" class="java.lang.String"/>
     <parameter name="fechaReporte" class="java.lang.String"/>
 
+    <!-- Valores opcionales de cabecera.
+         No se dejan quemados en el JRXML. -->
+    <parameter name="areaGeneraReporte" class="java.lang.String"/>
+    <parameter name="dirigidoA" class="java.lang.String"/>
+
     <!-- ========================================================= -->
     <!-- CAMPOS S03                                               -->
     <!-- ========================================================= -->
@@ -118,7 +123,7 @@
     <!-- ========================================================= -->
 
     <pageHeader
-        height="126"
+        height="104"
         splitType="Stretch">
 
         <element
@@ -303,21 +308,32 @@
 
         </element>
 
-        <!-- ÁREA -->
+        <!-- ===================================================== -->
+        <!-- ÁREA / DIRIGIDO A - UNA SOLA FILA 50 / 50           -->
+        <!-- Los valores no se dejan quemados en el JRXML         -->
+        <!-- ===================================================== -->
 
         <element
-            kind="staticText"
+            kind="textField"
             uuid="e6030001-0007-4000-8000-000000000001"
             x="0"
             y="82"
-            width="520"
+            width="1155"
             height="22"
             fontName="Arial"
             fontSize="9"
             bold="true"
             vTextAlign="Middle">
 
-            <text><![CDATA[Área que genera el reporte:]]></text>
+            <expression><![CDATA[
+                "Área que genera el reporte:"
+                + (
+                    $P{areaGeneraReporte} == null
+                    || $P{areaGeneraReporte}.trim().isEmpty()
+                        ? ""
+                        : " " + $P{areaGeneraReporte}
+                )
+            ]]></expression>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -330,68 +346,26 @@
         </element>
 
         <element
-            kind="staticText"
+            kind="textField"
             uuid="e6030001-0008-4000-8000-000000000001"
-            x="520"
+            x="1155"
             y="82"
-            width="1790"
-            height="22"
-            fontName="Arial"
-            fontSize="9"
-            vTextAlign="Middle">
-
-            <text><![CDATA[
-                División Gestión de la Investigación
-            ]]></text>
-
-            <box>
-                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
-            </box>
-
-        </element>
-
-        <!-- DIRIGIDO A -->
-
-        <element
-            kind="staticText"
-            uuid="e6030001-0009-4000-8000-000000000001"
-            x="0"
-            y="104"
-            width="520"
+            width="1155"
             height="22"
             fontName="Arial"
             fontSize="9"
             bold="true"
             vTextAlign="Middle">
 
-            <text><![CDATA[Dirigido a:]]></text>
-
-            <box>
-                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
-            </box>
-
-        </element>
-
-        <element
-            kind="staticText"
-            uuid="e6030001-0010-4000-8000-000000000001"
-            x="520"
-            y="104"
-            width="1790"
-            height="22"
-            fontName="Arial"
-            fontSize="9"
-            vTextAlign="Middle">
-
-            <text><![CDATA[Universidad del Cauca]]></text>
+            <expression><![CDATA[
+                "Dirigido a:"
+                + (
+                    $P{dirigidoA} == null
+                    || $P{dirigidoA}.trim().isEmpty()
+                        ? ""
+                        : " " + $P{dirigidoA}
+                )
+            ]]></expression>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
