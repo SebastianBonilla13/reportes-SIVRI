@@ -1,5 +1,6 @@
 package edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,13 +35,9 @@ public class ReporteTipo1CStrategy
         if (datos != null && !datos.isEmpty()) {
 
             /*
-             * R01-C recibe un arreglo cuyo primer elemento contiene:
-             *
-             * 1. La información general del grupo.
-             * 2. La lista anidada "integrantes".
-             *
-             * La información general alimenta los parámetros del JRXML.
-             * La lista de integrantes alimenta directamente DATA_LIST.
+             * El front envía data como una lista.
+             * Para R01-C se espera un único objeto raíz de grupo
+             * que contiene la lista anidada DataIntegrantes.
              */
             ReporteTipo1CDTOPeticion grupo = datos.get(0);
 
@@ -48,46 +45,19 @@ public class ReporteTipo1CStrategy
             // INFORMACIÓN GENERAL DEL GRUPO
             // =====================================================
 
-            parametrosLocales.put(
-                    "idGrupo",
-                    grupo.getIdGrupo()
-            );
+            parametrosLocales.put("idGrupo", grupo.getIdGrupo());
+            parametrosLocales.put("nombreGrupo", grupo.getNombreGrupo());
+            parametrosLocales.put("codigoGruplac", grupo.getCodigoGruplac());
+            parametrosLocales.put("enlaceGruplac", grupo.getEnlaceGruplac());
 
-            parametrosLocales.put(
-                    "nombreGrupo",
-                    grupo.getNombreGrupo()
-            );
-
-            parametrosLocales.put(
-                    "codigoGruplac",
-                    grupo.getCodigoGruplac()
-            );
-
-            parametrosLocales.put(
-                    "enlaceGruplac",
-                    grupo.getEnlaceGruplac()
-            );
-
-            parametrosLocales.put(
-                    "directorGrupo",
-                    grupo.getDirectorGrupo()
-            );
-
+            parametrosLocales.put("directorGrupo", grupo.getDirectorGrupo());
             parametrosLocales.put(
                     "correoDirectorGrupo",
                     grupo.getCorreoDirectorGrupo()
             );
+            parametrosLocales.put("correoGrupo", grupo.getCorreoGrupo());
 
-            parametrosLocales.put(
-                    "correoGrupo",
-                    grupo.getCorreoGrupo()
-            );
-
-            parametrosLocales.put(
-                    "facultadGrupo",
-                    grupo.getFacultadGrupo()
-            );
-
+            parametrosLocales.put("facultadGrupo", grupo.getFacultadGrupo());
             parametrosLocales.put(
                     "departamentoDirector",
                     grupo.getDepartamentoDirector()
@@ -97,22 +67,16 @@ public class ReporteTipo1CStrategy
                     "lineasInvestigacionGrupo",
                     grupo.getLineasInvestigacionGrupo()
             );
-
+            parametrosLocales.put(
+                    "categorizacionGrupo",
+                    grupo.getCategorizacionGrupo()
+            );
             parametrosLocales.put(
                     "disciplinasGrupo",
                     grupo.getDisciplinasGrupo()
             );
 
-            parametrosLocales.put(
-                    "categorizacionGrupo",
-                    grupo.getCategorizacionGrupo()
-            );
-
-            parametrosLocales.put(
-                    "estadoGrupo",
-                    grupo.getEstadoGrupo()
-            );
-
+            parametrosLocales.put("estadoGrupo", grupo.getEstadoGrupo());
             parametrosLocales.put(
                     "fechaCreacionGruplac",
                     grupo.getFechaCreacionGruplac()
@@ -123,9 +87,11 @@ public class ReporteTipo1CStrategy
             // =====================================================
 
             /*
-             * JasperHelper crea el JRBeanCollectionDataSource a partir
-             * de DATA_LIST. Por eso aquí debe ir la lista anidada de
-             * integrantes y NO el objeto general del grupo.
+             * JasperHelper toma DATA_LIST y crea con ella el
+             * JRBeanCollectionDataSource.
+             *
+             * Por eso DATA_LIST debe contener la lista de integrantes,
+             * no el objeto raíz del grupo.
              */
             parametrosLocales.put(
                     "DATA_LIST",
@@ -143,7 +109,7 @@ public class ReporteTipo1CStrategy
         }
 
         // =========================================================
-        // DATOS DEL REPORTE
+        // DATOS FIJOS DEL REPORTE
         // =========================================================
 
         parametrosLocales.put(
@@ -151,24 +117,14 @@ public class ReporteTipo1CStrategy
                 "Certificados grupos de investigación e integrantes"
         );
 
-        parametrosLocales.put(
-                "codigoReporte",
-                "R01-C"
-        );
-
-        parametrosLocales.put(
-                "versionReporte",
-                "1.0"
-        );
+        parametrosLocales.put("codigoReporte", "R01-C");
+        parametrosLocales.put("versionReporte", "1.0");
 
         String fechaActual = DateTimeFormatter
                 .ofPattern("dd/MM/yyyy")
-                .format(java.time.LocalDate.now());
+                .format(LocalDate.now());
 
-        parametrosLocales.put(
-                "fechaReporte",
-                fechaActual
-        );
+        parametrosLocales.put("fechaReporte", fechaActual);
 
         return parametrosLocales;
     }
