@@ -11,7 +11,8 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import edu.unicauca.reportes_SIVRI.reportes.infraestructura
-        .input.controllerReportesProyectos.DTOPeticion.ReporteTipo1CDTOPeticion;
+        .input.controllerReportesProyectos.DTOPeticion
+        .ReporteTipo1CDTOPeticion;
 
 @Component
 public class ReporteTipo1CStrategy
@@ -33,11 +34,19 @@ public class ReporteTipo1CStrategy
         if (datos != null && !datos.isEmpty()) {
 
             /*
-             * Todos los registros corresponden al mismo grupo.
-             * Se toma el primero para construir la información
-             * general del certificado.
+             * R01-C recibe un arreglo cuyo primer elemento contiene:
+             *
+             * 1. La información general del grupo.
+             * 2. La lista anidada "integrantes".
+             *
+             * La información general alimenta los parámetros del JRXML.
+             * La lista de integrantes alimenta directamente DATA_LIST.
              */
             ReporteTipo1CDTOPeticion grupo = datos.get(0);
+
+            // =====================================================
+            // INFORMACIÓN GENERAL DEL GRUPO
+            // =====================================================
 
             parametrosLocales.put(
                     "idGrupo",
@@ -109,15 +118,20 @@ public class ReporteTipo1CStrategy
                     grupo.getFechaCreacionGruplac()
             );
 
+            // =====================================================
+            // TABLA DE INTEGRANTES
+            // =====================================================
+
             /*
-             * IMPORTANTE:
-             *
-             * El JSON definitivo ya viene como una lista plana
-             * de integrantes. Esa misma lista alimenta la tabla.
+             * JasperHelper crea el JRBeanCollectionDataSource a partir
+             * de DATA_LIST. Por eso aquí debe ir la lista anidada de
+             * integrantes y NO el objeto general del grupo.
              */
             parametrosLocales.put(
                     "DATA_LIST",
-                    datos
+                    grupo.getIntegrantes() != null
+                            ? grupo.getIntegrantes()
+                            : new ArrayList<>()
             );
 
         } else {
@@ -127,6 +141,10 @@ public class ReporteTipo1CStrategy
                     new ArrayList<>()
             );
         }
+
+        // =========================================================
+        // DATOS DEL REPORTE
+        // =========================================================
 
         parametrosLocales.put(
                 "tituloReporte",
@@ -159,7 +177,8 @@ public class ReporteTipo1CStrategy
     public TypeReference<List<ReporteTipo1CDTOPeticion>>
             getTypeReference() {
 
-        return new TypeReference<List<ReporteTipo1CDTOPeticion>>() {
+        return new TypeReference<
+                List<ReporteTipo1CDTOPeticion>>() {
         };
     }
 
