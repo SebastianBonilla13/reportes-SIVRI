@@ -71,7 +71,7 @@
     <!-- CABECERA INSTITUCIONAL                                    -->
     <!-- ========================================================= -->
 
-    <pageHeader height="126" splitType="Stretch">
+    <pageHeader height="104" splitType="Stretch">
 
         <!-- LOGO -->
 
@@ -260,14 +260,17 @@
 
         </element>
 
-        <!-- ÁREA -->
+        <!-- ÁREA QUE GENERA / DIRIGIDO A -->
+        <!-- Cada bloque ocupa exactamente el 50% del ancho total (950 px) -->
+
+        <!-- ÁREA QUE GENERA EL REPORTE -->
 
         <element
             kind="staticText"
             uuid="a1010001-0007-4000-8000-000000000001"
             x="0"
             y="82"
-            width="520"
+            width="950"
             height="22"
             fontName="Arial"
             fontSize="9"
@@ -286,37 +289,14 @@
 
         </element>
 
-        <element
-            kind="staticText"
-            uuid="a1010001-0008-4000-8000-000000000001"
-            x="520"
-            y="82"
-            width="1380"
-            height="22"
-            fontName="Arial"
-            fontSize="9"
-            vTextAlign="Middle">
-
-            <text><![CDATA[]]></text>
-
-            <box>
-                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
-            </box>
-
-        </element>
-
         <!-- DIRIGIDO A -->
 
         <element
             kind="staticText"
             uuid="a1010001-0009-4000-8000-000000000001"
-            x="0"
-            y="104"
-            width="520"
+            x="950"
+            y="82"
+            width="950"
             height="22"
             fontName="Arial"
             fontSize="9"
@@ -324,29 +304,6 @@
             vTextAlign="Middle">
 
             <text><![CDATA[Dirigido a:]]></text>
-
-            <box>
-                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <topPen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <leftPen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
-                <rightPen lineWidth="0.5" lineColor="#CCCCCC"/>
-            </box>
-
-        </element>
-
-        <element
-            kind="staticText"
-            uuid="a1010001-0010-4000-8000-000000000001"
-            x="520"
-            y="104"
-            width="1380"
-            height="22"
-            fontName="Arial"
-            fontSize="9"
-            vTextAlign="Middle">
-
-            <text><![CDATA[]]></text>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>

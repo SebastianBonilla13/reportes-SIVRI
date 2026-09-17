@@ -33,6 +33,16 @@
         name="fechaReporte"
         class="java.lang.String"/>
 
+    <!-- Valores opcionales de cabecera.
+         No se dejan quemados en el JRXML. -->
+    <parameter
+        name="areaGeneraReporte"
+        class="java.lang.String"/>
+
+    <parameter
+        name="dirigidoA"
+        class="java.lang.String"/>
+
     <!-- ========================================================= -->
     <!-- INFORMACIÓN GENERAL DEL SEMILLERO                         -->
     <!-- ========================================================= -->
@@ -116,7 +126,7 @@
     <!-- ========================================================= -->
 
     <pageHeader
-        height="206"
+        height="184"
         splitType="Stretch">
 
         <!-- LOGO -->
@@ -295,94 +305,63 @@
 
         </element>
 
-        <!-- ÁREA -->
+        <!-- ===================================================== -->
+        <!-- ÁREA / DIRIGIDO A - UNA SOLA FILA 50 / 50           -->
+        <!-- Los valores no se dejan quemados en el JRXML         -->
+        <!-- ===================================================== -->
 
         <element
-            kind="staticText"
+            kind="textField"
             uuid="c6010001-0007-4000-8000-000000000001"
             x="0"
             y="82"
-            width="260"
+            width="575"
             height="22"
             fontName="Arial"
             fontSize="8"
             bold="true"
             vTextAlign="Middle">
 
-            <text><![CDATA[Área que genera el reporte:]]></text>
+            <expression><![CDATA[
+                "Área que genera el reporte:"
+                + (
+                    $P{areaGeneraReporte} == null
+                    || $P{areaGeneraReporte}.trim().isEmpty()
+                        ? ""
+                        : " " + $P{areaGeneraReporte}
+                )
+            ]]></expression>
 
             <box>
-                <pen
-                    lineWidth="0.5"
-                    lineColor="#CCCCCC"/>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
             </box>
 
         </element>
 
         <element
-            kind="staticText"
+            kind="textField"
             uuid="c6010001-0008-4000-8000-000000000001"
-            x="260"
+            x="575"
             y="82"
-            width="891"
-            height="22"
-            fontName="Arial"
-            fontSize="8"
-            vTextAlign="Middle">
-
-            <text><![CDATA[
-                División Gestión de la Investigación
-            ]]></text>
-
-            <box>
-                <pen
-                    lineWidth="0.5"
-                    lineColor="#CCCCCC"/>
-            </box>
-
-        </element>
-
-        <!-- DIRIGIDO A -->
-
-        <element
-            kind="staticText"
-            uuid="c6010001-0009-4000-8000-000000000001"
-            x="0"
-            y="104"
-            width="260"
+            width="576"
             height="22"
             fontName="Arial"
             fontSize="8"
             bold="true"
             vTextAlign="Middle">
 
-            <text><![CDATA[Dirigido a:]]></text>
+            <expression><![CDATA[
+                "Dirigido a:"
+                + (
+                    $P{dirigidoA} == null
+                    || $P{dirigidoA}.trim().isEmpty()
+                        ? ""
+                        : " " + $P{dirigidoA}
+                )
+            ]]></expression>
 
             <box>
-                <pen
-                    lineWidth="0.5"
-                    lineColor="#CCCCCC"/>
-            </box>
-
-        </element>
-
-        <element
-            kind="staticText"
-            uuid="c6010001-0010-4000-8000-000000000001"
-            x="260"
-            y="104"
-            width="891"
-            height="22"
-            fontName="Arial"
-            fontSize="8"
-            vTextAlign="Middle">
-
-            <text><![CDATA[Universidad del Cauca]]></text>
-
-            <box>
-                <pen
-                    lineWidth="0.5"
-                    lineColor="#CCCCCC"/>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
             </box>
 
         </element>
@@ -395,7 +374,7 @@
             kind="staticText"
             uuid="c6010001-0011-4000-8000-000000000001"
             x="0"
-            y="126"
+            y="104"
             width="1151"
             height="20"
             mode="Opaque"
@@ -426,7 +405,7 @@
             kind="textField"
             uuid="c6010001-0012-4000-8000-000000000001"
             x="0"
-            y="146"
+            y="124"
             width="180"
             height="30"
             fontName="Arial"
@@ -451,7 +430,7 @@
             kind="textField"
             uuid="c6010001-0013-4000-8000-000000000001"
             x="180"
-            y="146"
+            y="124"
             width="430"
             height="30"
             fontName="Arial"
@@ -476,7 +455,7 @@
             kind="textField"
             uuid="c6010001-0014-4000-8000-000000000001"
             x="610"
-            y="146"
+            y="124"
             width="160"
             height="30"
             fontName="Arial"
@@ -501,7 +480,7 @@
             kind="textField"
             uuid="c6010001-0015-4000-8000-000000000001"
             x="770"
-            y="146"
+            y="124"
             width="381"
             height="30"
             fontName="Arial"
@@ -530,7 +509,7 @@
             kind="textField"
             uuid="c6010001-0016-4000-8000-000000000001"
             x="0"
-            y="176"
+            y="154"
             width="420"
             height="30"
             fontName="Arial"
@@ -555,7 +534,7 @@
             kind="textField"
             uuid="c6010001-0017-4000-8000-000000000001"
             x="420"
-            y="176"
+            y="154"
             width="390"
             height="30"
             fontName="Arial"
@@ -580,7 +559,7 @@
             kind="textField"
             uuid="c6010001-0018-4000-8000-000000000001"
             x="810"
-            y="176"
+            y="154"
             width="341"
             height="30"
             fontName="Arial"
@@ -609,7 +588,7 @@
     <!-- ========================================================= -->
 
     <columnHeader
-        height="75"
+        height="62"
         splitType="Stretch">
 
         <element
@@ -644,16 +623,14 @@
         <element kind="staticText"
             uuid="c6010001-0101-4000-8000-000000000001"
             x="0" y="20"
-            width="175" height="55"
+            width="165" height="42"
             fontName="Arial"
             fontSize="6"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
 
-            <text><![CDATA[
-                Nombre completo integrante
-            ]]></text>
+            <text><![CDATA[Nombre completo integrante]]></text>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -664,17 +641,15 @@
 
         <element kind="staticText"
             uuid="c6010001-0102-4000-8000-000000000001"
-            x="175" y="20"
-            width="100" height="55"
+            x="165" y="20"
+            width="100" height="42"
             fontName="Arial"
             fontSize="6"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
 
-            <text><![CDATA[
-                Número de identificación
-            ]]></text>
+            <text><![CDATA[Número de identificación]]></text>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -685,17 +660,15 @@
 
         <element kind="staticText"
             uuid="c6010001-0103-4000-8000-000000000001"
-            x="275" y="20"
-            width="140" height="55"
+            x="265" y="20"
+            width="140" height="42"
             fontName="Arial"
             fontSize="6"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
 
-            <text><![CDATA[
-                Historial roles en el Semillero
-            ]]></text>
+            <text><![CDATA[Historial roles en el Semillero]]></text>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -706,17 +679,15 @@
 
         <element kind="staticText"
             uuid="c6010001-0104-4000-8000-000000000001"
-            x="415" y="20"
-            width="90" height="55"
+            x="405" y="20"
+            width="90" height="42"
             fontName="Arial"
             fontSize="6"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
 
-            <text><![CDATA[
-                Fecha inicio rol
-            ]]></text>
+            <text><![CDATA[Fecha inicio rol]]></text>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -727,17 +698,15 @@
 
         <element kind="staticText"
             uuid="c6010001-0105-4000-8000-000000000001"
-            x="505" y="20"
-            width="90" height="55"
+            x="495" y="20"
+            width="115" height="42"
             fontName="Arial"
             fontSize="6"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
 
-            <text><![CDATA[
-                Fecha finalización rol
-            ]]></text>
+            <text><![CDATA[Fecha finalización rol]]></text>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -748,17 +717,15 @@
 
         <element kind="staticText"
             uuid="c6010001-0106-4000-8000-000000000001"
-            x="595" y="20"
-            width="90" height="55"
+            x="610" y="20"
+            width="90" height="42"
             fontName="Arial"
             fontSize="6"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
 
-            <text><![CDATA[
-                Estado vinculación
-            ]]></text>
+            <text><![CDATA[Estado vinculación]]></text>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -769,17 +736,15 @@
 
         <element kind="staticText"
             uuid="c6010001-0107-4000-8000-000000000001"
-            x="685" y="20"
-            width="140" height="55"
+            x="700" y="20"
+            width="140" height="42"
             fontName="Arial"
             fontSize="6"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
 
-            <text><![CDATA[
-                Tipo vinculación actual
-            ]]></text>
+            <text><![CDATA[Tipo vinculación actual]]></text>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -790,17 +755,15 @@
 
         <element kind="staticText"
             uuid="c6010001-0108-4000-8000-000000000001"
-            x="825" y="20"
-            width="190" height="55"
+            x="840" y="20"
+            width="175" height="42"
             fontName="Arial"
             fontSize="6"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
 
-            <text><![CDATA[
-                Facultad integrante
-            ]]></text>
+            <text><![CDATA[Facultad integrante]]></text>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -812,16 +775,14 @@
         <element kind="staticText"
             uuid="c6010001-0109-4000-8000-000000000001"
             x="1015" y="20"
-            width="136" height="55"
+            width="136" height="42"
             fontName="Arial"
             fontSize="6"
             bold="true"
             hTextAlign="Center"
             vTextAlign="Middle">
 
-            <text><![CDATA[
-                Departamento / Programa
-            ]]></text>
+            <text><![CDATA[Departamento / Programa]]></text>
 
             <box>
                 <pen lineWidth="0.5" lineColor="#CCCCCC"/>
@@ -845,7 +806,7 @@
             <element kind="textField"
                 uuid="c6010001-0201-4000-8000-000000000001"
                 x="0" y="0"
-                width="175" height="42"
+                width="165" height="42"
                 fontName="Arial"
                 fontSize="7"
                 vTextAlign="Middle"
@@ -864,7 +825,7 @@
 
             <element kind="textField"
                 uuid="c6010001-0202-4000-8000-000000000001"
-                x="175" y="0"
+                x="165" y="0"
                 width="100" height="42"
                 fontName="Arial"
                 fontSize="7"
@@ -885,7 +846,7 @@
 
             <element kind="textField"
                 uuid="c6010001-0203-4000-8000-000000000001"
-                x="275" y="0"
+                x="265" y="0"
                 width="140" height="42"
                 fontName="Arial"
                 fontSize="7"
@@ -906,7 +867,7 @@
 
             <element kind="textField"
                 uuid="c6010001-0204-4000-8000-000000000001"
-                x="415" y="0"
+                x="405" y="0"
                 width="90" height="42"
                 fontName="Arial"
                 fontSize="7"
@@ -927,8 +888,8 @@
 
             <element kind="textField"
                 uuid="c6010001-0205-4000-8000-000000000001"
-                x="505" y="0"
-                width="90" height="42"
+                x="495" y="0"
+                width="115" height="42"
                 fontName="Arial"
                 fontSize="7"
                 hTextAlign="Center"
@@ -948,7 +909,7 @@
 
             <element kind="textField"
                 uuid="c6010001-0206-4000-8000-000000000001"
-                x="595" y="0"
+                x="610" y="0"
                 width="90" height="42"
                 fontName="Arial"
                 fontSize="7"
@@ -969,7 +930,7 @@
 
             <element kind="textField"
                 uuid="c6010001-0207-4000-8000-000000000001"
-                x="685" y="0"
+                x="700" y="0"
                 width="140" height="42"
                 fontName="Arial"
                 fontSize="7"
@@ -990,8 +951,8 @@
 
             <element kind="textField"
                 uuid="c6010001-0208-4000-8000-000000000001"
-                x="825" y="0"
-                width="190" height="42"
+                x="840" y="0"
+                width="175" height="42"
                 fontName="Arial"
                 fontSize="7"
                 vTextAlign="Middle"

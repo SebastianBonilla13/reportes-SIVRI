@@ -33,6 +33,16 @@
         name="fechaReporte"
         class="java.lang.String"/>
 
+    <!-- Valores opcionales de cabecera.
+         No se dejan quemados en el JRXML. -->
+    <parameter
+        name="areaGeneraReporte"
+        class="java.lang.String"/>
+
+    <parameter
+        name="dirigidoA"
+        class="java.lang.String"/>
+
     <!-- ========================================================= -->
     <!-- INFORMACIÓN GENERAL DEL INTEGRANTE                        -->
     <!-- ========================================================= -->
@@ -132,7 +142,7 @@
     <!-- ========================================================= -->
 
     <pageHeader
-        height="176"
+        height="154"
         splitType="Stretch">
 
         <!-- LOGO -->
@@ -313,100 +323,63 @@
 
         </element>
 
-        <!-- ÁREA -->
+        <!-- ===================================================== -->
+        <!-- ÁREA / DIRIGIDO A - UNA SOLA FILA 50 / 50           -->
+        <!-- Los valores no se dejan quemados en el JRXML         -->
+        <!-- ===================================================== -->
 
         <element
-            kind="staticText"
+            kind="textField"
             uuid="e4040001-0007-4000-8000-000000000001"
             x="0"
             y="82"
-            width="260"
+            width="575"
             height="22"
             fontName="Arial"
             fontSize="8"
             bold="true"
             vTextAlign="Middle">
 
-            <text><![CDATA[
-                Área que genera el reporte:
-            ]]></text>
+            <expression><![CDATA[
+                "Área que genera el reporte:"
+                + (
+                    $P{areaGeneraReporte} == null
+                    || $P{areaGeneraReporte}.trim().isEmpty()
+                        ? ""
+                        : " " + $P{areaGeneraReporte}
+                )
+            ]]></expression>
 
             <box>
-                <pen
-                    lineWidth="0.5"
-                    lineColor="#CCCCCC"/>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
             </box>
 
         </element>
 
         <element
-            kind="staticText"
+            kind="textField"
             uuid="e4040001-0008-4000-8000-000000000001"
-            x="260"
+            x="575"
             y="82"
-            width="891"
-            height="22"
-            fontName="Arial"
-            fontSize="8"
-            vTextAlign="Middle">
-
-            <text><![CDATA[
-                División Gestión de la Investigación
-            ]]></text>
-
-            <box>
-                <pen
-                    lineWidth="0.5"
-                    lineColor="#CCCCCC"/>
-            </box>
-
-        </element>
-
-        <!-- DIRIGIDO A -->
-
-        <element
-            kind="staticText"
-            uuid="e4040001-0009-4000-8000-000000000001"
-            x="0"
-            y="104"
-            width="260"
+            width="576"
             height="22"
             fontName="Arial"
             fontSize="8"
             bold="true"
             vTextAlign="Middle">
 
-            <text><![CDATA[
-                Dirigido a:
-            ]]></text>
+            <expression><![CDATA[
+                "Dirigido a:"
+                + (
+                    $P{dirigidoA} == null
+                    || $P{dirigidoA}.trim().isEmpty()
+                        ? ""
+                        : " " + $P{dirigidoA}
+                )
+            ]]></expression>
 
             <box>
-                <pen
-                    lineWidth="0.5"
-                    lineColor="#CCCCCC"/>
-            </box>
-
-        </element>
-
-        <element
-            kind="staticText"
-            uuid="e4040001-0010-4000-8000-000000000001"
-            x="260"
-            y="104"
-            width="891"
-            height="22"
-            fontName="Arial"
-            fontSize="8"
-            vTextAlign="Middle">
-
-            <text><![CDATA[
-                Universidad del Cauca
-            ]]></text>
-
-            <box>
-                <pen
-                    lineWidth="0.5"
-                    lineColor="#CCCCCC"/>
+                <pen lineWidth="0.5" lineColor="#CCCCCC"/>
             </box>
 
         </element>
@@ -419,7 +392,7 @@
             kind="staticText"
             uuid="e4040001-0011-4000-8000-000000000001"
             x="0"
-            y="126"
+            y="104"
             width="1151"
             height="20"
             mode="Opaque"
@@ -448,7 +421,7 @@
             kind="textField"
             uuid="e4040001-0012-4000-8000-000000000001"
             x="0"
-            y="146"
+            y="124"
             width="240"
             height="30"
             fontName="Arial"
@@ -477,7 +450,7 @@
             kind="textField"
             uuid="e4040001-0013-4000-8000-000000000001"
             x="240"
-            y="146"
+            y="124"
             width="160"
             height="30"
             fontName="Arial"
@@ -506,7 +479,7 @@
             kind="textField"
             uuid="e4040001-0014-4000-8000-000000000001"
             x="400"
-            y="146"
+            y="124"
             width="290"
             height="30"
             fontName="Arial"
@@ -535,7 +508,7 @@
             kind="textField"
             uuid="e4040001-0015-4000-8000-000000000001"
             x="690"
-            y="146"
+            y="124"
             width="230"
             height="30"
             fontName="Arial"
@@ -564,7 +537,7 @@
             kind="textField"
             uuid="e4040001-0016-4000-8000-000000000001"
             x="920"
-            y="146"
+            y="124"
             width="231"
             height="30"
             fontName="Arial"
