@@ -1,5 +1,6 @@
 package edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,6 +14,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import edu.unicauca.reportes_SIVRI.reportes.infraestructura
         .input.controllerReportesProyectos.DTOPeticion
         .ReporteTipo1FDTOPeticion;
+import edu.unicauca.reportes_SIVRI.reportes.infraestructura
+        .input.controllerReportesProyectos.DTOPeticion
+        .ReporteTipo1FDTOPeticion.FichaDTO;
 
 @Component
 public class ReporteTipo1FStrategy
@@ -34,96 +38,153 @@ public class ReporteTipo1FStrategy
         if (datos != null && !datos.isEmpty()) {
 
             /*
-             * R01-F corresponde a la ficha de un grupo.
-             * La petición real envía un arreglo cuyo primer
-             * elemento contiene el grupo y sus cinco listas.
+             * El front envía data como una lista con un objeto raíz.
+             * Ese objeto contiene:
+             *
+             * 1. Información general del grupo.
+             * 2. Una lista "DataFicha".
+             *
+             * DataFicha contiene un único objeto con las cinco listas
+             * que alimentan las tablas del JRXML.
              */
-            ReporteTipo1FDTOPeticion ficha = datos.get(0);
+            ReporteTipo1FDTOPeticion grupo = datos.get(0);
 
             // =====================================================
-            // DATOS GENERALES DEL GRUPO
+            // INFORMACIÓN GENERAL DEL GRUPO
             // =====================================================
 
             parametrosLocales.put(
                     "idGrupo",
-                    ficha.getIdGrupo()
+                    grupo.getIdGrupo()
             );
 
             parametrosLocales.put(
                     "nombreGrupo",
-                    ficha.getNombreGrupo()
+                    grupo.getNombreGrupo()
             );
 
             parametrosLocales.put(
                     "codigoGruplac",
-                    ficha.getCodigoGruplac()
+                    grupo.getCodigoGruplac()
             );
 
             parametrosLocales.put(
                     "categorizacionGrupo",
-                    ficha.getCategorizacionGrupo()
+                    grupo.getCategorizacionGrupo()
             );
 
             parametrosLocales.put(
                     "facultadGrupo",
-                    ficha.getFacultadGrupo()
+                    grupo.getFacultadGrupo()
             );
 
             // =====================================================
-            // TABLAS
+            // FICHA
             // =====================================================
 
-            parametrosLocales.put(
-                    "LISTA_INTEGRANTES",
-                    ficha.getIntegrantes() != null
-                            ? ficha.getIntegrantes()
-                            : new ArrayList<>()
-            );
+            FichaDTO ficha = null;
 
-            parametrosLocales.put(
-                    "LISTA_PROYECTOS",
-                    ficha.getProyectos() != null
-                            ? ficha.getProyectos()
-                            : new ArrayList<>()
-            );
+            if (grupo.getDataFicha() != null
+                    && !grupo.getDataFicha().isEmpty()) {
 
-            parametrosLocales.put(
-                    "LISTA_SEMILLEROS",
-                    ficha.getSemilleros() != null
-                            ? ficha.getSemilleros()
-                            : new ArrayList<>()
-            );
+                ficha = grupo.getDataFicha().get(0);
+            }
 
-            parametrosLocales.put(
-                    "LISTA_PRODUCTOS_ENTREGADOS",
-                    ficha.getProductosEntregados() != null
-                            ? ficha.getProductosEntregados()
-                            : new ArrayList<>()
-            );
+            if (ficha != null) {
 
-            parametrosLocales.put(
-                    "LISTA_PRODUCTOS_PENDIENTES",
-                    ficha.getProductosPendientes() != null
-                            ? ficha.getProductosPendientes()
-                            : new ArrayList<>()
-            );
+                // Parámetros de listas. Se mantienen porque el JRXML
+                // ya los declara y pueden ser reutilizados.
+                parametrosLocales.put(
+                        "LISTA_INTEGRANTES",
+                        ficha.getIntegrantes() != null
+                                ? ficha.getIntegrantes()
+                                : new ArrayList<>()
+                );
 
-            /*
-             * JasperHelper necesita DATA_LIST.
-             *
-             * Dejamos un único registro para que la banda detail
-             * se ejecute una sola vez y dentro de ella se impriman
-             * las cinco tablas.
-             */
-            List<ReporteTipo1FDTOPeticion> dataList =
-                    new ArrayList<>();
+                parametrosLocales.put(
+                        "LISTA_PROYECTOS",
+                        ficha.getProyectos() != null
+                                ? ficha.getProyectos()
+                                : new ArrayList<>()
+                );
 
-            dataList.add(ficha);
+                parametrosLocales.put(
+                        "LISTA_SEMILLEROS",
+                        ficha.getSemilleros() != null
+                                ? ficha.getSemilleros()
+                                : new ArrayList<>()
+                );
 
-            parametrosLocales.put(
-                    "DATA_LIST",
-                    dataList
-            );
+                parametrosLocales.put(
+                        "LISTA_PRODUCTOS_ENTREGADOS",
+                        ficha.getProductosEntregados() != null
+                                ? ficha.getProductosEntregados()
+                                : new ArrayList<>()
+                );
+
+                parametrosLocales.put(
+                        "LISTA_PRODUCTOS_PENDIENTES",
+                        ficha.getProductosPendientes() != null
+                                ? ficha.getProductosPendientes()
+                                : new ArrayList<>()
+                );
+
+                /*
+                 * IMPORTANTE:
+                 *
+                 * El JRXML actual usa:
+                 *   $F{integrantes}
+                 *   $F{proyectos}
+                 *   $F{semilleros}
+                 *   $F{productosEntregados}
+                 *   $F{productosPendientes}
+                 *
+                 * Por eso DATA_LIST debe contener la FichaDTO.
+                 * Se agrega una única ficha para que las bandas detail
+                 * se ejecuten una sola vez.
+                 */
+                List<FichaDTO> dataList =
+                        new ArrayList<>();
+
+                dataList.add(ficha);
+
+                parametrosLocales.put(
+                        "DATA_LIST",
+                        dataList
+                );
+
+            } else {
+
+                parametrosLocales.put(
+                        "LISTA_INTEGRANTES",
+                        new ArrayList<>()
+                );
+
+                parametrosLocales.put(
+                        "LISTA_PROYECTOS",
+                        new ArrayList<>()
+                );
+
+                parametrosLocales.put(
+                        "LISTA_SEMILLEROS",
+                        new ArrayList<>()
+                );
+
+                parametrosLocales.put(
+                        "LISTA_PRODUCTOS_ENTREGADOS",
+                        new ArrayList<>()
+                );
+
+                parametrosLocales.put(
+                        "LISTA_PRODUCTOS_PENDIENTES",
+                        new ArrayList<>()
+                );
+
+                parametrosLocales.put(
+                        "DATA_LIST",
+                        new ArrayList<>()
+                );
+            }
 
         } else {
 
@@ -179,7 +240,7 @@ public class ReporteTipo1FStrategy
 
         String fechaActual = DateTimeFormatter
                 .ofPattern("dd/MM/yyyy")
-                .format(java.time.LocalDate.now());
+                .format(LocalDate.now());
 
         parametrosLocales.put(
                 "fechaReporte",

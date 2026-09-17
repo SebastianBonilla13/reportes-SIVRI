@@ -1,5 +1,8 @@
 package edu.unicauca.reportes_SIVRI.reportes.infraestructura.input.controllerReportesProyectos.DTOPeticion;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -14,50 +17,79 @@ public class ReporteTipoS01CDTOPeticion {
 
     // =========================================================
     // INFORMACIÓN GENERAL DEL SEMILLERO
-    // Campos 1 - 7
     // =========================================================
 
     private String idSemillero;
     private String nombreSemillero;
 
+    /*
+     * El front real no envía idGrupo en el objeto raíz,
+     * pero se conserva por compatibilidad con el JRXML.
+     * La Strategy puede recuperarlo desde el primer integrante.
+     */
     private String idGrupo;
     private String nombreGrupo;
 
     private String facultadSemillero;
     private String departamentoSemillero;
+    private String programasSemillero;
 
+    private String mentorSemillero;
+    private String coordinadorSemillero;
+
+    private String correoMentor;
+    private String correoSemillero;
+
+    private String lineasInvestigacionSemillero;
+    private String objetivoSemillero;
+    private String disciplinasSemillero;
+
+    private String estadoSemillero;
+    private String informePlanTrabajoSemillero;
     private String fechaCreacionSemillero;
 
     // =========================================================
-    // INFORMACIÓN DEL INTEGRANTE
-    // Campos grises 8 - 16
+    // INTEGRANTES DEL SEMILLERO
     // =========================================================
 
-    private String nombreIntegrante;
-    private String numeroIdentificacion;
-
-    private String historialRolesEnSemillero;
-
-    private String fechaInicioRol;
-    private String fechaFinRol;
-
-    private String estadoIntegranteSemillero;
-
-    private String tipoVinculacionIntegrante;
-
-    private String facultadIntegrante;
-    private String departamentoIntegrante;
-
     /*
-     * Viene en el JSON y sirve para estudiantes,
-     * aunque la tabla funcional agrupa departamento/programa
-     * dentro del campo 16.
+     * El front envía esta propiedad con el nombre
+     * "DataIntegrantesSemillero".
      */
-    private String programaIntegrante;
+    @JsonAlias("DataIntegrantesSemillero")
+    private List<IntegranteSemilleroDTO> integrantesSemillero;
 
-    /*
-     * Viene en la petición real, pero no hace parte
-     * de los campos visibles solicitados para S01-C.
-     */
-    private String enlaceCvlac;
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class IntegranteSemilleroDTO {
+
+        private String nombreIntegrante;
+        private String numeroIdentificacion;
+
+        private String idSemillero;
+        private String nombreSemillero;
+
+        private String nombreGrupo;
+        private String idGrupo;
+
+        private String enlaceCvlac;
+
+        private String historialRolesEnSemillero;
+
+        private String fechaInicioRol;
+        private String fechaFinRol;
+
+        private String estadoIntegranteSemillero;
+        private String tipoVinculacionIntegrante;
+
+        private String facultadIntegrante;
+        private String departamentoIntegrante;
+        private String programaIntegrante;
+
+        private String facultadSemillero;
+        private String departamentoSemillero;
+        private String fechaCreacionSemillero;
+    }
 }

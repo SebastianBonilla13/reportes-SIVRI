@@ -1,5 +1,6 @@
 package edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,6 +14,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import edu.unicauca.reportes_SIVRI.reportes.infraestructura
         .input.controllerReportesProyectos.DTOPeticion
         .ReporteTipoS01CDTOPeticion;
+import edu.unicauca.reportes_SIVRI.reportes.infraestructura
+        .input.controllerReportesProyectos.DTOPeticion
+        .ReporteTipoS01CDTOPeticion.IntegranteSemilleroDTO;
 
 @Component
 public class ReporteTipoS01CStrategy
@@ -34,13 +38,20 @@ public class ReporteTipoS01CStrategy
         if (datos != null && !datos.isEmpty()) {
 
             /*
-             * La petición viene como lista plana.
-             * Todos los registros corresponden al mismo semillero.
+             * El front envía data como una lista con un único
+             * objeto raíz del semillero.
              *
-             * Tomamos el primero para la información general.
+             * Ese objeto contiene:
+             * 1. La información general del semillero.
+             * 2. La lista anidada "DataIntegrantesSemillero".
              */
             ReporteTipoS01CDTOPeticion semillero =
                     datos.get(0);
+
+            List<IntegranteSemilleroDTO> integrantes =
+                    semillero.getIntegrantesSemillero() != null
+                            ? semillero.getIntegrantesSemillero()
+                            : new ArrayList<>();
 
             // =====================================================
             // INFORMACIÓN GENERAL DEL SEMILLERO
@@ -56,6 +67,13 @@ public class ReporteTipoS01CStrategy
                     semillero.getNombreSemillero()
             );
 
+            /*
+             * El payload real no trae idGrupo en el objeto raíz.
+             * Además, los integrantes pueden traer idGrupo distintos,
+             * por lo que no se debe inferir un único valor desde la lista.
+             * Si el front no lo envía a nivel general, el parámetro queda null
+             * y el JRXML lo mostrará vacío.
+             */
             parametrosLocales.put(
                     "idGrupo",
                     semillero.getIdGrupo()
@@ -81,14 +99,20 @@ public class ReporteTipoS01CStrategy
                     semillero.getFechaCreacionSemillero()
             );
 
+            // =====================================================
+            // TABLA DE INTEGRANTES
+            // =====================================================
+
             /*
-             * Campos 8 - 16:
-             * la misma lista plana alimenta la tabla
-             * de integrantes.
+             * JasperHelper construye el JRBeanCollectionDataSource
+             * a partir de DATA_LIST.
+             *
+             * Por eso DATA_LIST debe contener directamente
+             * DataIntegrantesSemillero.
              */
             parametrosLocales.put(
                     "DATA_LIST",
-                    datos
+                    integrantes
             );
 
         } else {
@@ -120,7 +144,7 @@ public class ReporteTipoS01CStrategy
 
         String fechaActual = DateTimeFormatter
                 .ofPattern("dd/MM/yyyy")
-                .format(java.time.LocalDate.now());
+                .format(LocalDate.now());
 
         parametrosLocales.put(
                 "fechaReporte",

@@ -1,5 +1,6 @@
 package edu.unicauca.reportes_SIVRI.reportes.dominio.casosDeUso.strategies;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,6 +14,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import edu.unicauca.reportes_SIVRI.reportes.infraestructura
         .input.controllerReportesProyectos.DTOPeticion
         .ReporteTipo4CDTOPeticion;
+import edu.unicauca.reportes_SIVRI.reportes.infraestructura
+        .input.controllerReportesProyectos.DTOPeticion
+        .ReporteTipo4CDTOPeticion.DetalleIntegranteDTO;
 
 @Component
 public class ReporteTipo4CStrategy
@@ -33,6 +37,16 @@ public class ReporteTipo4CStrategy
 
         if (datos != null && !datos.isEmpty()) {
 
+            /*
+             * El front envía data como una lista con un objeto raíz.
+             * Ese objeto contiene:
+             *
+             * 1. Información general del integrante.
+             * 2. Una lista "DetalleIntegrante".
+             *
+             * DetalleIntegrante contiene la información consolidada
+             * del integrante y la lista completa de proyectos.
+             */
             ReporteTipo4CDTOPeticion integrante =
                     datos.get(0);
 
@@ -66,14 +80,30 @@ public class ReporteTipo4CStrategy
             );
 
             // =====================================================
-            // PROYECTOS
+            // DETALLE DEL INTEGRANTE / PROYECTOS
             // =====================================================
 
-            if (integrante.getProyectos() != null) {
+            DetalleIntegranteDTO detalle = null;
+
+            if (integrante.getDetalleIntegrante() != null
+                    && !integrante.getDetalleIntegrante().isEmpty()) {
+
+                detalle = integrante.getDetalleIntegrante().get(0);
+            }
+
+            /*
+             * JasperHelper crea el JRBeanCollectionDataSource
+             * directamente con DATA_LIST.
+             *
+             * Por eso DATA_LIST debe ser la lista "proyectos"
+             * que viene dentro de DetalleIntegrante[0].
+             */
+            if (detalle != null
+                    && detalle.getProyectos() != null) {
 
                 parametrosLocales.put(
                         "DATA_LIST",
-                        integrante.getProyectos()
+                        detalle.getProyectos()
                 );
 
             } else {
@@ -113,7 +143,7 @@ public class ReporteTipo4CStrategy
 
         String fechaActual = DateTimeFormatter
                 .ofPattern("dd/MM/yyyy")
-                .format(java.time.LocalDate.now());
+                .format(LocalDate.now());
 
         parametrosLocales.put(
                 "fechaReporte",

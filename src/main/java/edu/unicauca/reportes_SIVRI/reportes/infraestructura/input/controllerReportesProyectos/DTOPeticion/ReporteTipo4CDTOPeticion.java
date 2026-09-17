@@ -2,6 +2,7 @@ package edu.unicauca.reportes_SIVRI.reportes.infraestructura.input.controllerRep
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -26,10 +27,35 @@ public class ReporteTipo4CDTOPeticion {
     private String programaIntegrante;
 
     // =========================================================
-    // PROYECTOS DEL INTEGRANTE
+    // DETALLE DEL INTEGRANTE ENVIADO POR EL FRONT
     // =========================================================
 
-    private List<ProyectoDTO> proyectos;
+    /*
+     * El front envía esta propiedad con el nombre "DetalleIntegrante".
+     * Internamente se mantiene el nombre Java "detalleIntegrante".
+     */
+    @JsonAlias("DetalleIntegrante")
+    private List<DetalleIntegranteDTO> detalleIntegrante;
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class DetalleIntegranteDTO {
+
+        private String nombreIntegrante;
+        private String numeroIdentificacion;
+
+        private String facultadIntegrante;
+        private String departamentoIntegrante;
+        private String programaIntegrante;
+
+        private List<ProyectoDTO> proyectos;
+    }
+
+    // =========================================================
+    // PROYECTOS DEL INTEGRANTE
+    // =========================================================
 
     @Data
     @AllArgsConstructor

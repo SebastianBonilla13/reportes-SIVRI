@@ -1,11 +1,13 @@
 package edu.unicauca.reportes_SIVRI.reportes.infraestructura.input.controllerReportesProyectos.DTOPeticion;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -14,24 +16,54 @@ import java.util.List;
 public class ReporteTipo1FDTOPeticion {
 
     // =========================================================
-    // DATOS GENERALES DEL GRUPO
+    // INFORMACIÓN GENERAL DEL GRUPO
     // =========================================================
 
     private String idGrupo;
     private String nombreGrupo;
     private String codigoGruplac;
-    private String categorizacionGrupo;
+    private String enlaceGruplac;
+
+    private String directorGrupo;
+    private String correoDirectorGrupo;
+    private String correoGrupo;
+
     private String facultadGrupo;
+    private String departamentoDirector;
+
+    private String lineasInvestigacionGrupo;
+    private String categorizacionGrupo;
+    private String disciplinasGrupo;
+
+    private String estadoGrupo;
+    private String fechaCreacionGruplac;
 
     // =========================================================
-    // LISTAS DE LA FICHA
+    // FICHA ENVIADA POR EL FRONT
     // =========================================================
 
-    private List<IntegranteDTO> integrantes;
-    private List<ProyectoDTO> proyectos;
-    private List<SemilleroDTO> semilleros;
-    private List<ProductoEntregadoDTO> productosEntregados;
-    private List<ProductoPendienteDTO> productosPendientes;
+    /*
+     * El front envía la ficha con el nombre "DataFicha".
+     * Internamente se mantiene el nombre Java "dataFicha".
+     */
+    @JsonAlias("DataFicha")
+    private List<FichaDTO> dataFicha;
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class FichaDTO {
+
+        private String idGrupo;
+        private String nombreGrupo;
+
+        private List<IntegranteDTO> integrantes;
+        private List<ProyectoDTO> proyectos;
+        private List<SemilleroDTO> semilleros;
+        private List<ProductoEntregadoDTO> productosEntregados;
+        private List<ProductoPendienteDTO> productosPendientes;
+    }
 
     // =========================================================
     // INTEGRANTES
