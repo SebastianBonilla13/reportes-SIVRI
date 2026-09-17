@@ -9,12 +9,16 @@ import edu.unicauca.reportes_SIVRI.reportes.aplicacion.output.GenerarReporteGate
 @Service
 public class GenerarReporteGatewayImplAdapter implements GenerarReporteGatewayIntPort {
 
-    private final JasperHelper jasperService = new JasperHelper();
+    @Override
+    public byte[] generarReporteDesdePlantilla(
+            String plantillaJrxml,
+            Map<String, Object> parametrosYDatos,
+            String formato) {
 
-	@Override
-	public byte[] generarReporteDesdePlantilla(String plantillaJrxml, Map<String, Object> parametrosYDatos, String formato) {
-		
-		return jasperService.generarReporteDesdePlantilla(plantillaJrxml, parametrosYDatos, formato);
-	}
-    
+        return JasperHelper.generarReporteDesdePlantilla(
+                plantillaJrxml,
+                parametrosYDatos,
+                formato
+        );
+    }
 }
