@@ -1,5 +1,7 @@
 package edu.unicauca.reportes_SIVRI.reportes.infraestructura.input.controllerReportesProyectos.DTOPeticion;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -13,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class ReporteTipo1CDTOPeticion {
 
     // =========================================================
-    // DATOS DEL GRUPO
+    // DATOS GENERALES DEL GRUPO
     // =========================================================
 
     private String idGrupo;
@@ -21,10 +23,6 @@ public class ReporteTipo1CDTOPeticion {
     private String codigoGruplac;
     private String enlaceGruplac;
 
-    /*
-     * Estos campos pertenecen a la especificación del certificado.
-     * La petición JSON de ejemplo actualmente no los envía.
-     */
     private String directorGrupo;
     private String correoDirectorGrupo;
     private String correoGrupo;
@@ -37,31 +35,41 @@ public class ReporteTipo1CDTOPeticion {
 
     private String categorizacionGrupo;
     private String estadoGrupo;
-
     private String fechaCreacionGruplac;
 
     // =========================================================
-    // DATOS DEL INTEGRANTE
+    // LISTA DE INTEGRANTES
     // =========================================================
 
-    private String nombreIntegrante;
-    private String numeroIdentificacion;
+    private List<IntegranteDTO> integrantes;
 
-    private String estadoIntegranteGrupo;
-    private String historialRolesEnGrupo;
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class IntegranteDTO {
 
-    private String fechaInicioRol;
-    private String fechaFinRol;
+        private String nombreIntegrante;
+        private String numeroIdentificacion;
 
-    private String facultadIntegrante;
-    private String departamentoIntegrante;
-    private String programaIntegrante;
+        private String estadoIntegranteGrupo;
+        private String historialRolesEnGrupo;
 
-    private String tipoVinculacionIntegrante;
+        private String fechaInicioRol;
+        private String fechaFinRol;
 
-    /*
-     * Viene en el JSON real, aunque no hace parte
-     * de los campos visibles del certificado.
-     */
-    private String enlaceCvlac;
+        private String facultadIntegrante;
+        private String departamentoIntegrante;
+        private String programaIntegrante;
+
+        private String tipoVinculacionIntegrante;
+
+        /*
+         * El front también puede enviarlo.
+         * Actualmente no se imprime en el certificado,
+         * pero se conserva en el DTO para representar
+         * correctamente la estructura recibida.
+         */
+        private String enlaceCvlac;
+    }
 }
