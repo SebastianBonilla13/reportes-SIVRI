@@ -566,7 +566,7 @@
             uuid="c1010001-0032-4000-8000-000000000001"
             x="90" y="242" width="310" height="22"
             fontName="Arial" fontSize="7"
-            hTextAlign="Center"
+            hTextAlign="Left"
             vTextAlign="Middle"
             textAdjust="ScaleFont">
             <expression><![CDATA[
@@ -588,11 +588,22 @@
             uuid="c1010001-0034-4000-8000-000000000001"
             x="520" y="242" width="282" height="22"
             fontName="Arial" fontSize="7"
-            hTextAlign="Center"
+            hTextAlign="Left"
             vTextAlign="Middle"
             textAdjust="ScaleFont">
             <expression><![CDATA[
-                $P{fechaCreacionGruplac} == null ? "" : $P{fechaCreacionGruplac}
+                $P{fechaCreacionGruplac} == null
+                || $P{fechaCreacionGruplac}.trim().isEmpty()
+                    ? ""
+                    : (
+                        $P{fechaCreacionGruplac}.matches("\\d{4}-\\d{2}-\\d{2}.*")
+                            ? $P{fechaCreacionGruplac}.substring(8, 10)
+                                + "/"
+                                + $P{fechaCreacionGruplac}.substring(5, 7)
+                                + "/"
+                                + $P{fechaCreacionGruplac}.substring(0, 4)
+                            : $P{fechaCreacionGruplac}
+                    )
             ]]></expression>
             <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
         </element>
@@ -1069,7 +1080,18 @@
                 vTextAlign="Middle"
                 textAdjust="ScaleFont">
                 <expression><![CDATA[
-                    $F{fechaInicioRol} == null ? "" : $F{fechaInicioRol}
+                    $F{fechaInicioRol} == null
+                    || $F{fechaInicioRol}.trim().isEmpty()
+                        ? ""
+                        : (
+                            $F{fechaInicioRol}.matches("\\d{4}-\\d{2}-\\d{2}.*")
+                                ? $F{fechaInicioRol}.substring(8, 10)
+                                    + "/"
+                                    + $F{fechaInicioRol}.substring(5, 7)
+                                    + "/"
+                                    + $F{fechaInicioRol}.substring(0, 4)
+                                : $F{fechaInicioRol}
+                        )
                 ]]></expression>
                 <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
             </element>
@@ -1082,7 +1104,18 @@
                 vTextAlign="Middle"
                 textAdjust="ScaleFont">
                 <expression><![CDATA[
-                    $F{fechaFinRol} == null ? "" : $F{fechaFinRol}
+                    $F{fechaFinRol} == null
+                    || $F{fechaFinRol}.trim().isEmpty()
+                        ? ""
+                        : (
+                            $F{fechaFinRol}.matches("\\d{4}-\\d{2}-\\d{2}.*")
+                                ? $F{fechaFinRol}.substring(8, 10)
+                                    + "/"
+                                    + $F{fechaFinRol}.substring(5, 7)
+                                    + "/"
+                                    + $F{fechaFinRol}.substring(0, 4)
+                                : $F{fechaFinRol}
+                        )
                 ]]></expression>
                 <box><pen lineWidth="0.5" lineColor="#CCCCCC"/></box>
             </element>

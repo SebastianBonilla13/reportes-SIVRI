@@ -534,7 +534,8 @@
             fontName="Arial"
             fontSize="7"
             vTextAlign="Middle"
-            textAdjust="ScaleFont">
+            textAdjust="ScaleFont"
+            hTextAlign="Center">
 
             <expression><![CDATA[$P{idGrupo}]]></expression>
 
@@ -576,7 +577,8 @@
             fontName="Arial"
             fontSize="7"
             vTextAlign="Middle"
-            textAdjust="ScaleFont">
+            textAdjust="ScaleFont"
+            hTextAlign="Left">
 
             <expression><![CDATA[$P{nombreGrupo}]]></expression>
 
@@ -618,7 +620,8 @@
             fontName="Arial"
             fontSize="7"
             vTextAlign="Middle"
-            textAdjust="ScaleFont">
+            textAdjust="ScaleFont"
+            hTextAlign="Center">
 
             <expression><![CDATA[$P{codigoGruplac}]]></expression>
 
@@ -635,7 +638,7 @@
             uuid="f0100027-0000-4000-8000-000000000001"
             x="180"
             y="150"
-            width="85"
+            width="95"
             height="28"
             fontName="Arial"
             fontSize="7"
@@ -653,14 +656,15 @@
         <element
             kind="textField"
             uuid="f0100028-0000-4000-8000-000000000001"
-            x="265"
+            x="275"
             y="150"
-            width="95"
+            width="85"
             height="28"
             fontName="Arial"
             fontSize="7"
             vTextAlign="Middle"
-            textAdjust="ScaleFont">
+            textAdjust="ScaleFont"
+            hTextAlign="Center">
 
             <expression><![CDATA[
                 $P{categorizacionGrupo}
@@ -704,7 +708,8 @@
             fontName="Arial"
             fontSize="7"
             vTextAlign="Middle"
-            textAdjust="ScaleFont">
+            textAdjust="ScaleFont"
+            hTextAlign="Left">
 
             <expression><![CDATA[$P{facultadGrupo}]]></expression>
 
@@ -1114,7 +1119,8 @@
                                 fontName="Arial"
                                 fontSize="7"
                                 vTextAlign="Middle"
-                                textAdjust="StretchHeight">
+                                textAdjust="StretchHeight"
+                                hTextAlign="Left">
 
                                 <expression><![CDATA[
                                     $F{nombreIntegrante}
@@ -1288,12 +1294,12 @@
 
                     <column kind="single"
                         uuid="f0100203-0000-4000-8000-000000000001"
-                        width="100">
+                        width="185">
 
                         <columnHeader height="22" style="TableHeader">
                             <element kind="staticText"
                                 x="0" y="0"
-                                width="100" height="22"
+                                width="185" height="22"
                                 fontName="Arial"
                                 fontSize="7"
                                 bold="true"
@@ -1306,7 +1312,7 @@
                         <detailCell height="22" style="TableCell">
                             <element kind="textField"
                                 x="0" y="0"
-                                width="100" height="22"
+                                width="185" height="22"
                                 fontName="Arial"
                                 fontSize="7"
                                 hTextAlign="Center"
@@ -1321,12 +1327,12 @@
 
                     <column kind="single"
                         uuid="f0100204-0000-4000-8000-000000000001"
-                        width="100">
+                        width="185">
 
                         <columnHeader height="22" style="TableHeader">
                             <element kind="staticText"
                                 x="0" y="0"
-                                width="100" height="22"
+                                width="185" height="22"
                                 fontName="Arial"
                                 fontSize="7"
                                 bold="true"
@@ -1339,7 +1345,7 @@
                         <detailCell height="22" style="TableCell">
                             <element kind="textField"
                                 x="0" y="0"
-                                width="100" height="22"
+                                width="185" height="22"
                                 fontName="Arial"
                                 fontSize="7"
                                 hTextAlign="Center"
@@ -1354,12 +1360,12 @@
 
                     <column kind="single"
                         uuid="f0100205-0000-4000-8000-000000000001"
-                        width="355">
+                        width="185">
 
                         <columnHeader height="22" style="TableHeader">
                             <element kind="staticText"
                                 x="0" y="0"
-                                width="355" height="22"
+                                width="185" height="22"
                                 fontName="Arial"
                                 fontSize="7"
                                 bold="true"
@@ -1372,11 +1378,12 @@
                         <detailCell height="22" style="TableCell">
                             <element kind="textField"
                                 x="0" y="0"
-                                width="355" height="22"
+                                width="185" height="22"
                                 fontName="Arial"
                                 fontSize="7"
                                 vTextAlign="Middle"
-                                textAdjust="StretchHeight">
+                                textAdjust="StretchHeight"
+                                hTextAlign="Left">
                                 <expression><![CDATA[
                                     $F{nombreConvocatoria}
                                 ]]></expression>
@@ -1501,7 +1508,8 @@
                                 fontName="Arial"
                                 fontSize="7"
                                 vTextAlign="Middle"
-                                textAdjust="StretchHeight">
+                                textAdjust="StretchHeight"
+                                hTextAlign="Left">
                                 <expression><![CDATA[
                                     $F{nombreSemillero}
                                 ]]></expression>
@@ -1536,7 +1544,19 @@
                                 hTextAlign="Center"
                                 vTextAlign="Middle">
                                 <expression><![CDATA[
-                                    $F{fechaCreacionSemillero}
+                                    $F{fechaCreacionSemillero} == null
+                                    || $F{fechaCreacionSemillero}.trim().isEmpty()
+                                        ? ""
+                                        : (
+                                            $F{fechaCreacionSemillero}
+                                                .matches("\\d{4}-\\d{2}-\\d{2}.*")
+                                                ? $F{fechaCreacionSemillero}.substring(8, 10)
+                                                    + "/"
+                                                    + $F{fechaCreacionSemillero}.substring(5, 7)
+                                                    + "/"
+                                                    + $F{fechaCreacionSemillero}.substring(0, 4)
+                                                : $F{fechaCreacionSemillero}
+                                        )
                                 ]]></expression>
                             </element>
                         </detailCell>
@@ -1659,7 +1679,8 @@
                                 fontName="Arial"
                                 fontSize="7"
                                 vTextAlign="Middle"
-                                textAdjust="StretchHeight">
+                                textAdjust="StretchHeight"
+                                hTextAlign="Left">
                                 <expression><![CDATA[
                                     $F{representanteProductoEntregado}
                                 ]]></expression>
@@ -1692,7 +1713,8 @@
                                 fontName="Arial"
                                 fontSize="7"
                                 vTextAlign="Middle"
-                                textAdjust="StretchHeight">
+                                textAdjust="StretchHeight"
+                                hTextAlign="Center">
                                 <expression><![CDATA[
                                     $F{tipoProductoEntregado}
                                 ]]></expression>
@@ -1725,7 +1747,8 @@
                                 fontName="Arial"
                                 fontSize="7"
                                 vTextAlign="Middle"
-                                textAdjust="StretchHeight">
+                                textAdjust="StretchHeight"
+                                hTextAlign="Left">
                                 <expression><![CDATA[
                                     $F{nombreResponsableProductoEntregado}
                                 ]]></expression>
@@ -1817,7 +1840,8 @@
                                 fontName="Arial"
                                 fontSize="7"
                                 vTextAlign="Middle"
-                                textAdjust="StretchHeight">
+                                textAdjust="StretchHeight"
+                                hTextAlign="Left">
                                 <expression><![CDATA[
                                     $F{representanteProductoPendiente}
                                 ]]></expression>
@@ -1850,7 +1874,8 @@
                                 fontName="Arial"
                                 fontSize="7"
                                 vTextAlign="Middle"
-                                textAdjust="StretchHeight">
+                                textAdjust="StretchHeight"
+                                hTextAlign="Center">
                                 <expression><![CDATA[
                                     $F{tipoProductoPendiente}
                                 ]]></expression>
@@ -1883,7 +1908,8 @@
                                 fontName="Arial"
                                 fontSize="7"
                                 vTextAlign="Middle"
-                                textAdjust="StretchHeight">
+                                textAdjust="StretchHeight"
+                                hTextAlign="Left">
                                 <expression><![CDATA[
                                     $F{nombreResponsableProductoPendiente}
                                 ]]></expression>
